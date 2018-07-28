@@ -9,7 +9,7 @@
 
 
 
-### **JAVA Coding Style **
+### JAVA Coding Style
 
  아래 항목은 안드로이드에서 제공하는 *'AOSP(Android OpenSource Project) 를 위한 코딩 규칙'*에서 최소한으로 발췌한 내용입니다. 전체 문서를 참조하려면 [여기](https://source.android.com/setup/contribute/code-style)를 클릭하세요.
 
