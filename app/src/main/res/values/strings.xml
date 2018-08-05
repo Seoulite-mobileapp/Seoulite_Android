@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Seoulite</string>
+    <string name="hello">Seoulite Hello !</string>
 </resources>
