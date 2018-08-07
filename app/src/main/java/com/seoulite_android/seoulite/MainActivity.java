@@ -1,9 +1,16 @@
 package com.seoulite_android.seoulite;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -15,9 +22,17 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
-//        implements NavigationView.OnNavigationItemSelectedListener {
-//    DrawerLayout drawer;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
+
+public class MainActivity extends AppCompatActivity implements NavigationHost {
+
+    ViewPager viewPager;
+    TabLayout indicator;
+
+    List<Drawable> images;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,29 +45,26 @@ public class MainActivity extends AppCompatActivity {
                 getResources().getDrawable(R.drawable.ic_hamburger_menu),
                 getResources().getDrawable(R.drawable.ic_x_shape)));
         // Set cut corner background for API 23+
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            findViewById(R.id.main_container).setBackground(getDrawable(R.drawable.toolbar_shape));
-        }
-
-//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
-//
-//
-//        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-//        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-//                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-//        drawer.addDrawerListener(toggle);
-//        toggle.syncState();
-//
-//
-//        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-//        navigationView.setNavigationItemSelectedListener(this);
-//
-//        if (savedInstanceState == null) {
-//            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-//                    new MessageFragment()).commit();
-//            navigationView.setCheckedItem(R.id.nav_camera);
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+//            findViewById(R.id.main_container).setBackground(getDrawable(R.drawable.toolbar_shape));
 //        }
+
+        // For image slider
+        viewPager = findViewById(R.id.image_viewpager);
+        indicator = findViewById(R.id.indicator);
+
+        images = new ArrayList<>();
+        // TODO: Temp Code. Needs refactoring
+        images.add(getDrawable(R.drawable.sample_1));
+        images.add(getDrawable(R.drawable.sample_2));
+        images.add(getDrawable(R.drawable.sample_3));
+
+        viewPager.setAdapter(new SliderAdapter(this, images));
+        indicator.setupWithViewPager(viewPager, true);
+
+        Timer timer = new Timer();
+        timer.scheduleAtFixedRate(new SliderTimer(), 4000, 6000);
+
     }
 
 //    @Override
@@ -118,4 +130,32 @@ public class MainActivity extends AppCompatActivity {
 //        drawer.closeDrawer(GravityCompat.START);
 //        return true;
 //    }
+
+    private class SliderTimer extends TimerTask {
+        @Override
+        public void run() {
+            MainActivity.this.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    if (viewPager.getCurrentItem() < images.size() - 1) {
+                        viewPager.setCurrentItem(viewPager.getCurrentItem() + 1);
+                    } else {
+                        viewPager.setCurrentItem(0);
+                    }
+                }
+            });
+        }
+    }
+
+    @Override
+    public void replaceFragment(Fragment fragment, boolean addToBackstack) {
+        FragmentTransaction transaction =
+                getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.main_container, fragment);
+        if (addToBackstack) {
+            transaction.addToBackStack(null);
+        }
+        transaction.commit();
+    }
 }

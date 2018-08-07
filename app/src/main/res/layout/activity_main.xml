@@ -38,20 +38,81 @@
             <include layout="@layout/backdrop_menu" />
 
         </LinearLayout>
-        <android.support.v4.widget.NestedScrollView
+        <!--<android.support.v4.widget.NestedScrollView-->
+            <!--android:id="@+id/main_container"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:background="@color/productGridBackgroundColor"-->
+            <!--android:elevation="8dp"-->
+            <!--app:layout_behavior="@string/appbar_scrolling_view_behavior">-->
+
+            <!--<android.support.v7.widget.RecyclerView-->
+                <!--android:id="@+id/recycler_view"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent" />-->
+
+        <!--</android.support.v4.widget.NestedScrollView>-->
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </FrameLayout>
+        <LinearLayout
             android:id="@+id/main_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/productGridBackgroundColor"
+            android:background="@color/mainFragBackgroundColor"
             android:elevation="8dp"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+            android:orientation="vertical">
 
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/recycler_view"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:elevation="4dp">
 
-        </android.support.v4.widget.NestedScrollView>
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/image_viewpager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true" />
+
+                <android.support.design.widget.TabLayout
+                    android:id="@+id/indicator"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerInParent="true"
+                    app:tabBackground="@drawable/indicator_selector"
+                    app:tabGravity="center"
+                    app:tabIndicatorHeight="0dp"/>
+
+            </RelativeLayout>
+
+            <TextView
+                style="@style/Widget.Shrine.Button.TextButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="------------ shortcut ------------" />
+            <android.support.design.button.MaterialButton
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/search_by_district_label"/>
+            <android.support.design.button.MaterialButton
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/living_info_label"/>
+            <android.support.design.button.MaterialButton
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/favorites_label"/>
+        </LinearLayout>
+
     </FrameLayout>
 
 
