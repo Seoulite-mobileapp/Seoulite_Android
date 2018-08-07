@@ -39,18 +39,21 @@
         android:text="------------ shortcut ------------" />
 
     <android.support.design.button.MaterialButton
+        android:id="@+id/btn_main_search"
         style="@style/Widget.MaterialComponents.Button.TextButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/search_by_district_label" />
 
     <android.support.design.button.MaterialButton
+        android:id="@+id/btn_main_living_info"
         style="@style/Widget.MaterialComponents.Button.TextButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/living_info_label" />
 
     <android.support.design.button.MaterialButton
+        android:id="@+id/btn_main_favorites"
         style="@style/Widget.MaterialComponents.Button.TextButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
