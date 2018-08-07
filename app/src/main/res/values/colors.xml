@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
-    <color name="darkBlue">#4c9cb8</color>
+    <color name="colorPrimary">#e0e0e0</color>
+    <color name="colorPrimaryDark">#dadce0</color>
+    <color name="colorAccent">#6200ee</color>
+    <color name="toolbarIconColor">#FFCF44</color>
+    <color name="loginPageBackgroundColor">#ffffff</color>
+    <color name="productGridBackgroundColor">#fffbfa</color>
 </resources>
