@@ -8,21 +8,32 @@ import android.support.v4.app.FragmentTransaction;
 
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.view.Menu;
+import android.view.View;
+import android.widget.FrameLayout;
+
+import java.util.ArrayList;
+
+import butterknife.BindView;
 
 
 public class MainActivity extends AppCompatActivity implements NavigationHost {
+    private Toolbar mToolbar;
+    private NavigationIconClickListener mNavIconClickListener;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = findViewById(R.id.app_bar);
-        setSupportActionBar(toolbar);
-        toolbar.setNavigationOnClickListener(new NavigationIconClickListener(this,
+        mToolbar = findViewById(R.id.app_bar);
+        setSupportActionBar(mToolbar);
+        mNavIconClickListener = new NavigationIconClickListener(this,
                 findViewById(R.id.main_container), null,
                 getResources().getDrawable(R.drawable.ic_hamburger_menu),
-                getResources().getDrawable(R.drawable.ic_x_shape)));
+                getResources().getDrawable(R.drawable.ic_x_shape));
+        mToolbar.setNavigationOnClickListener(mNavIconClickListener);
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
@@ -37,15 +48,36 @@ public class MainActivity extends AppCompatActivity implements NavigationHost {
 
     }
 
-//    @Override
-//    public void onBackPressed() {
-//        if (drawer.isDrawerOpen(GravityCompat.START)) {
-//            drawer.closeDrawer(GravityCompat.START);
-//        } else {
-//            super.onBackPressed();
-//        }
-//    }
-//
+    @Override
+    public void onBackPressed() {
+        if (mNavIconClickListener.getBackdropShown()) {
+            View navIconView = getToolbarNavigationIcon(mToolbar);
+            mNavIconClickListener.onClick(navIconView);
+        } else if (getCurrentFragment() instanceof MainFragment){
+            super.onBackPressed();
+        } else {
+            replaceFragment(new MainFragment(), false);
+        }
+    }
+
+    private Fragment getCurrentFragment() {
+        return getSupportFragmentManager().findFragmentById(R.id.main_container);
+    }
+
+    private View getToolbarNavigationIcon(Toolbar toolbar) {
+        boolean hadContentDescription = TextUtils.isEmpty(toolbar.getNavigationContentDescription());
+        String contentDescription = !hadContentDescription ? toolbar.getNavigationContentDescription().toString() : "navigationIcon";
+        toolbar.setNavigationContentDescription(contentDescription);
+        ArrayList<View> potentialView = new ArrayList<>();
+        toolbar.findViewsWithText(potentialView, contentDescription, View.FIND_VIEWS_WITH_CONTENT_DESCRIPTION);
+        View navIcon = null;
+        if (potentialView.size() > 0) {
+            navIcon = potentialView.get(0);
+        }
+        if (hadContentDescription) toolbar.setNavigationContentDescription(null);
+        return navIcon;
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -53,6 +85,8 @@ public class MainActivity extends AppCompatActivity implements NavigationHost {
         return true;
     }
 //
+//    TODO: implements onOptionsItemSelected - Warnings: MainFragment Timer!
+
 //    @Override
 //    public boolean onOptionsItemSelected(MenuItem item) {
 //        // Handle action bar item clicks here. The action bar will
