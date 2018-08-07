@@ -8,6 +8,7 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:statusBarColor">#27272F</item>
         <item name="android:colorControlActivated">@color/colorAccent</item>
+        <item name="android:textColorPrimary">@color/textColorPrimary</item>
     </style>
 
     <style name="Theme.Shrine.Dark">
@@ -25,7 +26,6 @@
         <item name="android:theme">@style/Theme.Shrine.Dark</item>
         <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
         <item name="titleTextAppearance">@style/TextAppearance.Shrine.Toolbar</item>
-        <item name="android:actionOverflowButtonStyle">@style/Widget.Shrine.Dark.ToolbarIcon</item>
     </style>
 
     <style name="Widget.Shrine.Dark.ToolbarIcon" parent="Widget.AppCompat.ActionButton.Overflow">
