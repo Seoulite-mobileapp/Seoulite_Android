@@ -18,4 +18,6 @@
     <string name="living_info_label">Living Info</string>
     <string name="favorites_label">Favorites</string>
     <string name="home_label">Home</string>
+
+    <string name="btn_search">Search</string>
 </resources>
