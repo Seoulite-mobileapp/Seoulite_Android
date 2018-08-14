@@ -1,12 +1,15 @@
 package com.seoulite_android.seoulite;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -18,7 +21,10 @@ import butterknife.ButterKnife;
 
 public class DistrictSelectionFragment extends Fragment {
     @BindView(R.id.list_district) ListView mDistrictListView;
+    @BindView(R.id.btn_district_selection_search) Button mSearchButton;
 
+    private int mSelectedDistrictPos;
+    private String mSelectedDistrictName;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -26,11 +32,30 @@ public class DistrictSelectionFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_district_selection, container, false);
 
         ButterKnife.bind(this, view);
-        DistrictListAdapter adapter = new DistrictListAdapter(getContext(), DistrictEntry.getDistrictList());
+        final DistrictListAdapter adapter = new DistrictListAdapter(getContext(), DistrictEntry.getDistrictList());
         mDistrictListView.setAdapter(adapter);
+        mDistrictListView.setSelector(R.drawable.list_selector);
+
+        mDistrictListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                // TODO: Background Color Change ... WTF selector...
+                if (mSelectedDistrictPos != position) {
+                    TextView prevTextView = (adapter.getView(mSelectedDistrictPos, null, parent)).findViewById(R.id.district_name);
+                    //prevTextView.setBackgroundColor(Color.parseColor("#FFFFFF"));
+                    prevTextView.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+
+                    ((TextView)view.findViewById(R.id.district_name)).setBackgroundColor(getResources().getColor(R.color.toolbarIconColor));
+                    mSelectedDistrictPos = position;
+                    mSelectedDistrictName = (String)parent.getItemAtPosition(position);
+                }
+
+            }
+        });
 
         return view;
     }
+
 
 
 
