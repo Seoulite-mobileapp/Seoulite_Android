@@ -11,23 +11,29 @@ import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.Menu;
 import android.view.View;
-import android.widget.FrameLayout;
 
 import java.util.ArrayList;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 
 public class MainActivity extends AppCompatActivity implements NavigationHost {
-    private Toolbar mToolbar;
+    @BindView(R.id.app_bar) Toolbar mToolbar;
     private NavigationIconClickListener mNavIconClickListener;
 
+    View mNavIconView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mToolbar = findViewById(R.id.app_bar);
+
+        ButterKnife.bind(this);
+
+        mNavIconView = getToolbarNavigationIcon(mToolbar);
+
         setSupportActionBar(mToolbar);
         mNavIconClickListener = new NavigationIconClickListener(this,
                 findViewById(R.id.main_container), null,
@@ -37,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements NavigationHost {
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.main_container, new MainFragment())
+                    .add(R.id.main_container, new HomeFragment())
                     .commit();
         }
         // Set cut corner background for API 23+
@@ -51,12 +57,11 @@ public class MainActivity extends AppCompatActivity implements NavigationHost {
     @Override
     public void onBackPressed() {
         if (mNavIconClickListener.getBackdropShown()) {
-            View navIconView = getToolbarNavigationIcon(mToolbar);
-            mNavIconClickListener.onClick(navIconView);
-        } else if (getCurrentFragment() instanceof MainFragment){
+            mNavIconClickListener.onClick(mNavIconView);
+        } else if (getCurrentFragment() instanceof HomeFragment){
             super.onBackPressed();
         } else {
-            replaceFragment(new MainFragment(), false);
+            replaceFragment(new HomeFragment(), false);
         }
     }
 
@@ -84,8 +89,32 @@ public class MainActivity extends AppCompatActivity implements NavigationHost {
         getMenuInflater().inflate(R.menu.toolbar_menu, menu);
         return true;
     }
+
+    @OnClick(R.id.btn_backdrop_home)
+    public void moveToHomeFragment() {
+        mNavIconClickListener.onClick(mNavIconView);
+        replaceFragment(new HomeFragment(), false);
+    }
+
+    @OnClick(R.id.btn_backdrop_search)
+    public void moveToDistrictSelectionFragment() {
+        mNavIconClickListener.onClick(mNavIconView);
+        replaceFragment(new DistrictSelectionFragment(), false);
+    }
+
+    @OnClick(R.id.btn_backdrop_living_info)
+    public void moveToLivingInfoFragment() {
+        mNavIconClickListener.onClick(mNavIconView);
+        replaceFragment(new LivingInfoFragment(), false);
+    }
+
+    @OnClick(R.id.btn_backdrop_favorites)
+    public void moveToFavoritesFragemnt() {
+        mNavIconClickListener.onClick(mNavIconView);
+        replaceFragment(new FavoritesFragment(), false);
+    }
 //
-//    TODO: implements onOptionsItemSelected - Warnings: MainFragment Timer!
+//    TODO: implements onOptionsItemSelected - Warnings: HomeFragment Timer!
 
 //    @Override
 //    public boolean onOptionsItemSelected(MenuItem item) {
