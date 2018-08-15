@@ -12,18 +12,20 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 
 public class DistrictSelectionFragment extends Fragment {
     @BindView(R.id.list_district) ListView mDistrictListView;
     @BindView(R.id.btn_district_selection_search) Button mSearchButton;
 
-    private int mSelectedDistrictPos;
+    private int mSelectedDistrictPos = -1;
     private String mSelectedDistrictName;
 
     @Override
@@ -32,31 +34,23 @@ public class DistrictSelectionFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_district_selection, container, false);
 
         ButterKnife.bind(this, view);
-        final DistrictListAdapter adapter = new DistrictListAdapter(getContext(), DistrictEntry.getDistrictList());
+        DistrictListAdapter adapter = new DistrictListAdapter(getContext(), DistrictEntry.getDistrictList());
         mDistrictListView.setAdapter(adapter);
-        mDistrictListView.setSelector(R.drawable.list_selector);
 
-        mDistrictListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                // TODO: Background Color Change ... WTF selector...
-                if (mSelectedDistrictPos != position) {
-                    TextView prevTextView = (adapter.getView(mSelectedDistrictPos, null, parent)).findViewById(R.id.district_name);
-                    //prevTextView.setBackgroundColor(Color.parseColor("#FFFFFF"));
-                    prevTextView.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
-
-                    ((TextView)view.findViewById(R.id.district_name)).setBackgroundColor(getResources().getColor(R.color.toolbarIconColor));
-                    mSelectedDistrictPos = position;
-                    mSelectedDistrictName = (String)parent.getItemAtPosition(position);
-                }
-
-            }
-        });
 
         return view;
     }
 
 
+    @OnClick(R.id.btn_district_selection_search)
+    public void moveToAgencyByDistrictFragment() {
+        if (mSelectedDistrictName == null) {
+            Toast.makeText(getContext(), "Please select a district !", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        // TODO: open new page
+
+    }
 
 
     class DistrictListAdapter extends BaseAdapter {
@@ -72,6 +66,8 @@ public class DistrictSelectionFragment extends Fragment {
 
         // Cache item states based on positions
         private int[] mItemsStates;
+
+
 
         DistrictListAdapter(Context context, List<String> list) {
             mContext = context;
@@ -95,7 +91,7 @@ public class DistrictSelectionFragment extends Fragment {
         }
 
         @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
+        public View getView(final int position, View convertView, ViewGroup parent) {
             View view;
             boolean showSeparator = false;
 
@@ -107,9 +103,15 @@ public class DistrictSelectionFragment extends Fragment {
             }
 
             // Set text
-            TextView districtNameTextView = view.findViewById(R.id.district_name);
+            final TextView districtNameTextView = view.findViewById(R.id.district_name);
             String districtName = mDistrictList.get(position);
             districtNameTextView.setText(districtName);
+            // Set Selector color
+            if (mSelectedDistrictPos == position) {
+                districtNameTextView.setBackgroundColor(Color.parseColor("#FFCF44"));
+            } else {
+                districtNameTextView.setBackgroundColor(Color.parseColor("#e0e0e0"));
+            }
 
             // Show separator when needed
             switch(mItemsStates[position]) {
@@ -142,8 +144,19 @@ public class DistrictSelectionFragment extends Fragment {
                 separatorView.setVisibility(View.GONE);
             }
 
+            districtNameTextView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mSelectedDistrictName = districtNameTextView.getText().toString();
+                    mSelectedDistrictPos = position;
+                    notifyDataSetChanged();
+                    Toast.makeText(mContext, mSelectedDistrictName + " clicked.", Toast.LENGTH_SHORT).show();
+                }
+            });
+
             return view;
         }
+
 
     }
 }
