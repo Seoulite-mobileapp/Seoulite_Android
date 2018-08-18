@@ -3,6 +3,8 @@ package com.seoulite_android.seoulite;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,6 +30,8 @@ public class DistrictSelectionFragment extends Fragment {
     private int mSelectedDistrictPos = -1;
     private String mSelectedDistrictName;
 
+    private OnFragmentInteractionListener mListener;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -41,6 +45,11 @@ public class DistrictSelectionFragment extends Fragment {
         return view;
     }
 
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+    }
 
     @OnClick(R.id.btn_district_selection_search)
     public void moveToAgencyByDistrictFragment() {
@@ -48,9 +57,33 @@ public class DistrictSelectionFragment extends Fragment {
             Toast.makeText(getContext(), "Please select a district !", Toast.LENGTH_SHORT).show();
             return;
         }
-        // TODO: open new page
 
+        mListener.onFragmentInteraction(mSelectedDistrictName);
     }
+
+    // Containing Activity must implement this interface
+    public interface OnFragmentInteractionListener {
+        void onFragmentInteraction(String districtName);
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof OnFragmentInteractionListener) {
+            mListener = (OnFragmentInteractionListener)context;
+        } else {
+            throw new RuntimeException(context.toString() +
+                    " must implement OnFragmentInteractionListener.");
+        }
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        mListener = null;
+    }
+
+
 
 
     class DistrictListAdapter extends BaseAdapter {

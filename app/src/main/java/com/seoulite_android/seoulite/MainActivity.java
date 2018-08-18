@@ -9,6 +9,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 
@@ -19,11 +20,21 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 
-public class MainActivity extends AppCompatActivity implements NavigationHost {
+public class MainActivity extends AppCompatActivity implements NavigationHost,
+        DistrictSelectionFragment.OnFragmentInteractionListener {
+    private static final String TAG = "MainActivity";
+
     @BindView(R.id.app_bar) Toolbar mToolbar;
     private NavigationIconClickListener mNavIconClickListener;
 
     View mNavIconView;
+
+    // Fragments
+    private static DistrictSelectionFragment mDistrictSelectionFragment;
+    private static AgencyByDistrictFragment mAgencyByDistrictFragment;
+    private static LivingInfoFragment mLivingInfoFragment;
+    private static FavoritesFragment mFavoritesFragment;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +62,14 @@ public class MainActivity extends AppCompatActivity implements NavigationHost {
 //            findViewById(R.id.main_container).setBackground(getDrawable(R.drawable.toolbar_shape));
 //        }
 
+        // Initialize Fragments
+        mDistrictSelectionFragment = new DistrictSelectionFragment();
+        mAgencyByDistrictFragment = new AgencyByDistrictFragment();
+        mLivingInfoFragment = new LivingInfoFragment();
+        mFavoritesFragment = new FavoritesFragment();
+
+
+        Log.d(TAG, "onCreate: ");
 
     }
 
@@ -99,19 +118,19 @@ public class MainActivity extends AppCompatActivity implements NavigationHost {
     @OnClick(R.id.btn_backdrop_search)
     public void moveToDistrictSelectionFragment() {
         mNavIconClickListener.onClick(mNavIconView);
-        replaceFragment(new DistrictSelectionFragment(), false);
+        replaceFragment(mDistrictSelectionFragment, false);
     }
 
     @OnClick(R.id.btn_backdrop_living_info)
     public void moveToLivingInfoFragment() {
         mNavIconClickListener.onClick(mNavIconView);
-        replaceFragment(new LivingInfoFragment(), false);
+        replaceFragment(mLivingInfoFragment, false);
     }
 
     @OnClick(R.id.btn_backdrop_favorites)
     public void moveToFavoritesFragemnt() {
         mNavIconClickListener.onClick(mNavIconView);
-        replaceFragment(new FavoritesFragment(), false);
+        replaceFragment(mFavoritesFragment, false);
     }
 //
 //    TODO: implements onOptionsItemSelected - Warnings: HomeFragment Timer!
@@ -164,6 +183,21 @@ public class MainActivity extends AppCompatActivity implements NavigationHost {
 //        return true;
 //    }
 
+
+    // Pass the district name from DistrictSelectionFragment to AgencyByDistrictFragment
+    @Override
+    public void onFragmentInteraction(String districtName) {
+        if (mAgencyByDistrictFragment != null) {
+            Log.d(TAG, "onFragmentInteraction: mAgencyByDistrictFragment is not null");
+            Bundle args = new Bundle();
+            args.putString("districtName", districtName);
+            mAgencyByDistrictFragment.setArguments(args);
+            replaceFragment(mAgencyByDistrictFragment, false);
+
+        } else {
+            Log.d(TAG, "onFragmentInteraction: mAgencyBydistrictFragment is null");
+        }
+    }
 
     @Override
     public void replaceFragment(Fragment fragment, boolean addToBackstack) {
