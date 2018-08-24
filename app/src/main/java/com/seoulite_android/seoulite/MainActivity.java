@@ -192,7 +192,7 @@ public class MainActivity extends AppCompatActivity implements NavigationHost,
             Bundle args = new Bundle();
             args.putString("districtName", districtName);
             mAgencyByDistrictFragment.setArguments(args);
-            replaceFragment(mAgencyByDistrictFragment, false);
+            replaceFragment(mAgencyByDistrictFragment, true);
 
         } else {
             Log.d(TAG, "onFragmentInteraction: mAgencyBydistrictFragment is null");
