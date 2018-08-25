@@ -63,10 +63,11 @@
         android:textStyle="bold" />
 
     <!--흰 부분 시작-->
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="10dp"
+        android:orientation="vertical"
         android:background="@drawable/agencybydistrict_content">
 
         <LinearLayout
@@ -76,55 +77,86 @@
             android:gravity="center"
             android:orientation="horizontal">
 
-            <CheckBox
-                android:layout_width="wrap_content"
+            <RadioGroup
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="3dp"
-                android:text="English" />
+                android:orientation="horizontal"
+                android:gravity="center_horizontal">
 
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="3dp"
-                android:text="Japanese" />
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="English"
+                    android:focusedByDefault="true"/>
 
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="3dp"
-                android:text="Chinese" />
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Japanese"/>
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Chinese"/>
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Etc."/>
+            </RadioGroup>
 
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="3dp"
-                android:text="Etc." />
+            <!--<CheckBox-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_margin="3dp"-->
+                <!--android:text="English" />-->
+
+            <!--<CheckBox-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_margin="3dp"-->
+                <!--android:text="Japanese" />-->
+
+            <!--<CheckBox-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_margin="3dp"-->
+                <!--android:text="Chinese" />-->
+
+            <!--<CheckBox-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_margin="3dp"-->
+                <!--android:text="Etc." />-->
         </LinearLayout>
 
         <View
             android:id="@+id/underline"
             android:layout_width="match_parent"
             android:layout_height="2dp"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/linearLayout"
             android:background="#797979" />
 
-        <android.support.v4.view.ViewPager
-            android:id="@+id/viewpager"
+        <ListView
+            android:id="@+id/list_agency_by_district"
             android:layout_width="match_parent"
-            android:layout_height="170dp"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/linearLayout">
+            android:layout_height="match_parent">
 
-        </android.support.v4.view.ViewPager>
+        </ListView>
 
-        <!--TODO: mapview 로 변경?-->
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/viewpager"
-            android:layout_margin="10dp"
-            android:src="@drawable/ic_menu_send" />
-    </RelativeLayout>
+        <!--<android.support.v4.view.ViewPager-->
+            <!--android:id="@+id/viewpager"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="170dp"-->
+            <!--android:layout_alignParentStart="true"-->
+            <!--android:layout_below="@+id/linearLayout">-->
+
+        <!--</android.support.v4.view.ViewPager>-->
+
+        <!--&lt;!&ndash;TODO: mapview 로 변경?&ndash;&gt;-->
+        <!--<ImageView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_below="@+id/viewpager"-->
+            <!--android:layout_margin="10dp"-->
+            <!--android:src="@drawable/ic_menu_send" />-->
+    </LinearLayout>
 
 </LinearLayout>
