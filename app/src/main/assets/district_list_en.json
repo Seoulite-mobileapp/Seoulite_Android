@@ -1,0 +1,1894 @@
+﻿{
+    "district_list_en": [
+        {
+            "name": "Cheongsol Certified Real Estate Agency",
+            "representative": "Lee, Donkwon",
+            "tel": "82-2-763-1126",
+            "fax": "82-2-763-1141",
+            "address_full": "365, Jong-ro, Jongno-gu, Seoul",
+            "address_district": "Jongno-gu",
+            "language": "English"
+        },
+        {
+            "name": "Jinsol Certified Real Estate Agency",
+            "representative": "Kim, Hyungkee",
+            "tel": "82-2-738-4984",
+            "fax": "82-2-738-4983",
+            "address_full": "33, Jahamun-ro, Jongno-gu, Seoul",
+            "address_district": "Jongno-gu",
+            "language": "English"
+        },
+        {
+            "name": "Hanil Certified Real Estate Agency",
+            "representative": "Lee, Woongki",
+            "tel": "82-2-765-2189",
+            "fax": "82-2-765-2146",
+            "address_full": "2F, 1, Jong-ro 46-gil, Jongno-gu, Seoul",
+            "address_district": "Jongno-gu",
+            "language": "English"
+        },
+        {
+            "name": "Ace Certified Real Estate Agency",
+            "representative": "Kee, Jongick",
+            "tel": "82-2-379-2600",
+            "fax": "82-0505-889-6161",
+            "address_full": "8, Pyeongchang-gil, Jongno-gu, Seoul",
+            "address_district": "Jongno-gu",
+            "language": "English"
+        },
+        {
+            "name": "Mentor Real Estate Agency",
+            "representative": "Youn, Young-sook",
+            "tel": "82-2-725-1127",
+            "fax": "82-2-736-1127",
+            "address_full": "King's GardenⅡ#112, 24 sajik-ro 8-gil, Jongno-gu",
+            "address_district": "Jongno-gu",
+            "language": "English"
+        },
+        {
+            "name": "Cheongun Sangnoksu Certified Real Estate Agency",
+            "representative": "Kang, Heemok",
+            "tel": "82-2-738-5288",
+            "fax": "82-2-735-4982",
+            "address_full": "30, Jahamun-ro 33-gil, Jongno-gu, Seoul",
+            "address_district": "Jongno-gu",
+            "language": "English"
+        },
+        {
+            "name": "Jungang Certified Real Estate Agency",
+            "representative": "Lee, Moonwoong",
+            "tel": "82-2-379-0047",
+            "fax": "82-2-379-4080",
+            "address_full": "94, Pyeongchangmunhwa-ro, Jongno-gu, Seoul",
+            "address_district": "Jongno-gu",
+            "language": "English"
+        },
+        {
+            "name": "Jongno Sangga Certified Real Estate Agency",
+            "representative": "Choi, Mungyu",
+            "tel": "82-2-3672-3478",
+            "fax": "82-2-3672-3479",
+            "address_full": "#302, 26 Donhwamun-ro 11-gil, Jongno-gu",
+            "address_district": "Jongno-gu",
+            "language": "English"
+        },
+        {
+            "name": "Pyeongchang Certified Real Estate Agency",
+            "representative": "Paik,Taehyun",
+            "tel": "82-2-396-7744",
+            "fax": "82-2-396-4004",
+            "address_full": "43-1, Pyeongchangmunhwa-ro, Jongno-gu, Seoul",
+            "address_district": "Jongno-gu",
+            "language": "English"
+        },
+        {
+            "name": "Jungang Certified Real Estate Agency",
+            "representative": "Yun, Haiwon",
+            "tel": "82-2-739-1155",
+            "fax": "82-2-722-2634",
+            "address_full": "#101 Donga apt shop, 147 songwal-gil, Jongno-gu, Seoul",
+            "address_district": "Jongno-gu",
+            "language": "English"
+        },
+        {
+            "name": "Kukje Certified Real Estate Agency",
+            "representative": "Koo, Youngzoo",
+            "tel": "82-2-2233-2525",
+            "fax": "82-2-2233-2503",
+            "address_full": "21, Dasan-ro 12-gil, Jung-gu, Seoul",
+            "address_district": "Jung-gu",
+            "language": "English"
+        },
+        {
+            "name": "DongDaeMoon Certified Real Estate Agency",
+            "representative": "Kim, Myungsoo",
+            "tel": "82-2-2254-4984",
+            "fax": "82-2-2254-4985",
+            "address_full": "#402, 11, Majang-ro, Jung-gu, Seoul",
+            "address_district": "Jung-gu",
+            "language": "English"
+        },
+        {
+            "name": "Atseoul Consulting Certified Real Estate Agency",
+            "representative": "Kang, Hunjoung",
+            "tel": "82-2-310-9009",
+            "fax": "82-2-310-9779",
+            "address_full": "#112, 64, Sejong-daero, Jung-gu, Seoul",
+            "address_district": "Jung-gu",
+            "language": "English"
+        },
+        {
+            "name": "Onnuri Certified Real Estate Agency",
+            "representative": "Kwon, Youngpil",
+            "tel": "82-2-796-4955",
+            "fax": "82-2-796-4946",
+            "address_full": "20, Dongho-ro 37-gil, Jung-gu, Seoul",
+            "address_district": "Jung-gu",
+            "language": "English"
+        },
+        {
+            "name": "아크로정문공인중개사사무소",
+            "representative": "Kim, Arvinmansik",
+            "tel": "82-2-773-0055",
+            "fax": null,
+            "address_full": "영등포구 양산로 206, 1층(영등포동5가)",
+            "address_district": "Yeongdeungpo-gu",
+            "language": "English"
+        },
+        {
+            "name": "Realty 114 Samsung Certified Real Estate Agency",
+            "representative": "Chang, Young",
+            "tel": "82-2-717-3399",
+            "fax": "82-2-714-6806",
+            "address_full": "#108, Samsung River Hill Apt. Sangga, 51, Wonhyo-ro, Yongsan-gu, Seoul",
+            "address_district": "Yongsan-gu",
+            "language": "English"
+        },
+        {
+            "name": "Eden Certified Real Estate Agency",
+            "representative": "Choi, Youngho",
+            "tel": "82-2-793-4774",
+            "fax": "82-2-793-4776",
+            "address_full": "1F, 9-1, Sinheung-ro, Yongsan-gu, Seoul",
+            "address_district": "Yongsan-gu",
+            "language": "English"
+        },
+        {
+            "name": "Jinny Certified Real Estate Agency",
+            "representative": "Cho, Jinhee",
+            "tel": "82-2-749-5959",
+            "fax": "82-2-749-5633",
+            "address_full": "#103,145, Hangang-daero, Yongsan-gu, Seoul",
+            "address_district": "Yongsan-gu",
+            "language": "English"
+        },
+        {
+            "name": "Dongwon Certified Real Estate Agency",
+            "representative": "Kang, Changsoo",
+            "tel": "82-2-792-1035",
+            "fax": "82-2-792-1036",
+            "address_full": "48, Noksapyeong-daero 40na-gil, Yongsan-gu, Seoul",
+            "address_district": "Yongsan-gu",
+            "language": "English"
+        },
+        {
+            "name": "Peace Certified Real Estate Agency",
+            "representative": "Park, Yesoon",
+            "tel": "82-2-792-1006",
+            "fax": "82-2-792-1033",
+            "address_full": "17-8, Hangang-daero 52-gil,Yongsan-gu, Seoul",
+            "address_district": "Yongsan-gu",
+            "language": "English"
+        },
+        {
+            "name": "Alps Certified Real Estate Agency",
+            "representative": "Hong, Soonuk",
+            "tel": "82-2-774-1588",
+            "fax": "82-2-752-1588",
+            "address_full": "8, Huam-ro, Yongsan-gu, Seoul",
+            "address_district": "Yongsan-gu",
+            "language": "English"
+        },
+        {
+            "name": "Viva-Consulting Certified Real Estate Agency",
+            "representative": "Park, Eunwoo",
+            "tel": "82-2-792-5500",
+            "fax": "82-2-793-5363",
+            "address_full": "#1, 1F, 4-2, Daesagwan-ro 12-gil, Yongsan-gu, Seoul",
+            "address_district": "Yongsan-gu",
+            "language": "English"
+        },
+        {
+            "name": "LA Certified Real Estate Agency",
+            "representative": "Park, Kyungbae",
+            "tel": "82-2-790-3555",
+            "fax": "82-2-790-5143",
+            "address_full": "#101, 1F11, Noksapyeong-daero 46-gil, Yongsan-gu, Seoul",
+            "address_district": "Yongsan-gu",
+            "language": "English"
+        },
+        {
+            "name": "New-Town Certified Real Estate Agency",
+            "representative": "Jung, Donhee",
+            "tel": "82-2-797-8200",
+            "fax": "82-2-797-8208",
+            "address_full": "1F, 120-1, Bogwang-ro, Yongsan-gu, Seoul",
+            "address_district": "Yongsan-gu",
+            "language": "English"
+        },
+        {
+            "name": "Summit Certified Real Estate Agency",
+            "representative": "Yu, Dongsuk",
+            "tel": "82-2-765-6820",
+            "fax": "82-2-765-6821",
+            "address_full": "3F, 196, Hangang-daero, Yongsan-gu, Seoul",
+            "address_district": "Yongsan-gu",
+            "language": "English"
+        },
+        {
+            "name": "Seoul Realty-Net Certified Real Estate Agency",
+            "representative": "Choi, Younsik",
+            "tel": "82-2-796-7114",
+            "fax": "82-2-798-0894",
+            "address_full": "3F,196, Hangang-daero, Yongsan-gu, Seoul",
+            "address_district": "Yongsan-gu",
+            "language": "English"
+        },
+        {
+            "name": "Hansol Certified Real Estate Agency",
+            "representative": "Lee, Yusang",
+            "tel": "82-2-798-6262",
+            "fax": "82-2-790-8882",
+            "address_full": "#105, Daeyoung Sangga, 66, Ichon-ro 65ga-gil, Yongsan-gu, Seoul",
+            "address_district": "Yongsan-gu",
+            "language": "English"
+        },
+        {
+            "name": "Nexus Certified Real Estate Agency",
+            "representative": "Yoo, Nanhee",
+            "tel": "82-2-796-5670",
+            "fax": "82-2-766-1777",
+            "address_full": "78, Hoenamu-ro, Yongsan-gu, Seoul",
+            "address_district": "Yongsan-gu",
+            "language": "English"
+        },
+        {
+            "name": "New-Town Certified Real Estate Agency",
+            "representative": "Kim, Insoon",
+            "tel": "82-2-703-7888",
+            "fax": "82-2-703-7891",
+            "address_full": "269-1, Hyochangwon-ro, Yongsan-gu, Seoul",
+            "address_district": "Yongsan-gu",
+            "language": "English"
+        },
+        {
+            "name": "C&G Certified Real Estate Agency",
+            "representative": "Chung, Chaehun",
+            "tel": "82-2-795-9043",
+            "fax": "82-2-790-9105",
+            "address_full": "33, Noksapyeong-daero 40-gil, Yongsan-gu, Seoul",
+            "address_district": "Yongsan-gu",
+            "language": "English"
+        },
+        {
+            "name": "All-Star Certified Real Estate Agency",
+            "representative": "Lee, Yongkyun",
+            "tel": "82-2-794-8844",
+            "fax": "82-2-749-8892",
+            "address_full": "#101, 1F, 15, Usadan-ro 2-gil, Yongsan-gu, Seoul",
+            "address_district": "Yongsan-gu",
+            "language": "English"
+        },
+        {
+            "name": "Jungang Dreamland Certified Real Estate Agency",
+            "representative": "Kang, Shinyoung",
+            "tel": "82-2-794-2002",
+            "fax": "82-2-794-9876",
+            "address_full": "21-101, Hangang Mansion Sangga, 248, Ichon-ro, Yongsan-gu, Seoul",
+            "address_district": "Yongsan-gu",
+            "language": "English"
+        },
+        {
+            "name": "Acerent Certified Real Estate Agency",
+            "representative": "Kim, Jaewoo",
+            "tel": "82-2-797-0330",
+            "fax": "82-2-794-2181",
+            "address_full": "서울특별시 서초구 서래로 32 1층3호",
+            "address_district": "Seocho-gu",
+            "language": "English"
+        },
+        {
+            "name": "Reamko advisor Real Estate co., Ltd",
+            "representative": "You, Younghwa",
+            "tel": "82-2-749-9959",
+            "fax": "82-2-749-7959",
+            "address_full": "2F, 86, Dokseodang-ro, Yongsan-gu, Seoul",
+            "address_district": "Yongsan-gu",
+            "language": "English"
+        },
+        {
+            "name": "UN Certified Real Estate Agency",
+            "representative": "Chang, Moonhee",
+            "tel": "82-2-792-2558",
+            "fax": "82-2-793-0741",
+            "address_full": "1F, 84, Dokseodang-ro, Yongsan-gu, Seoul",
+            "address_district": "Yongsan-gu",
+            "language": "English"
+        },
+        {
+            "name": "Green Certified Real Estate Agency",
+            "representative": "Chung, Seungsup",
+            "tel": "82-2-749-8070",
+            "fax": "82-2-749-8060",
+            "address_full": "#204, 2F, 98, Dokseodang-ro, Yongsan-gu,Seoul",
+            "address_district": "Yongsan-gu",
+            "language": "English"
+        },
+        {
+            "name": "Hi-Rent Certified Real Estate Agency",
+            "representative": "Ahn, Youngbok",
+            "tel": "82-2-797-7277",
+            "fax": "82-2-795-7077",
+            "address_full": "182, Ichon-ro, Yongsan-gu,Seoul",
+            "address_district": "Yongsan-gu",
+            "language": "English"
+        },
+        {
+            "name": "Seoul Certified Real Estate Agency",
+            "representative": "Kang, Phillsoo",
+            "tel": "82-2-797-0102",
+            "fax": "82-2-797-9794",
+            "address_full": "101-106, Green Park APT, 64, Seobinggo-ro 51-gil, Yongsan-gu, Seoul",
+            "address_district": "Yongsan-gu",
+            "language": "English"
+        },
+        {
+            "name": "Seoul Housing Certified Real Estate Agency",
+            "representative": "Kim, Youngkeun",
+            "tel": "82-2-749-7111",
+            "fax": "82-2-749-9711",
+            "address_full": "54, Hoenamu-ro, Yongsan-gu, Seoul",
+            "address_district": "Yongsan-gu",
+            "language": "English"
+        },
+        {
+            "name": "Rex Certified Real Estate Agency",
+            "representative": "An, Gwonchan",
+            "tel": "82-2-790-8833",
+            "fax": "82-2-790-8837",
+            "address_full": "27, Sinheung-ro, Yongsan-gu, Seoul",
+            "address_district": "Yongsan-gu",
+            "language": "English"
+        },
+        {
+            "name": "114 Certified Real Estate Agency",
+            "representative": "Lee, Alexduk",
+            "tel": "82-2-711-4088",
+            "fax": "82-2-711-4089",
+            "address_full": "26-3, Cheongpa-ro 71-gil, Yongsan-gu, Seoul",
+            "address_district": "Yongsan-gu",
+            "language": "English"
+        },
+        {
+            "name": "Sinyongsan Certified Real Estate Agency",
+            "representative": "Kim, Byongchun",
+            "tel": "82-2-796-8833",
+            "fax": "82-2-796-5673",
+            "address_full": "58, Bogwang-ro, Yongsan-gu, Seoul",
+            "address_district": "Yongsan-gu",
+            "language": "English"
+        },
+        {
+            "name": "Trapalace Certified Real Estate Agency",
+            "representative": "Ha, Hongsu",
+            "tel": "82-2-756-8959",
+            "fax": "82-2-756-4554",
+            "address_full": "37, Sowol-ro 2-gil, Yongsan-gu, Seoul",
+            "address_district": "Yongsan-gu",
+            "language": "English"
+        },
+        {
+            "name": "ABC Certified Real Estate Agency",
+            "representative": "Oh, Misook",
+            "tel": "82-2-797-4007",
+            "fax": "82-2-797-3537",
+            "address_full": "5, Jangmun-ro 49-gil, Yongsan-gu, Seoul",
+            "address_district": "Yongsan-gu",
+            "language": "English"
+        },
+        {
+            "name": "Hannam UN Certified Real Estate Agency",
+            "representative": "Lee, Saemok",
+            "tel": "82-2-792-7100",
+            "fax": "82-2-796-0330",
+            "address_full": "#1F ,4, Daesagwan-ro 30-gil, Yongsan-gu, Seoul",
+            "address_district": "Yongsan-gu",
+            "language": "English"
+        },
+        {
+            "name": "DabokCertified Real Estate Agency",
+            "representative": "Oh, Hyosuk",
+            "tel": "82-2-3273-8949",
+            "fax": "82-2-3273-4545",
+            "address_full": "#1F ,273, Hyochangwon-ro, Yongsan-gu, Seoul",
+            "address_district": "Yongsan-gu",
+            "language": "English"
+        },
+        {
+            "name": "Easy Living Certified Real Estate Agency",
+            "representative": "Yu, Jaeyoung",
+            "tel": "82-2-792-3300",
+            "fax": "82-2-775-4425",
+            "address_full": "D-2223, 205, Hangang-daero, Yongsan-gu, Seoul",
+            "address_district": "Yongsan-gu",
+            "language": "English"
+        },
+        {
+            "name": "Heemangchan Certified Real Estate Agency",
+            "representative": "Kim, Jeasung",
+            "tel": "82-2-719-0303",
+            "fax": "82-2-719-0535",
+            "address_full": "1F, 174, Wonhyo-ro, Yongsan-gu, Seoul",
+            "address_district": "Yongsan-gu",
+            "language": "English"
+        },
+        {
+            "name": "HallimCertified Real Estate Agency",
+            "representative": "Joe, Changki",
+            "tel": "82-2-790-8077",
+            "fax": "82-2-790-8078",
+            "address_full": "#101, 1F, 21, Hannam-daero 20-gil, Yongsan-gu, Seoul",
+            "address_district": "Yongsan-gu",
+            "language": "English"
+        },
+        {
+            "name": "YSPMC Certified Real Estate Agency",
+            "representative": "Cha, Yoonshin",
+            "tel": "82-2-793-2021",
+            "fax": "82-2-793-2620",
+            "address_full": "#1008, 10F Hannam Bldg, 211, Itaewon-ro, Yongsan-gu, Seoul",
+            "address_district": "Yongsan-gu",
+            "language": "English"
+        },
+        {
+            "name": "PillarCertified Real Estate Agency",
+            "representative": "Lee, Kyungja",
+            "tel": "82-2-790-3188",
+            "fax": "82-2-790-3177",
+            "address_full": "18, Noksapyeong-daero 40na-gil, Yongsan-gu, Seoul",
+            "address_district": "Yongsan-gu",
+            "language": "English"
+        },
+        {
+            "name": "DaerimCertified Real Estate Agency",
+            "representative": "Kim, Jongsoon",
+            "tel": "82-2-790-0079",
+            "fax": "82-2-796-7191",
+            "address_full": "39, Hoenamu-ro, Yongsan-gu, Seoul",
+            "address_district": "Yongsan-gu",
+            "language": "English"
+        },
+        {
+            "name": "YuorimCertified Real Estate Agency",
+            "representative": "Kwon, Soonyong",
+            "tel": "82-2-794-7633",
+            "fax": "82-2-798-0843",
+            "address_full": "26, Jangmun-ro, Yongsan-gu, Seoul",
+            "address_district": "Yongsan-gu",
+            "language": "English"
+        },
+        {
+            "name": "Andy'sCertified Real Estate Agency",
+            "representative": "Lee, Sangkeel",
+            "tel": "82-2-794-0990",
+            "fax": "82-2-792-0877",
+            "address_full": "#B18, Parktower Arcade, 69, Seobinggo-ro, Yongsan-gu, Seoul",
+            "address_district": "Yongsan-gu",
+            "language": "English"
+        },
+        {
+            "name": "Myung Real Estate Agency",
+            "representative": "Lee,Taesook",
+            "tel": "82-2-793-9696",
+            "fax": "82-2-790-6860",
+            "address_full": "1F, 13, Hannam-daero 20-gil, Yongsan-gu, Seoul",
+            "address_district": "Yongsan-gu",
+            "language": "English"
+        },
+        {
+            "name": "Top realtor Real Estate Consulting Agency",
+            "representative": "Kim, Junho",
+            "tel": "82-2-790-7933",
+            "fax": "82-2-790-7934",
+            "address_full": "#B1, 147, Jangmun-ro, Yongsan-gu, Seoul",
+            "address_district": "Yongsan-gu",
+            "language": "English"
+        },
+        {
+            "name": "Jules Realty and relocation Real Estate Brokerage Co., Ltd.",
+            "representative": "Baek, Juyeon",
+            "tel": "87-2-790-2097",
+            "fax": "82-2-790-2098",
+            "address_full": "210-2, Hangang-daero, Yongsan-gu, Seoul",
+            "address_district": "Yongsan-gu",
+            "language": "English"
+        },
+        {
+            "name": "Frist Avenue Certified Real Estate Agency",
+            "representative": "Kang, Wonhee",
+            "tel": "82-2-749-0091",
+            "fax": "82-2-749-0092",
+            "address_full": "5-1, Itaewon-ro, Yongsan-gu, Seoul",
+            "address_district": "Yongsan-gu",
+            "language": "English"
+        },
+        {
+            "name": "Global Yongsan-AgeReal Estate Brokerage Co., Ltd.",
+            "representative": "Kim, Hyonjeong",
+            "tel": "82-2-712-9993",
+            "fax": "82-2-717-7860",
+            "address_full": "#105, Yongsan-Prugiosummit, 69, Hangang-daero, Yongsan-gu, Seoul",
+            "address_district": "Yongsan-gu",
+            "language": "English"
+        },
+        {
+            "name": "Ciro Asset Management Korea Certified Real Estate Agency",
+            "representative": "Choi, Iero",
+            "tel": "82-2-792-8230",
+            "fax": "82-2-532-7324",
+            "address_full": "#1001, 217, Saechang-ro, Yongsan-gu, Seoul",
+            "address_district": "Yongsan-gu",
+            "language": "English"
+        },
+        {
+            "name": "Lee’s Certified Real Estate Agency",
+            "representative": "Lee, Kiho",
+            "tel": "82-2-797-2244",
+            "fax": "82-2-797-2254",
+            "address_full": "46, Daesagwan-ro 34-gil, Yongsan-gu, Seoul",
+            "address_district": "Yongsan-gu",
+            "language": "English"
+        },
+        {
+            "name": "Asterium Seoul Certified Real Estate Agency",
+            "representative": "Kim, MiAe",
+            "tel": "82-2-776-9999",
+            "fax": "82-2-757-6666",
+            "address_full": "#106 Tower B, Centreville Asterium Seoul, 372 Hangang-daero,Yongsan -gu, Seoul",
+            "address_district": "Yongsan-gu",
+            "language": "English"
+        },
+        {
+            "name": "ParkTower Certified Real Estate Agency",
+            "representative": "Jo, TaeIn",
+            "tel": "82-2-7777-367",
+            "fax": "82-2-7777-363",
+            "address_full": "104-106, ParkTower, 69 Seobinggoro, Yongsan-gu, Seoul",
+            "address_district": "Yongsan-gu",
+            "language": "English"
+        },
+        {
+            "name": "Asterium Certified Real Estate Agency",
+            "representative": "Woo, Seungwon",
+            "tel": "82-2-793-8949",
+            "fax": "82-2-793-8289",
+            "address_full": "#120, B1, Asterium Yongsan, Hangangdaero 30gil 25, Yongsan-Gu",
+            "address_district": "Yongsan-gu",
+            "language": "English"
+        },
+        {
+            "name": "Happinees Certified Real Estate Agency",
+            "representative": "Jang, Jaehyeok",
+            "tel": "82-2-701-4985",
+            "fax": "82-2-701-1414",
+            "address_full": "1F, 115, Hyochangwon-ro Yongsan-gu, Seoul",
+            "address_district": "Yongsan-gu",
+            "language": "English"
+        },
+        {
+            "name": "D1 Certified Real Estate Agency",
+            "representative": "Lee, MinChul",
+            "tel": "82-2-797-7607",
+            "fax": "82-2-797-7607",
+            "address_full": "8F, 211, Itaewon-ro, Yongsan-gu, Seoul",
+            "address_district": "Yongsan-gu",
+            "language": "English"
+        },
+        {
+            "name": "Best One Certified Real Estate Agency",
+            "representative": "Ji, YoungHoon",
+            "tel": "82-2-779-1119",
+            "fax": "82-2-757-1118",
+            "address_full": "#B-105, AsteriumSeoul, Hangang-daero 372, Yongsan-gu, Seoul",
+            "address_district": "Yongsan-gu",
+            "language": "English"
+        },
+        {
+            "name": "Centreville Certified Real Estate Agency",
+            "representative": "Lee, Junghee",
+            "tel": "82-2-563-6700",
+            "fax": "82-2-563-6700",
+            "address_full": "51. Huam-ro 35-gil.Yongsan-gu, Seoul",
+            "address_district": "Yongsan-gu",
+            "language": "English"
+        },
+        {
+            "name": "Fortune Certified Real Estate Agency",
+            "representative": "Yoo, Byoung Kang",
+            "tel": "82-2-749-5886",
+            "fax": "82-2-749-5887",
+            "address_full": "#813, 211, Itaewon-ro, Yongsan-gu, Seoul",
+            "address_district": "Yongsan-gu",
+            "language": "English"
+        },
+        {
+            "name": "Kyungje Certified Real Estate Agency",
+            "representative": "Jung, Inchul",
+            "tel": "82-2-595-4235",
+            "fax": "82-2-595-4239",
+            "address_full": "1st Floor,161, Hangang-daero Yongsan-gu, Seoul",
+            "address_district": "Yongsan-gu",
+            "language": "English"
+        },
+        {
+            "name": "ERA Korea Certified Real Estate Agency",
+            "representative": "Kwon, Yongjoo",
+            "tel": "82-2-797-5589",
+            "fax": "82-2-796-5589",
+            "address_full": "#301, 9, Hoenamu-ro 13-gil, Yongsan-gu, Seoul",
+            "address_district": "Yongsan-gu",
+            "language": "English"
+        },
+        {
+            "name": "Yongsan Asterium Cindys Certified Real Estate Agency",
+            "representative": "Park, Kyunghun",
+            "tel": "82-2-792-3222",
+            "fax": "82-2-792-3200",
+            "address_full": "#B113, Yongsan Asterium, 25, Hangang-daero 30-gil, Yongsan-gu, Seoul",
+            "address_district": "Yongsan-gu",
+            "language": "English"
+        },
+        {
+            "name": "A&A Certified Real Estate Agency",
+            "representative": "Jeon, Hojae",
+            "tel": "82-2-794-1133",
+            "fax": "82-2-798-0201",
+            "address_full": "#1009, 211, Itaewon-ro, Yongsan-gu, Seoul",
+            "address_district": "Yongsan-gu",
+            "language": "English"
+        },
+        {
+            "name": "Gangsan Certified Real Estate Agency",
+            "representative": "Lee, Soowon",
+            "tel": "82-2-2292-8799",
+            "fax": "82-2-2292-8799",
+            "address_full": "5, Wangsimni-ro 21-gil, Seongdong-gu, Seoul",
+            "address_district": "Seongdong-gu",
+            "language": "English"
+        },
+        {
+            "name": "Real-light Real Estate Reserch Agency",
+            "representative": "Song, Changhyeon",
+            "tel": "82-2-498-9669",
+            "fax": "82-2-498-9766",
+            "address_full": "#101, Hyundai I-park Apt., Sangga, 137, Seongsui-ro, Seongdong-gu, Seoul",
+            "address_district": "Seongdong-gu",
+            "language": "English"
+        },
+        {
+            "name": "Yes Certified Real Estate Agency",
+            "representative": "Kim, Manjae",
+            "tel": "82-2-2299-0064",
+            "fax": "82-2-2299-0048",
+            "address_full": "#107, 390 Wangsimni-ro, Seongdong-Gu, Seoul",
+            "address_district": "Seongdong-gu",
+            "language": "English"
+        },
+        {
+            "name": "Vision Certified Real Estate Agency",
+            "representative": "Joo, Eungjoong",
+            "tel": "82-2-2292-3040",
+            "fax": "82-2-6081-0633",
+            "address_full": "#101,186, majang-ro, Seongdong-Gu, Seoul",
+            "address_district": "Seongdong-gu",
+            "language": "English"
+        },
+        {
+            "name": "Kangsan Certified Real Estate Agency",
+            "representative": "Yoo, Taishik",
+            "tel": "82-2-446-0092",
+            "fax": "82-2-453-3646",
+            "address_full": "606, Gwangnaru-ro, Gwangjin-gu, Seoul",
+            "address_district": "Gwangjin-gu",
+            "language": "English"
+        },
+        {
+            "name": "Sobaek Certified Real Estate Agency",
+            "representative": "Choi, Kyohwan",
+            "tel": "82-2-432-8949",
+            "fax": "82-2-469-3300",
+            "address_full": "8, Gingorang-ro, Gwangjin-gu, Seoul",
+            "address_district": "Gwangjin-gu",
+            "language": "English"
+        },
+        {
+            "name": "Gwangnaru Certified Real Estate Agency",
+            "representative": "Seo, Hongsuk",
+            "tel": "82-2-444-4949",
+            "fax": "82-2-444-4995",
+            "address_full": "31, Achasan-ro 76-gil, Gwangjin-gu,Seoul",
+            "address_district": "Gwangjin-gu",
+            "language": "English"
+        },
+        {
+            "name": "Cheonjiin Certified Real Estate Agency",
+            "representative": "Shin, Younwook",
+            "tel": "82-2-458-5151",
+            "fax": "82-2-876-8242",
+            "address_full": "530, Achasan-ro, Gwangjin-gu, Seoul",
+            "address_district": "Gwangjin-gu",
+            "language": "English"
+        },
+        {
+            "name": "Jangwon Certified Real Estate Agency",
+            "representative": "Jang, Muhyun",
+            "tel": "82-2-444-8066",
+            "fax": "82-2-444-8069",
+            "address_full": "36, Achasan-ro 51-gil, Gwangjin-gu, Seoul",
+            "address_district": "Gwangjin-gu",
+            "language": "English, Japanese"
+        },
+        {
+            "name": "Gundae Starcity Certified Real Estate Agency",
+            "representative": "Chang, Jihyung",
+            "tel": "82-2-3437-4005",
+            "fax": "82-2-3437-0002",
+            "address_full": "#107, 39, Achasan-ro 36-gil, Gwangjin-gu, Seoul",
+            "address_district": "Gwangjin-gu",
+            "language": "English"
+        },
+        {
+            "name": "Ivy Certified Real Estate Agency",
+            "representative": "Kwon, Soohan",
+            "tel": "82-2-923-2202",
+            "fax": "82-2-923-2202",
+            "address_full": "134, Anam-ro, Dongdaemun-gu, Seoul",
+            "address_district": "Dongdaemun-gu",
+            "language": "English"
+        },
+        {
+            "name": "kyunghee Certified Real Estate Agency",
+            "representative": "kim, Hana",
+            "tel": "82-2-969-4501",
+            "fax": "82-2-966-4501",
+            "address_full": "138, hoegi-ro dongdaemun-gu",
+            "address_district": "Dongdaemun-gu",
+            "language": "English"
+        },
+        {
+            "name": "Kumgang Certified Real Eatate Agency",
+            "representative": "Yom, Heungseob",
+            "tel": "82-2-977-5775",
+            "fax": "82-2-972-5776",
+            "address_full": "7, Dongil-ro 157-gil, Jungnang-gu, Seoul",
+            "address_district": "Jungnang-gu",
+            "language": "English"
+        },
+        {
+            "name": "Seonghyeon Certified Real Estate Agency",
+            "representative": "Jeong, Moongyoo",
+            "tel": "82-2-496-0500",
+            "fax": "82-2-496-0502",
+            "address_full": "7, Donil-ro 140-gil, Jungnang-gu, Seoul",
+            "address_district": "Jungnang-gu",
+            "language": "English"
+        },
+        {
+            "name": "Orient Certified Real Estate Agency",
+            "representative": "Kim, Yoosook",
+            "tel": "82-2-3672-4400",
+            "fax": "82-2-3672-1279",
+            "address_full": "98 Daesagwan-ro, Seongbuk-gu, Seoul",
+            "address_district": "Seongbuk-gu",
+            "language": "English"
+        },
+        {
+            "name": "Royal Real Estate Agency",
+            "representative": "Kang, Hyeonsoo",
+            "tel": "82-2-953-7477",
+            "fax": "82-2-953-7478",
+            "address_full": "22,Bomun-ro 13-gil, Seongbuk-gu, Seoul",
+            "address_district": "Seongbuk-gu",
+            "language": "English"
+        },
+        {
+            "name": "hanil UNI Certified Real Estate Agency",
+            "representative": "Kim, Dongju",
+            "tel": "82-2-987-8945",
+            "fax": "82-2-987-8946",
+            "address_full": "#101, 111dong Sangga, 41, Wolgye-ro 21ga-gil, Gangbuk-gu, Seoul",
+            "address_district": "Gangbuk-gu",
+            "language": "English"
+        },
+        {
+            "name": "Ace Certified Real Estate Agency",
+            "representative": "Kwak, dongsun",
+            "tel": "82-2-995-6060",
+            "fax": "82-2-995-6131",
+            "address_full": "31, Insubong-ro 78-gil, Gangbuk-gu, Seoul",
+            "address_district": "Gangbuk-gu",
+            "language": "English"
+        },
+        {
+            "name": "Miraen Certified Real Estate Agency",
+            "representative": "Kwon, Youngchang",
+            "tel": "82-2-989-1114",
+            "fax": "82-2-989-2229",
+            "address_full": "7, Dobong-ro 53-gil, Gangbuk-gu, Seoul",
+            "address_district": "Gangbuk-gu",
+            "language": "English"
+        },
+        {
+            "name": "Joeun Certified Real Estate Agency",
+            "representative": "Lee, Kyungsook",
+            "tel": "82-2-990-0708",
+            "fax": "82-2-990-0711",
+            "address_full": "#102, 37, Nohae-ro 63ga-gil, Dobong-gu",
+            "address_district": "Dobong-gu",
+            "language": "English"
+        },
+        {
+            "name": "Shinwung Certified Real Estate Agency",
+            "representative": "Suh, Shinwung",
+            "tel": "82-2-936-1589",
+            "fax": "82-2-933-9970",
+            "address_full": "#130, 1F, Hyundai Shopping Complx, 48, Hangeulbiseok-ro 15-gil, Nowon-gu, Seoul",
+            "address_district": "Nowon-gu",
+            "language": "English"
+        },
+        {
+            "name": "GaGa Good Landvision Certified Real Estate Agency",
+            "representative": "Lee, Myeong-shik",
+            "tel": "82-2-935-0005",
+            "fax": "82-2-935-0651",
+            "address_full": "89, Sanggye-ro, Nowon-gu, Seoul",
+            "address_district": "Nowon-gu",
+            "language": "English"
+        },
+        {
+            "name": "Yesung Certified Real Estate Agency",
+            "representative": "Lee, Jongbae",
+            "tel": "82-2-383-2459",
+            "fax": "82-2-383-2480",
+            "address_full": "99, Yeonseo-ro, Eunpyeong-gu, Seoul",
+            "address_district": "Eunpyeong-gu",
+            "language": "English"
+        },
+        {
+            "name": "Good Place Certified Real Estate Agency",
+            "representative": "Lee, Kapho",
+            "tel": "82-2-307-8779",
+            "fax": "82-2-303-4770",
+            "address_full": "1F, 23 Eungam-ro 14-gil, Eunpyeong-gu,Seoul",
+            "address_district": "Eunpyeong-gu",
+            "language": "English"
+        },
+        {
+            "name": "DMC(Su) Certified Real Estate Agency",
+            "representative": "Chun, Sungee",
+            "tel": "82-2-307-5300",
+            "fax": "82-2-384-7997",
+            "address_full": "#102, 20, Jeungsan-ro 15-gil, Eunpyeong-gu, Seoul",
+            "address_district": "Eunpyeong-gu",
+            "language": "English"
+        },
+        {
+            "name": "Moonchanho Realty Certified Real Estate Agency",
+            "representative": "Moon, Chanho",
+            "tel": "82-2-392-4040",
+            "fax": "82-2-393-0804",
+            "address_full": "45, Ewhayeodae 3-gil, Seodaemun-gu, Seoul",
+            "address_district": "Seodaemun-gu",
+            "language": "English"
+        },
+        {
+            "name": "Gaia Certified Real Estate Agency",
+            "representative": "Lee, SoonWoo",
+            "tel": "82-2-363-4200",
+            "fax": "82-2-313-3212",
+            "address_full": "#102-1, 1F, Gaia shinchon, 16, Sinchonnyeok-ro, Seodaemoon-Gu, Seoul",
+            "address_district": "Seodaemun-gu",
+            "language": "English"
+        },
+        {
+            "name": "Sinsung Certified Real Estate Agency",
+            "representative": "Jun,Yongwoo",
+            "tel": "82-2-372-0202",
+            "fax": "82-2-372-0212",
+            "address_full": "#103, 45, Gajaeul­ro, Seodaemun­gu, Seoul",
+            "address_district": "Seodaemun-gu",
+            "language": "English"
+        },
+        {
+            "name": "Kim Dongyoung Certified Real Estate Agency",
+            "representative": "Kim, Dongyoung",
+            "tel": "82-02-365-0080",
+            "fax": "82-02-365-0089",
+            "address_full": "#1F, 36, Ewhayeodae 8-gil, Seodaemun-gu, Seoul",
+            "address_district": "Seodaemun-gu",
+            "language": "English, Japanese"
+        },
+        {
+            "name": "JK Certified Real Estate Agency",
+            "representative": "Lim, Jinki",
+            "tel": "82-02-393-8489",
+            "fax": "82-02-393-8486",
+            "address_full": "#B220, 109 Sinchon-ro, Seodaemun-gu, Seou",
+            "address_district": "Seodaemun-gu",
+            "language": "English"
+        },
+        {
+            "name": "Yeonhuidong Sun Certified Real Estate Agency",
+            "representative": "Oh,Gyuyoun",
+            "tel": "82-2-322-8945",
+            "fax": "82-2-323-8945",
+            "address_full": "48, Jeungga-ro, Seodaemun-gu, Seoul",
+            "address_district": "Seodaemun-gu",
+            "language": "English"
+        },
+        {
+            "name": "Shinchon xiella Certified Real Estate Agency",
+            "representative": "Shin, hyesun",
+            "tel": "82-02-364-4080",
+            "fax": "82-02-364-4980",
+            "address_full": "#B101, 149, Sinchon-ro, Seodaemun-gu, Seoul",
+            "address_district": "Seodaemun-gu",
+            "language": "English"
+        },
+        {
+            "name": "Best Certified Real Estate Agency",
+            "representative": "Jeong, Siyoung",
+            "tel": "82-2-312-8500",
+            "fax": "82-2-312-8500",
+            "address_full": "1F, 1, Dongnimmun-ro, Seodaemun-gu, Seoul",
+            "address_district": "Seodaemun-gu",
+            "language": "English"
+        },
+        {
+            "name": "Yeonhui Certified Real Estate Agency",
+            "representative": "Lee, Eunhee",
+            "tel": "82-2-333-0302",
+            "fax": "82-2-333-0302",
+            "address_full": "10-4, Yeonhui-ro 12-gil, Seodaemun-gu,Seoul",
+            "address_district": "Seodaemun-gu",
+            "language": "English"
+        },
+        {
+            "name": "GS Certified Real Estate Agency",
+            "representative": "Park, Mahn Soon",
+            "tel": "82-2-3275-2092",
+            "fax": "82-2-3275-2093",
+            "address_full": "#1006, Jin-Do Building, 44, Mapo-daero, Mapo-gu, Seoul",
+            "address_district": "Mapo-gu",
+            "language": "English"
+        },
+        {
+            "name": "Yale Certified Real Estate Agency",
+            "representative": "Jang, Deukkul",
+            "tel": "82-2-3141-1233",
+            "fax": "82-504-033-3030",
+            "address_full": "B-3, Paradisetel, 157, Yanghwa-ro, Mapo-gu, Seoul",
+            "address_district": "Mapo-gu",
+            "language": "English"
+        },
+        {
+            "name": "Global Seoul Real Estate Co., Ltd",
+            "representative": "Youn, Seonhwa",
+            "tel": "82-2-717-0049",
+            "fax": "82-2-702-2480",
+            "address_full": "#102, Seil Complex Store, 52, Keunumul-ro, Mapo-gu, Seoul",
+            "address_district": "Mapo-gu",
+            "language": "English"
+        },
+        {
+            "name": "Sindaerim Certified Real Estate Agency",
+            "representative": "Cho, Hangjoon",
+            "tel": "82-2-375-4489",
+            "fax": "82-2-490-9114",
+            "address_full": "188, World Cup buk-ro, Mapo-gu, Seoul",
+            "address_district": "Mapo-gu",
+            "language": "English"
+        },
+        {
+            "name": "Hyundai Certified Real Estate Agency",
+            "representative": "Lee, Misook",
+            "tel": "82-2-376-7700",
+            "fax": "82-2-376-7720",
+            "address_full": "#101, Sangga, 57, Sangamsan-ro 1-gil, Mapo-gu, Seoul",
+            "address_district": "Mapo-gu",
+            "language": "English, Japanese"
+        },
+        {
+            "name": "Iaan Certified Real Estate Agency",
+            "representative": "Choi, Eunjin",
+            "tel": "82-2-376-0089",
+            "fax": "82-2-6393-6377",
+            "address_full": "#112, 361, World Cup buk-ro, Mapo-gu, Seoul",
+            "address_district": "Mapo-gu",
+            "language": "English"
+        },
+        {
+            "name": "Smile Certified Real Estate Agency",
+            "representative": "Noh, SangKyu",
+            "tel": "82-2-713-7756~7",
+            "fax": "82-2-713-7758",
+            "address_full": "#B106, 170, Sinchon-ro, Mapo-gu, Seoul",
+            "address_district": "Mapo-gu",
+            "language": "English"
+        },
+        {
+            "name": "Forum Certified Real Estate Agency",
+            "representative": "Park, Soon",
+            "tel": "82-2-338-8988",
+            "fax": "82-707-7753-7019",
+            "address_full": "Rm, 1110, Seokyo Tower, 133 Yanghwa-ro, Mapo-gu, Seoul",
+            "address_district": "Mapo-gu",
+            "language": "English"
+        },
+        {
+            "name": "Tower Certified Real Estate Agency",
+            "representative": "Lee, Yeongtae",
+            "tel": "82-2-393-3500",
+            "fax": "82-2-393-3502",
+            "address_full": "Arcade 4-113(Ahyun-dong, Mapo Ramian Prugio) #195, Mapo-daero Mapo-gu, Seoul",
+            "address_district": "Mapo-gu",
+            "language": "English"
+        },
+        {
+            "name": "Yonsei Certified Real Estste Agency",
+            "representative": "Lee, Junkyu",
+            "tel": "82-2-706-1472",
+            "fax": "82-2-706-0046",
+            "address_full": "#B103, 11, Tojung-ro 35-gil, Mapo-gu, Seoul",
+            "address_district": "Mapo-gu",
+            "language": "English"
+        },
+        {
+            "name": "Hyperion Certified Real Estate Agency",
+            "representative": "Kim, Myungjun",
+            "tel": "82-2-2648-5300",
+            "fax": "82-2-2643-0050",
+            "address_full": "119, Sinmok-ro, Yangcheon-gu, Seoul",
+            "address_district": "Yangcheon-gu",
+            "language": "English"
+        },
+        {
+            "name": "Mokdong Myeong-ji certified Real Estate Agency",
+            "representative": "Hwang, Sungwon",
+            "tel": "82-2-2654-4988",
+            "fax": "82-2-2654-3611",
+            "address_full": "#104-1, 101-dong, 224, Mokdong-ro, Yangcheon-gu, Seoul",
+            "address_district": "Yangcheon-gu",
+            "language": "English"
+        },
+        {
+            "name": "Hyundai-I Certified Real Estate Agency",
+            "representative": "Kim, Sanghyun",
+            "tel": "82-2-2695-4998",
+            "fax": "82-2-2696-7611",
+            "address_full": "82, Hwagok-ro 31-gil, Gangseo-gu, Seoul",
+            "address_district": "Gangseo-gu",
+            "language": "English"
+        },
+        {
+            "name": "LBA Seoul Certified Real Estate Agency",
+            "representative": "Lee, Seongmu",
+            "tel": "82-2-2691-1700",
+            "fax": "82-2-2692-1113",
+            "address_full": "9, Gangseo-ro 45-gil, Gangseo-gu, Seoul",
+            "address_district": "Gangseo-gu",
+            "language": "English"
+        },
+        {
+            "name": "Sohn Nelson Certified Real Estate Agency",
+            "representative": "Sohn, Nelson",
+            "tel": "82-2-3662-5555",
+            "fax": "82-2-3664-0304",
+            "address_full": "#104-12, Ujangsan Hillstate Mall, 348, Gangseo-ro, Gangseo-gu,Seoul",
+            "address_district": "Gangseo-gu",
+            "language": "English, Japanese"
+        },
+        {
+            "name": "Lotte Certified Real Estate Agency",
+            "representative": "Kim, Jae Yoon",
+            "tel": "82-2-854-8534",
+            "fax": "82-2-854-8582",
+            "address_full": "41, Dorim-ro, Guro-gu, Seoul",
+            "address_district": "Guro-gu",
+            "language": "English"
+        },
+        {
+            "name": "Cheongho Certified Real Estate Agency",
+            "representative": "Park, Naeyeol",
+            "tel": "82-2-808-8920",
+            "fax": "82-2-808-8970",
+            "address_full": "39, Geumha-ro 24-gil, Geumcheon-gu, Seoul",
+            "address_district": "Geumcheon-gu",
+            "language": "English"
+        },
+        {
+            "name": "SK Certified Real Estate Agency",
+            "representative": "Moon, Hyouklae",
+            "tel": "82-2-6292-2400",
+            "fax": "82-2-6292-2402",
+            "address_full": "#103, B-dong, 119, Gasan digital 1-ro, Geumcheon-gu, Seoul",
+            "address_district": "Geumcheon-gu",
+            "language": "English"
+        },
+        {
+            "name": "Star Parks Real Estate Co.,Ltd.",
+            "representative": "Woo, Younsung",
+            "tel": "82-2-6337-1000",
+            "fax": "82-2-783-0086",
+            "address_full": "#1012, Center Bldg., 19, Gukjegeumyung-ro 8-gil, Yeongdeungpo-gu, Seoul",
+            "address_district": "Yeongdeungpo-gu",
+            "language": "English, Japanese, Chinese, Russian"
+        },
+        {
+            "name": "Munrae Parogon Real Estate Agency",
+            "representative": "Lee, SeungJin",
+            "tel": "82-2-2635-1900",
+            "fax": "82-2-2635-1551",
+            "address_full": "101-102, Munrae Paragon, 12, Seonyu-ro 11-gil,Yeongdeungpo-gu, Seoul",
+            "address_district": "Yeongdeungpo-gu",
+            "language": "English, Japanese"
+        },
+        {
+            "name": "Samsung Certified Real Estate Agency",
+            "representative": "Gang, Jiyoung",
+            "tel": "82-2-814-5848",
+            "fax": "82-2-824-5114",
+            "address_full": "39, Noryangjin-ro 8-gil, Dongjak-gu, Seoul",
+            "address_district": "Dongjak-gu",
+            "language": "English"
+        },
+        {
+            "name": "Shin-Hyundai Certified Real Estate Agency",
+            "representative": "Kim, Youngsik",
+            "tel": "82-2-817-8008",
+            "fax": "82-2-817-8532",
+            "address_full": "#116, 103Dong Hyundai Sangga, 127, Deungyong-ro, Dongjak-gu, Seoul",
+            "address_district": "Dongjak-gu",
+            "language": "English"
+        },
+        {
+            "name": "Alpha Certified Real Estate Agency",
+            "representative": "Ha, Changsoo",
+            "tel": "82-2-844-6000",
+            "fax": "82-2-844-6007",
+            "address_full": "#101, Hansung Apartmant Store, 13,Yeouidaebang-ro 10-gil, Dongjak-gu, Seoul",
+            "address_district": "Dongjak-gu",
+            "language": "English"
+        },
+        {
+            "name": "Hana Certified Real Estate Agency",
+            "representative": "Lee, Jinok",
+            "tel": "82-2-889-7003",
+            "fax": "82-2-888-6714",
+            "address_full": "#105, Daewoo Apt. Sangga,27, Gwanak-ro 30-gil, Gwanak-gu,Seoul",
+            "address_district": "Gwanak-gu",
+            "language": "English"
+        },
+        {
+            "name": "DongHwa Certified Real Estate Agency",
+            "representative": "An, Jongin",
+            "tel": "82-2-884-8579",
+            "fax": "82-2-878-8565",
+            "address_full": "1847, Nambusunhwan-ro, Gwanak-gu, Seoul",
+            "address_district": "Gwanak-gu",
+            "language": "English"
+        },
+        {
+            "name": "Sinmirae Certified Real Estate Agency",
+            "representative": "Kim, Seongeun",
+            "tel": "82-2-877-0062",
+            "fax": "82-2-877-0063",
+            "address_full": "1F, 261, Bongchun-ro, Gwanak-gu, Seoul",
+            "address_district": "Gwanak-gu",
+            "language": "English"
+        },
+        {
+            "name": "Banpo114 Certified Real Estate Agency",
+            "representative": "Lee, Dongha",
+            "tel": "82-2-595-5982",
+            "fax": "82-2-595-5909",
+            "address_full": "M-14, 49, Sinbanpo-ro, Seocho-gu, Seoul",
+            "address_district": "Seocho-gu",
+            "language": "English"
+        },
+        {
+            "name": "Nambuk Certified Real Estate Agency",
+            "representative": "Lee, Ohsung",
+            "tel": "82-2-577-9498",
+            "fax": "82-2-577-9407",
+            "address_full": "49, Gangnam-daero 12-gil,Seocho-gu, Seoul",
+            "address_district": "Seocho-gu",
+            "language": "English"
+        },
+        {
+            "name": "Daeseong Certified Real Estate Agency",
+            "representative": "Park, Jin",
+            "tel": "82-2-537-1044",
+            "fax": "82-2-536-2369",
+            "address_full": "#101, Seorae Bldg., 9, Seorae-ro 10-gil, Seocho-gu, Seoul",
+            "address_district": "Seocho-gu",
+            "language": "English"
+        },
+        {
+            "name": "Century KS Realty Co.,Ltd.",
+            "representative": "Kim, Seung",
+            "tel": "82-2-534-8252",
+            "fax": "82-2-534-8292",
+            "address_full": "#B101, 4, Donggwang-ro 46-gil, Seocho-gu, Seoul",
+            "address_district": "Seocho-gu",
+            "language": "English"
+        },
+        {
+            "name": "Hwangkum Certified Real Estate Agency",
+            "representative": "Song, Hangun",
+            "tel": "82-2-525-0077",
+            "fax": "82-2-525-0880",
+            "address_full": "#1,1F, 76, Hyoryeong-ro 34-gil, Seocho-gu, Seoul",
+            "address_district": "Seocho-gu",
+            "language": "English, Spainish"
+        },
+        {
+            "name": "Top Certified Real Estate Agency",
+            "representative": "Lee, Kwangsoo",
+            "tel": "82-2-522-5355",
+            "fax": "82-2-522-4288",
+            "address_full": "#103, Anam Sangga, 50, Seocho-daero 64-gil, Seocho-gu, Seoul",
+            "address_district": "Seocho-gu",
+            "language": "English"
+        },
+        {
+            "name": "Fortune Certified Real Estate Agency",
+            "representative": "Park, Chanyup",
+            "tel": "82-2-525-2779",
+            "fax": "82-2-525-7728",
+            "address_full": "39, Banpo-daero 28-gil, Seocho-gu, Seoul",
+            "address_district": "Seocho-gu",
+            "language": "English"
+        },
+        {
+            "name": "Wooil Certified Real Estate Agency",
+            "representative": "Lee, Chunho",
+            "tel": "82-2-514-8959",
+            "fax": "82-2-515-4980",
+            "address_full": "1F ,7, Gangnam-daero 89-gil, Seocho-Gu, Seoul",
+            "address_district": "Seocho-gu",
+            "language": "English"
+        },
+        {
+            "name": "Samik Certified Real Estate Agency",
+            "representative": "Hyun, Changhwan",
+            "tel": "82-2-533-4001",
+            "fax": "82-2-593-4934",
+            "address_full": "#105 ,55, Seochojungang-Plaza, Seochojungang-ro 24-gil, Seocho-gu, Seoul",
+            "address_district": "Seocho-gu",
+            "language": "English"
+        },
+        {
+            "name": "kumdongsan Certified Real Estate Agency",
+            "representative": "kim, Seojeoung",
+            "tel": "82-2-597-7171",
+            "fax": "82-2-586-8830",
+            "address_full": "72, Seochojungang-ro, Seocho-gu, Seoul",
+            "address_district": "Seocho-gu",
+            "language": "English, Japanese"
+        },
+        {
+            "name": "Office Certified Real Estate Agency",
+            "representative": "Park, Myungjin",
+            "tel": "82-2-557-8444",
+            "fax": "82-2-6280-9175",
+            "address_full": "#808, 481, Gangnam­daero, Seocho-gu, Seoul",
+            "address_district": "Seocho-gu",
+            "language": "English"
+        },
+        {
+            "name": "Gangnam HyosungCertified Real Estate Agency",
+            "representative": "Jeong Yuri",
+            "tel": "82-2-588-2110",
+            "fax": "82-2-582-2117",
+            "address_full": "102, 1337-6, Seocho-dong, Seocho-gu, Seoul",
+            "address_district": "Seocho-gu",
+            "language": "English, Chinese"
+        },
+        {
+            "name": "Shin Dong A Certified Real Estate Agency",
+            "representative": "Kim, Haksung",
+            "tel": "82-2-599-5000",
+            "fax": "82-2-594-6608",
+            "address_full": "#15, Banpo Shopping Town 8-dong, 219 Sinbanpo-ro, Seocho-gu, Seoul",
+            "address_district": "Seocho-gu",
+            "language": "English"
+        },
+        {
+            "name": "Hankook Certified Real Estate Agency",
+            "representative": "Lee, Heasun",
+            "tel": "82-2-578-0508",
+            "fax": "82-2-578-0589",
+            "address_full": "#205, 54, Banpo-dero 14-gil, Seocho-gu, Seoul",
+            "address_district": "Seocho-gu",
+            "language": "English, Chinese"
+        },
+        {
+            "name": "River Park Danjinae Certified Real Estate Agency",
+            "representative": "Kim, Eun",
+            "tel": "82-2-532-5100",
+            "fax": "82-2-535-7070",
+            "address_full": "#132, 1F, 29, Sinbanpo-ro 15-gil, Seocho-gu, Seoul",
+            "address_district": "Seocho-gu",
+            "language": "English"
+        },
+        {
+            "name": "LBA HanShin Certified Real Estate Agency",
+            "representative": "Chun, Youngdeuk",
+            "tel": "82-2-2042-1800",
+            "fax": "82-2-8706-6110",
+            "address_full": "45, Sapyeong-daero 55-gil, Seocho-gu, Seoul",
+            "address_district": "Seocho-gu",
+            "language": "English"
+        },
+        {
+            "name": "G&B Lotte Certified Real Estate Agency",
+            "representative": "Park, Soonseo",
+            "tel": "82-2-548-2002",
+            "fax": "82-2-540-3953",
+            "address_full": "#101, 431, Hakdong-ro, Gangnam-gu, Seoul",
+            "address_district": "Gangnam-gu",
+            "language": "English"
+        },
+        {
+            "name": "NewYork Certified Real Estate Agency",
+            "representative": "Park, Insoon",
+            "tel": "82-2-566-8666",
+            "fax": "82-2-529-8207",
+            "address_full": "#104-2, Academysweet A-Dong, 2804, Nambusunhwan-ro, Gangnam-gu, Seoul",
+            "address_district": "Gangnam-gu",
+            "language": "English"
+        },
+        {
+            "name": "Rexle-Top Certified Real Estate Agency",
+            "representative": "Moon, Jonggyo",
+            "tel": "82-2-576-5765",
+            "fax": "82-2-576-5796",
+            "address_full": "#137, Dogok Rexle Sangga, 225, Seolleung-ro, Gangnam-gu,Seoul",
+            "address_district": "Gangnam-gu",
+            "language": "English"
+        },
+        {
+            "name": "Anam Certified Real Estate Agency",
+            "representative": "Lee, Wonki",
+            "tel": "82-2-2009-4000",
+            "fax": "82-2-565-0505",
+            "address_full": "#124, 1st Basement, 311, Teheran-ro, Gangnam-gu, Seoul",
+            "address_district": "Gangnam-gu",
+            "language": "English, Japanese"
+        },
+        {
+            "name": "Sangwon Realty Co.,Ltd.",
+            "representative": "Park, Sangwon",
+            "tel": "82-2-541-8866",
+            "fax": "82-2-541-4012",
+            "address_full": "#107, 5, Yeongdong-daero 128-gil, Gangnam-gu, Seoul",
+            "address_district": "Gangnam-gu",
+            "language": "English"
+        },
+        {
+            "name": "Jun, Youngsuk Certified Real Estate Agency",
+            "representative": "Jun, Youngsuk",
+            "tel": "82-2-581-3353",
+            "fax": "82-2-581-3319",
+            "address_full": "#126, 46, Teheran-ro 4-gil, Gangnam-gu, Seoul",
+            "address_district": "Gangnam-gu",
+            "language": "English"
+        },
+        {
+            "name": "Newseoul Certified Real Estate Agency",
+            "representative": "Park, Ilkwon",
+            "tel": "82-2-555-2882",
+            "fax": "82-2-555-7682",
+            "address_full": "#35, 2921, Nambusunhwan-ro, Gangnam-gu,",
+            "address_district": "Gangnam-gu",
+            "language": "English"
+        },
+        {
+            "name": "Hansol Certified Real Estate Agency",
+            "representative": "Suh, Moosuk",
+            "tel": "82-2-517-7558",
+            "fax": "82-2-545-9139",
+            "address_full": "57, Seolleung-ro 130-gil, Gangnam-gu, Seoul",
+            "address_district": "Gangnam-gu",
+            "language": "English"
+        },
+        {
+            "name": "Chung's Certified Real Estate Agency",
+            "representative": "Chung, Sangho",
+            "tel": "82-2-555-1002",
+            "fax": "82-2-555-3250",
+            "address_full": "#101, Hyundai Apartment Arcade, 5, Samseong-ro 64-gil, Gangnam-gu, Seoul",
+            "address_district": "Gangnam-gu",
+            "language": "English"
+        },
+        {
+            "name": "Daeshin Certified Real Estate Agency",
+            "representative": "Kang, El",
+            "tel": "82-2-564-0111",
+            "fax": "82-2-554-6400",
+            "address_full": "#1, 1F, 420, Seolleung­ro, Gangnam­gu, Seoul",
+            "address_district": "Gangnam-gu",
+            "language": "English"
+        },
+        {
+            "name": "Top Certified Real Estate Agency",
+            "representative": "Shim, Deokbo",
+            "tel": "82-2-554-4151",
+            "fax": "82-2-2179-8354",
+            "address_full": "#101, 8, Yeoksam-ro 67-gil, Gangnam-gu, Seoul",
+            "address_district": "Gangnam-gu",
+            "language": "English"
+        },
+        {
+            "name": "global Lee Certified Real Estate Agency",
+            "representative": "Lee, Youngsung",
+            "tel": "82-2-508-4749",
+            "fax": "82-2-508-4749",
+            "address_full": "1F, 420, Seolleung-ro, Gangnam-gu, Seoul, Kprea",
+            "address_district": "Gangnam-gu",
+            "language": "English"
+        },
+        {
+            "name": "bexel Certified Real Estate Agency",
+            "representative": "Kim, Yoonhee",
+            "tel": "82-2-555-0885",
+            "fax": "82-2-2051-0885",
+            "address_full": "1F, 42, Bongeunsa-ro 114-gil, Gangnam-gu, Seoul, Korea",
+            "address_district": "Gangnam-gu",
+            "language": "English"
+        },
+        {
+            "name": "Daelim Certified Real Estate Agency",
+            "representative": "Changjoon Moon",
+            "tel": "82-2-566-4488",
+            "fax": "82-2-6455-4489",
+            "address_full": "1F, 323, Hakdong-ro, Gangnam-gu, Seoul, Korea",
+            "address_district": "Gangnam-gu",
+            "language": "English"
+        },
+        {
+            "name": "Mirae Certified Real Estate Agency",
+            "representative": "Shin, Youngji",
+            "tel": "82-2-3463-0111",
+            "fax": "82-2-571-5377",
+            "address_full": "#103, 118, Woosung-Character-Sangga, Eouju-ro, Gangnam-gu, Seoul",
+            "address_district": "Gangnam-gu",
+            "language": "English"
+        },
+        {
+            "name": "Topal Certified Real Estate Agency",
+            "representative": "Kim, Eunjung",
+            "tel": "82-2-571-9000",
+            "fax": "82-2-571-9923",
+            "address_full": "#103, Academy Sweet Building B Dong, 21 Eonju-ro 30-gil, Gangnam-gu,Seoul",
+            "address_district": "Gangnam-gu",
+            "language": "English"
+        },
+        {
+            "name": "Daechi Raemian Certified Real Estate Agency",
+            "representative": "Park Eunsuk",
+            "tel": "82-2-558-0123",
+            "fax": "82-2-558-0112",
+            "address_full": "#102, 22 Dogok-ro 78-gil, Gangnam-gu, Seoul",
+            "address_district": "Gangnam-gu",
+            "language": "English"
+        },
+        {
+            "name": "Rexle Certified Real Estate Agency",
+            "representative": "Cho Jangsoo",
+            "tel": "82-2-579-3335",
+            "fax": "82-2-562-3330",
+            "address_full": "#135, Dogok Rexle Arcade, 225 Seolleung-ro, Gangnam-gu, Seoul",
+            "address_district": "Gangnam-gu",
+            "language": "English, Chinese"
+        },
+        {
+            "name": "MVP Building Real Estate Brokerage Co., Ltd.",
+            "representative": "Park, Hyungbang",
+            "tel": "82-2-594-5555",
+            "fax": "82-2-538-5001",
+            "address_full": "#95, 1F, 310, Yeoksam-ro, Gangnam-gu, Seoul, Korea",
+            "address_district": "Gangnam-gu",
+            "language": "English"
+        },
+        {
+            "name": "Seoul Properties Certified Real Estate Agency",
+            "representative": "Lee,Seungyong",
+            "tel": "82-2-566-4088",
+            "fax": "82-2-6951-4088",
+            "address_full": "B202, 423 Teheran-ro, Gangnam-gu, Seoul",
+            "address_district": "Gangnam-gu",
+            "language": "English"
+        },
+        {
+            "name": "Ko's Certified Real Estate Agency",
+            "representative": "Ko, Jihoon",
+            "tel": "82-2-567-7942",
+            "fax": null,
+            "address_full": "Unit B102, Samhwan Art Nouveau Building, 405, Dogok-ro, Gangnam-gu, Seoul",
+            "address_district": "Gangnam-gu",
+            "language": "English"
+        },
+        {
+            "name": "Global Realty Consulting Real Estate Corporation",
+            "representative": "Kim, Eungjin",
+            "tel": "82-2-515-0073",
+            "fax": "82-2-515-0377",
+            "address_full": "1F, 43, Dosan-daero 25-gil, Gangnam-gu, Seoul",
+            "address_district": "Gangnam-gu",
+            "language": "English, Japanese"
+        },
+        {
+            "name": "Pureun Certified Real Estate Agency",
+            "representative": "Bae, Hongmoon",
+            "tel": "82-2-408-3003",
+            "fax": "82-2-408-4833",
+            "address_full": "#124, Da-dong Sangga, 359, Songpa-daero 32-gil, Songpa-gu, Seoul",
+            "address_district": "Songpa-gu",
+            "language": "English"
+        },
+        {
+            "name": "Corea Certified Real Estate Agency",
+            "representative": "Song, Wonyong",
+            "tel": "82-2-400-4300",
+            "fax": "82-2-400-3830",
+            "address_full": "11, Munjeong-ro, Songpa-gu,Seoul",
+            "address_district": "Songpa-gu",
+            "language": "English"
+        },
+        {
+            "name": "Cheongdam Certified Real Estate Agency",
+            "representative": "Koo, Jadong",
+            "tel": "82-2-416-8888",
+            "fax": "82-2-3431-8944",
+            "address_full": "#130, Jungang Arcade, 203, Olympic-ro, Songpa-gu, Seoul",
+            "address_district": "Songpa-gu",
+            "language": "English"
+        },
+        {
+            "name": "Hope Certified Real Estate Agency",
+            "representative": "Han, Sangjun",
+            "tel": "82-2-413-1114",
+            "fax": "82-2-413-8114",
+            "address_full": "#1F,1A1ho, Ricenz Commercial Bldg., 145, Olympic-ro, Songpa-gu,Seoul",
+            "address_district": "Songpa-gu",
+            "language": "English"
+        },
+        {
+            "name": "Hanmaru Realty Co.,Ltd.",
+            "representative": "Kim, Sanghun",
+            "tel": "82-2-415-7244",
+            "fax": "82-2-415-0044",
+            "address_full": "#107, Kyungnam Lake Park, 268, Seokchonhosu-ro, Songpa-gu, Seoul",
+            "address_district": "Songpa-gu",
+            "language": "English"
+        },
+        {
+            "name": "New goldstar Certified Real Estate Agency",
+            "representative": "Koo, Jaewoo",
+            "tel": "82-2-422-3755",
+            "fax": "82-2-424-4404",
+            "address_full": "#148-1, Parkrio, 435, Olympic-ro, Songpa-gu, Seoul",
+            "address_district": "Songpa-gu",
+            "language": "English"
+        },
+        {
+            "name": "Chungwoon Certified Real Estate Agency",
+            "representative": "Kim, byoungsoo",
+            "tel": "82-2-425-7222",
+            "fax": "82-2-423-4556",
+            "address_full": "119, Olympic-ro, Songpa-gu,Seoul,Korea, 1F1B11(Jamsil-dong,Fineapple Arcade)",
+            "address_district": "Songpa-gu",
+            "language": "English"
+        },
+        {
+            "name": "Hanyang Certified Real Estate Agency",
+            "representative": "Lee, sangil",
+            "tel": "82-2-408-1100",
+            "fax": "82-2-408-1140",
+            "address_full": "158 ,Wiryeseong-daero Songpa-gu Seoul, Korea,113(Ogeum-dong, Daelim)",
+            "address_district": "Songpa-gu",
+            "language": "English"
+        },
+        {
+            "name": "Global Real Estate Agency",
+            "representative": "Koo, Jawon",
+            "tel": "82-2-400-5562",
+            "fax": "82-2-400-5567",
+            "address_full": "#149, 62 Saemal-ro, Songpa-gu, Seoul",
+            "address_district": "Songpa-gu",
+            "language": "English"
+        },
+        {
+            "name": "Rosehill Certified Real Estate Agency",
+            "representative": "Kim, Junghee",
+            "tel": "82-2-477-0083",
+            "fax": "82-2-477-0983",
+            "address_full": "1F, 6, Toseong-ro 15-gil, Songpa-gu, Seoul",
+            "address_district": "Songpa-gu",
+            "language": "English"
+        },
+        {
+            "name": "Sinsung Certified Real Estate Agency",
+            "representative": "Kim, Kang",
+            "tel": "82-2-424-7400",
+            "fax": "82-2-415-8524",
+            "address_full": "#104, 426 Baekjegobun-ro, Songpa-gu, Seoul",
+            "address_district": "Songpa-gu",
+            "language": "English"
+        },
+        {
+            "name": "Domestic and foreignCertified Real Estate Agency",
+            "representative": "Hong, Kanggi",
+            "tel": "82-2-400-5679",
+            "fax": "82-2-400-5679",
+            "address_full": "#106, 6 Macheon-ro 7-gil, Songpa-gu, Seoul",
+            "address_district": "Songpa-gu",
+            "language": "English"
+        },
+        {
+            "name": "Lee Jik Sun Certified Real Estate Agency",
+            "representative": "Lee, Jiksun",
+            "tel": "82-2-470-0044",
+            "fax": "82-2-472-4455",
+            "address_full": "108, Myeongil-ro, Gangdong-gu, Seoul",
+            "address_district": "Gangdong-gu",
+            "language": "English"
+        },
+        {
+            "name": "HanyangCertified Real Estate Agency",
+            "representative": "Lee, Hyonjoo",
+            "tel": "82-2-441-0776",
+            "fax": "82-2-441-8994",
+            "address_full": "100, Cheonho-daero 219-gil, Gangdong-gu, Seoul",
+            "address_district": "Gangdong-gu",
+            "language": "English"
+        },
+        {
+            "name": "Sajik Certified Real Esate Agency",
+            "representative": "Junghee Jung",
+            "tel": "82-2-738-8898",
+            "fax": "82-2-738-8898",
+            "address_full": "6F, 43, Ujeongguk-ro 2-gil, Jongno-gu, Seoul",
+            "address_district": "Jongno-gu",
+            "language": "English, Japanese, Chinese"
+        },
+        {
+            "name": "Join Certified Real Estate Agency",
+            "representative": "Ahn Jinyeon",
+            "tel": "82-2-2234-0078",
+            "fax": "82-2-2256-7899",
+            "address_full": "#Na29, 1F, 318, Cheonggyecheon-ro, Jung-gu, Seoul",
+            "address_district": "Jung-gu",
+            "language": "English"
+        },
+        {
+            "name": "JayLee Cerfified Real Estate Agency",
+            "representative": "Seokkyu Jang",
+            "tel": "82-2-909-2878",
+            "fax": "82-50-4427-7327",
+            "address_full": "#49, 8F, 263, Jangchungdan-ro, Jung-gu, Seoul",
+            "address_district": "Jung-gu",
+            "language": "English"
+        },
+        {
+            "name": "Jeegoo Certified Real Estate Agency",
+            "representative": "Lee, Seung Young",
+            "tel": "82-2-792-2555",
+            "fax": "82-2-749-2555",
+            "address_full": "29, Hoenamu-ro, Yongsan-gu, Seoul",
+            "address_district": "Yongsan-gu",
+            "language": "English"
+        },
+        {
+            "name": "With Us Certified Real Estate Agency",
+            "representative": "Kwon, Young Kwang",
+            "tel": "82-2-797-2000",
+            "fax": "82-2-797-8200",
+            "address_full": "3F, 12-1, Hoenamu-ro 13-gil, Yongsan-gu, Seoul",
+            "address_district": "Yongsan-gu",
+            "language": "English"
+        },
+        {
+            "name": "MyAgent Seoul Real Estate Co., Ltd",
+            "representative": "Julian JY Joh",
+            "tel": "82-2-508-3668",
+            "fax": "82-2-508-3611",
+            "address_full": "#16, Sangga, 105Dong, Yongsan Park Tower, 67, Seobinggo-ro, Yongsan-gu,Seoul",
+            "address_district": "Yongsan-gu",
+            "language": "English, Japanese, Chinese"
+        },
+        {
+            "name": "Joong-Ang Certified Real Estate Agency",
+            "representative": "Min, SunGi",
+            "tel": "82-2-451-5002",
+            "fax": "82-2-457-6008",
+            "address_full": "1F, 676, Ttukseom-ro, Gwangjin-gu, seoul",
+            "address_district": "Gwangjin-gu",
+            "language": "English"
+        },
+        {
+            "name": "HMOOT Certified Real Estate Agency",
+            "representative": "Hwang Junsuk",
+            "tel": "82-2-2244-1100",
+            "fax": "82-2-2244-0033",
+            "address_full": "1F, 8, Janghan-ro 6-gil, Dongdaemun-gu, Seoul",
+            "address_district": "Dongdaemun-gu",
+            "language": "English"
+        },
+        {
+            "name": "Believe-In Certified Real Estate Agency",
+            "representative": "Yang,Dongil",
+            "tel": "82-2-365-2100",
+            "fax": "82-2-365-3003",
+            "address_full": "1F, 16, Sinchon-ro 33-gil, Seodaemun-gu, Seoul",
+            "address_district": "Seodaemun-gu",
+            "language": "English"
+        },
+        {
+            "name": "Ewha Certified Real Estate Agency",
+            "representative": "Choi, Inchul",
+            "tel": "82-2-718-0088",
+            "fax": "82-2-718-0884",
+            "address_full": "1F, 224, Sungmun-gil, Mapo-gu, Seoul",
+            "address_district": "Mapo-gu",
+            "language": "English"
+        },
+        {
+            "name": "Daehwa Certified Real Estate Agency",
+            "representative": "Lee, Jai Yong",
+            "tel": "82-2-2643-8844",
+            "fax": "82-2-2643-0094",
+            "address_full": "37, Sinmok-ro, Yangcheon-gu, Seoul",
+            "address_district": "Yangcheon-gu",
+            "language": "English"
+        },
+        {
+            "name": "Daebang 3F JIN Certified Real Estate Agency",
+            "representative": "JUNG, Hang JIN",
+            "tel": "82-2-2664-4489",
+            "fax": null,
+            "address_full": "A-318, 344, Yangcheon-ro, Gangseo-gu",
+            "address_district": "Gangseo-gu",
+            "language": "English"
+        },
+        {
+            "name": "DoDream Certified Real Estate Agency",
+            "representative": "Seo, Jiyou",
+            "tel": "82-2-865-1116",
+            "fax": null,
+            "address_full": "1F, 119, Jowon-ro, Gwanak-gu, Seoul",
+            "address_district": "Gwanak-gu",
+            "language": "English"
+        },
+        {
+            "name": "Leader's Certified Real Estate Agency",
+            "representative": "Kim, Hyun Sung",
+            "tel": "82-2-3461-4963",
+            "fax": "82-2-3461-4965",
+            "address_full": "#101, 15, Hyoryeong-ro 55-gil, Seocho-gu, Seoul",
+            "address_district": "Seocho-gu",
+            "language": "English"
+        },
+        {
+            "name": "Chung-Gu Certified Real Estate Agency",
+            "representative": "Jung, Haesol",
+            "tel": "82-2-599-8800",
+            "fax": "82-2-599-8118",
+            "address_full": "#101, 269, Bangbae-ro, Seocho-gu, Seoul",
+            "address_district": "Seocho-gu",
+            "language": "English"
+        },
+        {
+            "name": "The Blessed Certified Real Estate Agency",
+            "representative": "Peter Park",
+            "tel": "82-2-532-5577",
+            "fax": "82-2-532-5578",
+            "address_full": "#155, 29, Sinbanpo-ro 15-gil, Seocho-gu, Seoul",
+            "address_district": "Seocho-gu",
+            "language": "English"
+        },
+        {
+            "name": "Tong Tong Tong Certified Real Estate Agency",
+            "representative": "Lee, Jung-Ku",
+            "tel": "82-2-522-0018",
+            "fax": "82-2-588-8946",
+            "address_full": "1F, 88-3, Nambusunhwan-ro 315gil, Seocho-gu, Seoul",
+            "address_district": "Seocho-gu",
+            "language": "English"
+        },
+        {
+            "name": "DREAM REAL ESTATE CONSULTING",
+            "representative": "Lee Young Wook",
+            "tel": "82-2-597-0031",
+            "fax": "82-2-597-0038",
+            "address_full": "1F, 28, Hyoryeong-ro 27-gil, Seocho-gu, Seoul",
+            "address_district": "Seocho-gu",
+            "language": "English"
+        },
+        {
+            "name": "Brownstone Certified Real Estate Agency",
+            "representative": "Yoon, Hyo Sang",
+            "tel": "82-2-587-2885",
+            "fax": "82-2-587-5880",
+            "address_full": "#314, Brownstone, 334, Seocho-daero, Seocho-gu, Seoul",
+            "address_district": "Seocho-gu",
+            "language": "English"
+        },
+        {
+            "name": "Hyundai Rexion OK Certified Real Estate Agency",
+            "representative": "Yang, sung geun",
+            "tel": "82-2-2182-5088",
+            "fax": "82-2-2182-5089",
+            "address_full": "B110, Hyundai Rexion Building, 305, Gangnam-daero, Seocho-gu, Seoul",
+            "address_district": "Seocho-gu",
+            "language": "English"
+        },
+        {
+            "name": "Rosee Certified Real Estate Agency",
+            "representative": "Kim, Changsun",
+            "tel": "82-2-599-3090",
+            "fax": "82-2-599-3092",
+            "address_full": "1F, 30, Seocho-daero 27-gil, Seocho-gu, Seoul",
+            "address_district": "Seocho-gu",
+            "language": "English"
+        },
+        {
+            "name": "Seolleung-station Certified Real Estate Agency",
+            "representative": "Lim, Jungil",
+            "tel": "82-2-557-0047",
+            "fax": "82-2-070-8848-0392",
+            "address_full": "18, Seolleung-ro 86-gil, Gangnam-gu, Seoul",
+            "address_district": "Gangnam-gu",
+            "language": "English"
+        },
+        {
+            "name": "Korus Certified Real Estate Agency",
+            "representative": "Lee, Chaegil",
+            "tel": "82-2-2183-5758",
+            "fax": "82-2-2183-5544",
+            "address_full": "3F, Yoosung bldg, 121, Yeoksam-ro, Gangnam-gu, Seoul",
+            "address_district": "Gangnam-gu",
+            "language": "English"
+        },
+        {
+            "name": "K.REX Certified Real Estate Office",
+            "representative": "Sohn, Seongkoo",
+            "tel": "82-2-540-6540",
+            "fax": "82-2-540-7540",
+            "address_full": "#101, 1F, 10, Hakdong-ro, Gangnam-gu, Seoul",
+            "address_district": "Gangnam-gu",
+            "language": "English"
+        },
+        {
+            "name": "kangil IEUM Certified Real Estate Office",
+            "representative": "LEE, YUN-HEE",
+            "tel": "82-2-429-1400",
+            "fax": null,
+            "address_full": "#104, 419, arisu-ro, gangdong-gu, Seoul",
+            "address_district": "Gangdong-gu",
+            "language": "English"
+        }
+    ]
+}
