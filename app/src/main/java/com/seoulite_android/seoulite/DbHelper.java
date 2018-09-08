@@ -10,23 +10,35 @@ import java.util.Collection;
 
 public class DbHelper extends SQLiteOpenHelper{
 
-    public DbHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
-        super(context, name, factory, version);
+    private static final String DB_NAME = "Agencies.db";
+    private static final int DB_VERSION = 1;
+
+    private static final String SQL_CREATE_AGENCIES = "CREATE TABLE AGENCIES (" +
+            "_id INTEGER PRIMARY KEY AUTOINCREMENT, agnc_nm_kr TEXT, agnc_nm_en TEXT, " +
+            "own_kr TEXT, own_en TEXT, phone TEXT, fax TEXT, adr_gu_kr TEXT, adr_dt_kr TEXT," +
+            "adr_gu_en TEXT, adr_dt_en TEXT, lang_en NUMBER, lang_cn NUMBER, lang_jp NUMBER, " +
+            "lang_etc TEXT)";
+
+    private static final String SQL_CREATE_FAVORITES = "CREATE TABLE FAVORITES (" +
+            "_id INTEGER PRIMARY KEY AUTOINCREMENT, name, is_district INTEGER, is_agency INTEGER, memo)";
+
+    public DbHelper(Context context) {
+        super(context, DB_NAME, null, DB_VERSION);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE AGENCIES (" +
-                "_id INTEGER PRIMARY KEY AUTOINCREMENT, agnc_nm_kr TEXT, agnc_nm_en TEXT, " +
-                "own_kr TEXT, own_en TEXT, phone TEXT, fax TEXT, adr_gu_kr TEXT, adr_dt_kr TEXT," +
-                "adr_gu_en TEXT, adr_dt_en TEXT, lang_en NUMBER, lang_cn NUMBER, lang_jp NUMBER, " +
-                "lang_etc TEXT)"
-        );
+        db.execSQL(SQL_CREATE_AGENCIES);
+        db.execSQL(SQL_CREATE_FAVORITES);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+        if (newVersion == DB_VERSION) {
+            db.execSQL("DROP TABLE IF EXISTS AGENCIES");
+            db.execSQL("DROP TABLE IF EXISTS FAVORITES");
+            onCreate(db);
+        }
     }
 
     public void insert(String agnc_nm_kr, String agnc_nm_en, String own_kr, String own_en, String phone,
@@ -38,6 +50,7 @@ public class DbHelper extends SQLiteOpenHelper{
                 phone + "," + fax + "," + adr_gu_kr + "," + adr_dt_kr + "," + adr_gu_en + "," +
                 adr_dt_en + "," + lang_en +"," + lang_cn + "," +lang_jp + "," + lang_etc + ");"
         );
+        db.close();
     }
 
     public Collection<AgencyVO> getResults(){
