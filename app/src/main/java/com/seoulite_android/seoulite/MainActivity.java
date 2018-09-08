@@ -71,6 +71,25 @@ public class MainActivity extends AppCompatActivity implements NavigationHost,
 
         Log.d(TAG, "onCreate: ");
 
+        //Create DB
+        final DbHelper dbHelper = new DbHelper(getApplicationContext(), "Agencies.db", null, 1);
+
+        //Start: insert into agencies (261개 예정)
+        dbHelper.insert("'청솔공인중개사사무소'","'Cheongsol Certified Real Estate Agency'",
+                "'이돈권'","'Lee, Donkwon'","'82-2-763-1126'","'82-2-763-1141'",
+                "'종로구'","'종로구 종로 365(숭인동)'","'Jongno-gu'",
+                "'365, Jong-ro, Jongno-gu, Seoul'",1,0,0,"null");
+        dbHelper.insert("'진솔공인중개사사무소'","'Jinsol Certified Real Estate Agency'",
+                "'김형기'","'Kim, Hyungkee'","'82-2-738-4984'","'82-2-738-4983'",
+                "'종로구'","'종로구 자하문로 33 (통인동)'","'Jongno-gu'",
+                "'33, Jahamun-ro, Jongno-gu, Seoul'",1,0,0,"null");
+        dbHelper.insert("'한일공인중개사사무소'","'Hanil Certified Real Estate Agency'",
+                "'이웅기'","'Lee, Woongki'","'82-2-765-2189'","'82-2-765-2146'",
+                "'종로구'","'종로구 종로46길 1, 2층(창신동)'","'Jongno-gu'",
+                "'2F, 1, Jong-ro 46-gil, Jongno-gu, Seoul'",1,0,0,"null");
+
+        //End: insert into agencies
+
     }
 
     @Override
