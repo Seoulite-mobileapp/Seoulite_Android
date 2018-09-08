@@ -3,13 +3,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FavDistrictFragment">
+    tools:context=".FavDistrictFragment"
+    android:background="#FFFFFF">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Fav_District_fragment"
-        android:background="#FFFFFF"/>
+        android:layout_marginTop="20dp">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/fav_district_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </android.support.v7.widget.RecyclerView>
+    </android.support.v4.widget.NestedScrollView>
 
 </FrameLayout>
