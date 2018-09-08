@@ -16,9 +16,9 @@ public class FavPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         switch (position) {
             case 0:
-                return new FavDistrictFragment();
-            case 1:
                 return new FavAgencyFragment();
+            case 1:
+                return new FavDistrictFragment();
             default:
                 return null;
         }

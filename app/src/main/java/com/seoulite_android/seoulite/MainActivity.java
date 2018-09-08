@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity implements NavigationHost,
         Log.d(TAG, "onCreate: ");
 
         //Create DB
-        final DbHelper dbHelper = new DbHelper(getApplicationContext(), "Agencies.db", null, 1);
+        final DbHelper dbHelper = new DbHelper(getApplicationContext());
 
         //Start: insert into agencies (261개 예정)
         dbHelper.insert("'청솔공인중개사사무소'","'Cheongsol Certified Real Estate Agency'",
