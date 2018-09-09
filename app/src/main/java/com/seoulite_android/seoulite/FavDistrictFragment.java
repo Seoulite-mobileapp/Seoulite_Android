@@ -10,9 +10,15 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 //
 ///**
@@ -25,6 +31,7 @@ public class FavDistrictFragment extends Fragment {
 //
 //    private OnFragmentInteractionListener mListener;
 
+    @BindView(R.id.btn_fav_find_district) Button mFindDistrictButton;
     private ArrayList<FavVO> mMockList = new ArrayList<>();
 
     public FavDistrictFragment() {
@@ -36,7 +43,7 @@ public class FavDistrictFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_fav_district, container, false);
-
+        ButterKnife.bind(this, view);
         // Push mock data
         mMockList.add(new FavVO(1, "Nowon-gu", 1, 0, null));
         mMockList.add(new FavVO(2, "Gangnam-gu", 1, 0, null));
@@ -49,6 +56,12 @@ public class FavDistrictFragment extends Fragment {
         FavCardRecyclerViewAdapter adapter = new FavCardRecyclerViewAdapter(mMockList);
         recyclerView.setAdapter(adapter);
         return view;
+    }
+
+    // TODO: Make this Button Work. This is temporary !
+    @OnClick(R.id.btn_fav_find_district)
+    public void moveToDistrictSelection() {
+        Toast.makeText(getContext(), "Btn Clicked", Toast.LENGTH_SHORT).show();
     }
 //
 //    // TODO: Rename method, update argument and hook method into UI event
