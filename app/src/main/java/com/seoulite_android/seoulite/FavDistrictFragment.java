@@ -44,7 +44,8 @@ public class FavDistrictFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_fav_district, container, false);
         ButterKnife.bind(this, view);
-        // Push mock data
+
+        // TODO: This is mock data
         mMockList.add(new FavVO(1, "Nowon-gu", 1, 0, null));
         mMockList.add(new FavVO(2, "Gangnam-gu", 1, 0, null));
         mMockList.add(new FavVO(3, "Shit-gu", 1, 0, "Pretty fucking shit !"));
@@ -62,6 +63,7 @@ public class FavDistrictFragment extends Fragment {
     @OnClick(R.id.btn_fav_find_district)
     public void moveToDistrictSelection() {
         Toast.makeText(getContext(), "Btn Clicked", Toast.LENGTH_SHORT).show();
+        ((MainActivity)getActivity()).replaceFragment(new DistrictSelectionFragment(), true);
     }
 //
 //    // TODO: Rename method, update argument and hook method into UI event
