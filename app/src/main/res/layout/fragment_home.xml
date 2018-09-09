@@ -33,6 +33,7 @@
     </RelativeLayout>
 
     <TextView
+        android:id="@+id/agencyinfo_test_textview"
         style="@style/Widget.Shrine.Button.TextButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
