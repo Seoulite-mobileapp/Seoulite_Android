@@ -4,15 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
-
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/app_bar"
-        style="@style/Widget.Shrine.Toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        app:navigationIcon="@drawable/ic_hamburger_menu"
-        app:title="@string/app_name" />
+    android:orientation="vertical"
+    android:background="@android:color/white">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -44,7 +37,7 @@
                 android:textColor="#000000"
                 android:textSize="35sp"
                 android:textStyle="bold"
-                tools:text="Yongsan-gu" />
+                android:text="Yongsan-gu" />
 
             <android.support.design.button.MaterialButton
                 android:layout_width="wrap_content"
@@ -88,20 +81,27 @@
         tools:context="com.seoulite_android.seoulite.LivingInfoFragment"
         tools:showIn="@layout/fragment_living_info">
 
-        <!--<<ImageView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:layout_gravity="center"
-            android:layout_margin="10dp"
-            android:layout_weight="1"
-            android:src="@drawable/livinginfo_seoulmap_jongno" />-->
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-        <ListView
-            android:id="@+id/listview_livinginfo"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:src="@drawable/sample_1"/>
+
+            <ListView
+                android:id="@+id/listview_livinginfo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"/>
+
+        </LinearLayout>
     </ScrollView>
 
 </LinearLayout>

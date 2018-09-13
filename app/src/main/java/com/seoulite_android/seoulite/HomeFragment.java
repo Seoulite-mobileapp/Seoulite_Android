@@ -42,7 +42,6 @@ public class HomeFragment extends Fragment {
         mImages.add(getResources().getDrawable(R.drawable.sample_1));
         mImages.add(getResources().getDrawable(R.drawable.sample_2));
         mImages.add(getResources().getDrawable(R.drawable.sample_3));
-
         mViewPager.setAdapter(new SliderAdapter(getContext(), mImages));
         mIndicator.setupWithViewPager(mViewPager, true);
 
