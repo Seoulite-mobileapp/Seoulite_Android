@@ -13,11 +13,10 @@ class AgencyVO {
     private String adrGuEn = "";
     private String adrDtEn = "";
     private int langEn;    //0이면 제공 X, 1이면 제공 O
-    private int langCn;
-    private int langJp;
-    private String langEtc = "";
+    private int langCn;    //0이면 제공 X, 1이면 제공 O
+    private int langJp;    //0이면 제공 X, 1이면 제공 O
+    private String langEtc = "";    //0이면 제공 X, 1이면 제공 O
 
-    /**fax 번호 있는 경우*/
     public AgencyVO(String agncNmKr, String agncNmEn, String ownKr, String ownEn, String phone,
                     String fax, String adrGuKr, String adrDtKr, String adrGuEn, String adrDtEn,
                     int langEn, int langCn, int langJp, String langEtc) {
@@ -36,14 +35,6 @@ class AgencyVO {
         setLangJp(langJp);
         setLangEtc(langEtc);
     }
-
-    /**fax 번호 없는 경우 - 만약 null 값이 바로 들어가지 않는다면 필요
-    public AgencyVO(String agncNmKr, String agncNmEn, String ownKr, String ownEn, String phone,
-        String adrGuKr, String adrDtKr, String adrGuEn, String adrDtEn, int langEn, int langCn,
-        int langJp, String langEtc) {
-        this(agncNmKr, agncNmEn, ownKr, ownEn, phone, null, adrGuKr, adrDtKr, adrGuEn,adrDtEn,
-                langEn, langCn, langJp, langEtc);
-    }*/
 
     public String getAgncNmKr() {
         return agncNmKr;
@@ -155,5 +146,25 @@ class AgencyVO {
 
     public void setLangEtc(String langEtc) {
         this.langEtc = langEtc;
+    }
+
+    @Override
+    public String toString() {
+        return "AgencyVO{" +
+                "agncNmKr='" + agncNmKr + '\'' +
+                ", agncNmEn='" + agncNmEn + '\'' +
+                ", ownKr='" + ownKr + '\'' +
+                ", ownEn='" + ownEn + '\'' +
+                ", phone='" + phone + '\'' +
+                ", fax='" + fax + '\'' +
+                ", adrGuKr='" + adrGuKr + '\'' +
+                ", adrDtKr='" + adrDtKr + '\'' +
+                ", adrGuEn='" + adrGuEn + '\'' +
+                ", adrDtEn='" + adrDtEn + '\'' +
+                ", langEn=" + langEn +
+                ", langCn=" + langCn +
+                ", langJp=" + langJp +
+                ", langEtc='" + langEtc + '\'' +
+                '}';
     }
 }

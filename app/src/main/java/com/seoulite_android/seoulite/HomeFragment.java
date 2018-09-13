@@ -64,6 +64,11 @@ public class HomeFragment extends Fragment {
 
     }
 
+    @OnClick(R.id.agencyinfo_test_textview)
+    void moveToAgencyInfoFragment(){
+        ((MainActivity)getActivity()).replaceFragment(new AgencyInfoFragment(), false);
+    }
+
     @OnClick(R.id.btn_home_search)
     void moveToDistrictSelectionFragment() {
         ((MainActivity)getActivity()).replaceFragment(new DistrictSelectionFragment(), false);

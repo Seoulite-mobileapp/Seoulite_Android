@@ -68,4 +68,20 @@ public class DbHelper extends SQLiteOpenHelper{
         return list;
     }
 
+    /**(영문) 구별 부동산 조회*/
+    public Collection<AgencyVO> getAgenciesByAdrGuEn(String searchAdrGuEn){
+        SQLiteDatabase db = getReadableDatabase();
+        Collection list = new ArrayList();
+        Cursor cursor = db.rawQuery("SELECT * FROM AGENCIES WHERE adr_gu_en='"+searchAdrGuEn+"'", null);
+        AgencyVO agency;
+        while (cursor.moveToNext()) {
+            agency = new AgencyVO(cursor.getString(0), cursor.getString(1), cursor.getString(2),
+                    cursor.getString(3), cursor.getString(4), cursor.getString(5), cursor.getString(6),
+                    cursor.getString(7), cursor.getString(8), cursor.getString(9), cursor.getInt(10),
+                    cursor.getInt(11), cursor.getInt(12), cursor.getString(13));
+            list.add(agency);
+        }
+        return list;
+    }
+
 }
