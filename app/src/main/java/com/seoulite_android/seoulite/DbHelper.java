@@ -20,7 +20,14 @@ public class DbHelper extends SQLiteOpenHelper{
             "lang_etc TEXT)";
 
     private static final String SQL_CREATE_FAVORITES = "CREATE TABLE FAVORITES (" +
-            "_id INTEGER PRIMARY KEY AUTOINCREMENT, name, is_district INTEGER, is_agency INTEGER, memo)";
+            "_id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, is_district INTEGER, is_agency INTEGER, memo TEXT)";
+    //todo: foreign key??
+        /*
+            // Set up the location column as a foreign key to location table.
+            // https://gerardnico.com/android/sqlite
+            "FOREIGN KEY ('is_agency') REFERENCES 'AGENCIES' ('_id')"
+        */
+
 
     public DbHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);

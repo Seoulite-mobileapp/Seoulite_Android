@@ -20,4 +20,11 @@
     <string name="home_label">Home</string>
 
     <string name="btn_search">Search</string>
+
+    <string name="agencyinfo_addtofavorites">Add To Favorites</string>
+    <string name="agencyinfo_address">Address</string>
+    <string name="agencyinfo_representative">Representative</string>
+    <string name="agencyinfo_phone">Phone</string>
+    <string name="agencyinfo_fax">Fax</string>
+    <string name="agencyinfo_languageAvailable">Language Available</string>
 </resources>
