@@ -15,7 +15,7 @@ class AgencyVO {
     private int langEn;    //0이면 제공 X, 1이면 제공 O
     private int langCn;    //0이면 제공 X, 1이면 제공 O
     private int langJp;    //0이면 제공 X, 1이면 제공 O
-    private String langEtc = "";    //0이면 제공 X, 1이면 제공 O
+    private String langEtc = "";
 
     public AgencyVO(String agncNmKr, String agncNmEn, String ownKr, String ownEn, String phone,
                     String fax, String adrGuKr, String adrDtKr, String adrGuEn, String adrDtEn,
