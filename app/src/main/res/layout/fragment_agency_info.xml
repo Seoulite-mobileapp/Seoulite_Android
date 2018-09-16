@@ -9,11 +9,11 @@
     <!-- agency name -->
 
     <TextView
+        android:id="@+id/textview_agencyinfo_agencyName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
         android:textColor="@android:color/black"
-        android:textSize="22sp"
         android:textStyle="bold"
         android:textAlignment="center"
         android:text="Eden Certified Real Estate Agency" />
@@ -23,7 +23,7 @@
 
     <!-- address -->
     <LinearLayout
-        android:id="@+id/agencyinfo_favorite_layout"
+        android:id="@+id/linearlaout_agencyinfo_favorite"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
@@ -46,7 +46,7 @@
             android:layout_width="wrap_content"
             android:layout_height="20dp"
             android:paddingRight="10dp"
-            android:text="Add To Favorite"
+            android:text="@string/agencyinfo_addtofavorites"
             android:textColor="@android:color/black"
             android:textSize="15dp"
             />
@@ -72,7 +72,7 @@
                 android:paddingTop="5dp">
 
                 <ImageView
-                    android:layout_width="30dp"
+                    android:layout_width="25dp"
                     android:layout_height="20dp"
                     android:layout_marginRight="10dp"
                     android:background="@drawable/agencyinfo_mapmarker" />
@@ -80,18 +80,17 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="20dp"
-                    android:text="Address"
-                    android:textColor="@android:color/darker_gray"
+                    android:text="@string/agencyinfo_address"
                     android:textSize="15dp" />
 
             </LinearLayout>
 
             <!-- Address detail -->
             <TextView
+                android:id="@+id/textview_agencyinfo_address"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
-                android:text="1F, 9-1, Sinheung-ro, Yongsan-gu, Seoul"
                 android:textColor="@android:color/black" />
 
             <!--TODO: implement map -->
@@ -100,17 +99,18 @@
             <fragment xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:tools="http://schemas.android.com/tools"
             android:id="@+id/agencyinfo_map"
-            android:layout_width="310dp"
-            android:layout_height="270dp"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp"
+            android:layout_marginVertical="10dp"
+            android:layout_marginHorizontal="40dp"
             android:name="com.google.android.gms.maps.SupportMapFragment" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="40dp"
-                android:text="Click map to open in Google Map"
+                android:text="Please call the agency before the visit in case of the address is changed."
                 android:textColor="@android:color/holo_blue_light" />
 
             <!-- divider -->
@@ -148,7 +148,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
-                        android:text="Representative"
+                        android:text="@string/agencyinfo_representative"
                         android:textSize="16sp" />
                 </LinearLayout>
             </LinearLayout>
@@ -164,10 +164,10 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/textview_agencyinfo_representative"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="27dp"
-                    android:text="Choi, Youngho"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
             </LinearLayout>
@@ -209,7 +209,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
-                        android:text="Phone"
+                        android:text="@string/agencyinfo_phone"
                         android:textSize="16sp" />
                 </LinearLayout>
 
@@ -228,7 +228,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
-                        android:text="Fax"
+                        android:text="@string/agencyinfo_fax"
                         android:textSize="16sp" />
                 </LinearLayout>
             </LinearLayout>
@@ -251,10 +251,54 @@
 
 
                     <TextView
+                        android:id="@+id/textview_agencyinfo_phone1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="27dp"
-                        android:text="82-2-793-4774"
+                        android:autoLink="phone"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textview_agencyinfo_fax"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="27dp"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp" />
+                </LinearLayout>
+            </LinearLayout>
+            <!--4th row end-->
+
+            <!-- 5th row start -->
+
+            <LinearLayout
+                android:id="@+id/agencyinfo_second_tel_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:visibility="gone"
+                android:layout_marginRight="10dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textview_agencyinfo_phone2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="27dp"
                         android:autoLink="phone"
                         android:textColor="@android:color/black"
                         android:textSize="16sp" />
@@ -270,7 +314,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="27dp"
-                        android:text="82-2-793-4776"
                         android:textColor="@android:color/black"
                         android:textSize="16sp" />
                 </LinearLayout>
@@ -309,8 +352,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
-                        android:text="Language Available"
+                        android:layout_marginStart="5dp"
+                        android:text="@string/agencyinfo_languageAvailable"
                         android:textSize="16sp" />
                 </LinearLayout>
 
@@ -320,19 +363,52 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:orientation="horizontal"
-                    android:paddingLeft="30dp">
+                    android:paddingStart="30dp">
 
                     <ImageView
-                        android:layout_width="44dp"
+                        android:id="@+id/imageview_agencyinfo_us"
+                        android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:layout_marginRight="10dp"
+                        android:layout_marginEnd="10dp"
                         android:background="@drawable/language_us" />
 
                     <ImageView
+                        android:id="@+id/imageview_agencyinfo_china"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/language_china" />
+
+                    <ImageView
+                        android:id="@+id/imageview_agencyinfo_japan"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="10dp"
                         android:background="@drawable/language_japan" />
 
+                    <ImageView
+                        android:id="@+id/imageview_agencyinfo_portugal"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginRight="10dp"
+                        android:visibility="gone"
+                        android:background="@drawable/language_portugal" />
+
+                    <ImageView
+                        android:id="@+id/imageview_agencyinfo_russia"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginRight="10dp"
+                        android:visibility="gone"
+                        android:background="@drawable/language_russia" />
+
+                    <ImageView
+                        android:id="@+id/imageview_agencyinfo_spain"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginRight="10dp"
+                        android:visibility="gone"
+                        android:background="@drawable/language_spain" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
