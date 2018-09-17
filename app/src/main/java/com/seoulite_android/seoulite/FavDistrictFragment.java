@@ -1,6 +1,7 @@
 package com.seoulite_android.seoulite;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -32,7 +33,7 @@ public class FavDistrictFragment extends Fragment {
 //    private OnFragmentInteractionListener mListener;
 
     @BindView(R.id.btn_fav_find_district) Button mFindDistrictButton;
-    private ArrayList<FavVO> mMockList = new ArrayList<>();
+    private ArrayList<FavVO> mFavDistrictList = new ArrayList<>();
 
     public FavDistrictFragment() {
         // Required empty public constructor
@@ -45,16 +46,25 @@ public class FavDistrictFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_fav_district, container, false);
         ButterKnife.bind(this, view);
 
-        // TODO: This is mock data
-        mMockList.add(new FavVO(1, "Nowon-gu", 1, 0, null));
-        mMockList.add(new FavVO(2, "Gangnam-gu", 1, 0, null));
-        mMockList.add(new FavVO(3, "Shit-gu", 1, 0, "Pretty fucking shit !"));
+        DbHelper dbHelper = new DbHelper(getContext());
+        Cursor cursor = dbHelper.getReadableDatabase()
+                .query("FAVORITES", null, "is_district=?", new String[] {"1"}, null, null, null);
+
+        while (cursor.moveToNext()) {
+            mFavDistrictList.add(new FavVO(cursor.getInt(0), // id
+                    cursor.getString(1), // name
+                    cursor.getInt(2), // is_district
+                    cursor.getInt(3), // is_agency
+                    cursor.getString(4))); // memo
+        }
+        cursor.close();
+
 
         // Set up the recycler view
         RecyclerView recyclerView = view.findViewById(R.id.fav_district_recycler);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 1, GridLayoutManager.VERTICAL, false));
-        FavCardRecyclerViewAdapter adapter = new FavCardRecyclerViewAdapter(mMockList);
+        FavCardRecyclerViewAdapter adapter = new FavCardRecyclerViewAdapter(mFavDistrictList);
         recyclerView.setAdapter(adapter);
         return view;
     }
