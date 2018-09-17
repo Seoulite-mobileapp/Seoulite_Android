@@ -44,6 +44,8 @@ public class DbHelper extends SQLiteOpenHelper{
         db.execSQL(SQL_CREATE_FAVORITES);
         db.execSQL(SQL_CREATE_DISTRICTS);
 
+        insertAgenciesTotal();
+
     }
 
     @Override

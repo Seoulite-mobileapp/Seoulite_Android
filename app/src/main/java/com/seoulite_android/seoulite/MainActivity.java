@@ -71,16 +71,16 @@ public class MainActivity extends AppCompatActivity implements NavigationHost,
         Log.d(TAG, "onCreate: ");
 
         //Start DB
-        DbHelper dbHelper = new DbHelper(getApplicationContext());
-        //insert into agencies 호출
-        if(dbHelper.isTableReadyForInsert("AGENCIES")) {
-            dbHelper.insertAgenciesTotal();
-        }
-        Log.i("agencies records",dbHelper.countRecords("AGENCIES")+"");
-        if(dbHelper.isTableReadyForInsert("DISTRICTS")) {
-            dbHelper.insertDistrictsTotal();
-        }
-        Log.i("districts records",dbHelper.countRecords("DISTRICTS")+"");
+//        DbHelper dbHelper = new DbHelper(getApplicationContext());
+//        //insert into agencies 호출
+//        if(dbHelper.isTableReadyForInsert("AGENCIES")) {
+//            dbHelper.insertAgenciesTotal();
+//        }
+//        Log.i("agencies records",dbHelper.countRecords("AGENCIES")+"");
+//        if(dbHelper.isTableReadyForInsert("DISTRICTS")) {
+//            dbHelper.insertDistrictsTotal();
+//        }
+//        Log.i("districts records",dbHelper.countRecords("DISTRICTS")+"");
         //End DB
     }
 

@@ -100,7 +100,9 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
 
         //setTelephoneTextViews();
 
-        getAgencyInfo(agencyId); // db에서 전 화면에서 받아온 id를 이용해 sql select
+//        getAgencyInfo(agencyId); // db에서 전 화면에서 받아온 id를 이용해 sql select
+
+
 
         setTextViews(); //textview들을 setting
         setFlags(); // falg setting
