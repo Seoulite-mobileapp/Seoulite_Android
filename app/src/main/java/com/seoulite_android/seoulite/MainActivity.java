@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements NavigationHost,
         Log.d(TAG, "onCreate: ");
 
         //Start DB
-//        DbHelper dbHelper = new DbHelper(getApplicationContext());
+        DbHelper dbHelper = new DbHelper(getApplicationContext());
 //        //insert into agencies 호출
 //        if(dbHelper.isTableReadyForInsert("AGENCIES")) {
 //            dbHelper.insertAgenciesTotal();
