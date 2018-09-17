@@ -236,7 +236,7 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
         builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                (activity).replaceFragment(new FavAgencyFragment(), false);
+                (activity).replaceFragment(new FavoritesFragment(), false);
 
             }
         });
