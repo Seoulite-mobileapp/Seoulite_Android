@@ -28,6 +28,8 @@ public class DbHelper extends SQLiteOpenHelper{
             "FOREIGN KEY ('is_agency') REFERENCES 'AGENCIES' ('_id')"
         */
 
+    private static final String SQL_CREATE_DISTRICTS = "CREATE TABLE DISTRICTS (" +
+            "_id INTEGER PRIMARY KEY AUTOINCREMENT, dist TEXT, dist_pop INTEGER, fn_pop INTEGER, fn_rat INTEGER, avg_rent INTEGER, rank INTEGER, dist_near TEXT, dist_near_en TEXT, feats TEXT, feats_en TEXT)";
 
     public DbHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
@@ -37,22 +39,24 @@ public class DbHelper extends SQLiteOpenHelper{
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(SQL_CREATE_AGENCIES);
         db.execSQL(SQL_CREATE_FAVORITES);
+        db.execSQL(SQL_CREATE_DISTRICTS);
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+    public void onUpgrade(SQLiteDatabase db, int DB_VERSION, int newVersion) {
         if (newVersion == DB_VERSION) {
             db.execSQL("DROP TABLE IF EXISTS AGENCIES");
             db.execSQL("DROP TABLE IF EXISTS FAVORITES");
+            db.execSQL("DROP TABLE IF EXISTS DISTRICTS");
             onCreate(db);
         }
     }
 
-    public void insert(String agnc_nm_kr, String agnc_nm_en, String own_kr, String own_en, String phone,
+    public void insertAgencies(String agnc_nm_kr, String agnc_nm_en, String own_kr, String own_en, String phone,
                        String fax, String adr_gu_kr, String adr_dt_kr, String adr_gu_en, String adr_dt_en,
                        int lang_en, int lang_cn, int lang_jp, String lang_etc){
         SQLiteDatabase db = getWritableDatabase();
-        db.execSQL("INSERT INTO AGENCIES values(" +
+        db.execSQL("INSERT INTO AGENCIES VALUES(" +
                 "null," + agnc_nm_kr + "," + agnc_nm_en + "," + own_kr + "," + own_en + "," +
                 phone + "," + fax + "," + adr_gu_kr + "," + adr_dt_kr + "," + adr_gu_en + "," +
                 adr_dt_en + "," + lang_en +"," + lang_cn + "," +lang_jp + "," + lang_etc + ");"
@@ -60,6 +64,29 @@ public class DbHelper extends SQLiteOpenHelper{
         db.close();
     }
 
+    public void insertDistricts(String dist, double dist_pop, double fn_pop, double fn_rat, int avg_rent, int rank, String dist_near, String dist_near_en, String feats, String feats_en){
+        SQLiteDatabase db = getWritableDatabase();
+        db.execSQL("INSERT INTO DISTRICTS VALUES(" +
+                "null,"+dist+","+dist_pop+","+fn_pop+","+fn_rat+","+avg_rent+","+rank+","+dist_near+","+dist_near_en+","+feats+","+feats_en+");"
+        );
+        db.close();
+    }
+
+    /** 정상 입력 테스트*/
+    public String countInserts(String table){
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT COUNT(*) FROM " + table, null);
+        cursor.moveToNext();
+        return cursor.getString(0);
+    }
+
+    /**테스트용 데이터 리셋(전체 레코드 삭제)*/
+    public void deleteAll(String table){
+        SQLiteDatabase db = getWritableDatabase();
+        db.execSQL("DELETE FROM "+table);
+    }
+
+    //현재 미사용
     public Collection<AgencyVO> getResults(){
         SQLiteDatabase db = getReadableDatabase();
         Collection list = new ArrayList();
@@ -75,7 +102,7 @@ public class DbHelper extends SQLiteOpenHelper{
         return list;
     }
 
-    /**(영문) 구별 부동산 조회*/
+    /**(영문) 구별 부동산 조회-현재미사용*/
     public Collection<AgencyVO> getAgenciesByAdrGuEn(String searchAdrGuEn){
         SQLiteDatabase db = getReadableDatabase();
         Collection list = new ArrayList();
