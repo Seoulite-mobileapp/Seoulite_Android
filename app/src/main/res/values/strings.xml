@@ -27,4 +27,6 @@
     <string name="agencyinfo_phone">Phone</string>
     <string name="agencyinfo_fax">Fax</string>
     <string name="agencyinfo_languageAvailable">Language Available</string>
+    <string name="agencyinfo_notice">Please call the agency before the visit in case of the address is changed.</string>
+
 </resources>

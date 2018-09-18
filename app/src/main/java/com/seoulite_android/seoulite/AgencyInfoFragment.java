@@ -15,6 +15,7 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.widget.TextViewCompat;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -61,7 +62,7 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
     //todo: favorite check
 
     private boolean favorite_check = true;
-    private int agencyId = 1; // 현재는 할당했지만 실제로는 전화면에서 받아와야
+    private int agencyId = 3; // 현재는 할당했지만 실제로는 전화면에서 받아와야
 
     //db test
     DbHelper dbHelper;
@@ -119,8 +120,6 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
         //Toast.makeText(activity, "난수는"+rand_tel+"&" +agency.getAgncNmKr(), Toast.LENGTH_LONG).show();
         return rootView;
     }
-
-
 
     @OnClick(R.id.linearlaout_agencyinfo_favorite)
     void favoriteInteraction(){
@@ -210,11 +209,11 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
         if(jp != 1){
             jp_flag.setVisibility(View.GONE);
         }
-        if(etc == "Russian"){
+        if(etc.equals("Russian")){
             ru_flag.setVisibility(View.VISIBLE);
-        } else if(etc == "Portuguese"){
+        } else if(etc.equals("Portuguese")){
             pt_flag.setVisibility(View.VISIBLE);
-        } else if(etc == "Spanish"){
+        } else if(etc.equals("Spanish")){
             sp_flag.setVisibility(View.VISIBLE);
         }
     }
@@ -291,11 +290,11 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
     private void favoriteDb(String mode, int id){
         SQLiteDatabase db =  dbHelper.getWritableDatabase();
         String sql;
-        if(mode == "insert"){
+        if(mode.equals("insert")){
             sql = "INSERT INTO FAVORITES (name, is_district, is_agency, memo) values ('"
-                    + agency.getAgncNmEn() +"', NULL, "+ id +", NULL);";
+                    + agency.getAgncNmEn() +"', 0, "+ id +", NULL);";
             db.execSQL(sql);
-        }else if(mode == "delete"){
+        }else if(mode.equals("delete")){
             sql = "DELETE FROM FAVORITES WHERE is_agency = "+id+";";
             db.execSQL(sql);
         }

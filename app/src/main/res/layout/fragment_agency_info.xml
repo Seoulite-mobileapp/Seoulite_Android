@@ -2,6 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:paddingBottom="20dp"
     android:background="@android:color/white"
     android:orientation="vertical">
@@ -9,14 +11,15 @@
     <!-- agency name -->
 
     <TextView
+        android:paddingHorizontal="30dp"
         android:id="@+id/textview_agencyinfo_agencyName"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
+        android:layout_height="40dp"
+        android:autoSizeTextType="uniform"
+        android:maxLines="1"
         android:textColor="@android:color/black"
         android:textStyle="bold"
-        android:textAlignment="center"
-        android:text="Eden Certified Real Estate Agency" />
+        tools:text="Eden Ceddddddd rtifie Estate Agency" />
     <!--TODO: auto text-resize-->
 
     <!-- favorite button -->
@@ -26,11 +29,11 @@
         android:id="@+id/linearlaout_agencyinfo_favorite"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
         android:background="@drawable/agencyinfo_btn_border"
         android:layout_gravity="end"
         android:orientation="horizontal"
-        android:layout_marginRight="10dp"
+        android:layout_marginEnd="30dp"
         android:paddingBottom="5dp"
         android:paddingTop="5dp"
         android:layout_marginBottom="10dp">
@@ -48,8 +51,7 @@
             android:paddingRight="10dp"
             android:text="@string/agencyinfo_addtofavorites"
             android:textColor="@android:color/black"
-            android:textSize="15dp"
-            />
+            android:textSize="15dp" />
 
     </LinearLayout>
 
@@ -69,6 +71,7 @@
                 android:layout_marginLeft="10dp"
                 android:orientation="horizontal"
                 android:paddingBottom="5dp"
+                android:paddingHorizontal="30dp"
                 android:paddingTop="5dp">
 
                 <ImageView
@@ -90,27 +93,28 @@
                 android:id="@+id/textview_agencyinfo_address"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:textColor="@android:color/black" />
+                android:layout_marginStart="40dp"
+                android:textColor="#666666"
+                tools:text="안녕하세요" />
 
             <!--TODO: implement map -->
             <!-- map -->
 
             <fragment xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:tools="http://schemas.android.com/tools"
-            android:id="@+id/agencyinfo_map"
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:layout_gravity="center"
-            android:layout_marginVertical="10dp"
-            android:layout_marginHorizontal="40dp"
-            android:name="com.google.android.gms.maps.SupportMapFragment" />
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/agencyinfo_map"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginVertical="10dp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
-                android:text="Please call the agency before the visit in case of the address is changed."
+                android:layout_marginHorizontal="40dp"
+                android:text="@string/agencyinfo_notice"
                 android:textColor="@android:color/holo_blue_light" />
 
             <!-- divider -->
@@ -129,6 +133,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="40dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:orientation="horizontal">
@@ -159,6 +164,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="40dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:orientation="horizontal">
@@ -189,6 +195,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="40dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="10dp"
@@ -239,6 +246,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="40dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:orientation="horizontal">
@@ -283,10 +291,11 @@
                 android:id="@+id/agencyinfo_second_tel_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="40dp"
                 android:layout_marginLeft="10dp"
-                android:visibility="gone"
                 android:layout_marginRight="10dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:visibility="gone">
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -335,13 +344,12 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="40dp"
                 android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
                     android:orientation="horizontal">
 
                     <ImageView
@@ -360,7 +368,6 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:orientation="horizontal"
                     android:paddingStart="30dp">
@@ -391,24 +398,24 @@
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_marginRight="10dp"
-                        android:visibility="gone"
-                        android:background="@drawable/language_portugal" />
+                        android:background="@drawable/language_portugal"
+                        android:visibility="gone" />
 
                     <ImageView
                         android:id="@+id/imageview_agencyinfo_russia"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_marginRight="10dp"
-                        android:visibility="gone"
-                        android:background="@drawable/language_russia" />
+                        android:background="@drawable/language_russia"
+                        android:visibility="gone" />
 
                     <ImageView
                         android:id="@+id/imageview_agencyinfo_spain"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_marginRight="10dp"
-                        android:visibility="gone"
-                        android:background="@drawable/language_spain" />
+                        android:background="@drawable/language_spain"
+                        android:visibility="gone" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
