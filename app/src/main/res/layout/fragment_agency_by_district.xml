@@ -3,29 +3,63 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000"
-    android:orientation="vertical">
-
+    xmlns:tool="http://schemas.android.com/apk/res-auto"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    android:id="@+id/agency_by_district_content">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="3.3"
+    android:padding="0dp">
+    <!--여기와 -->
+    <LinearLayout
+        android:id="@+id/title_part"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="5dp"
+        android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-
-        <ImageView
+        <FrameLayout
+            android:id="@+id/map_image_layout"
             android:layout_width="0dp"
-            android:layout_height="70dp"
-            android:layout_margin="10dp"
-            android:layout_marginLeft="30dp"
-            android:layout_weight="1"
-            android:layout_gravity="center_vertical"
-            android:src="@drawable/ic_x_shape" />
+            android:layout_weight="2"
+            android:layout_height="fill_parent"
+            android:layout_alignParentStart="true">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|right"
+                android:src="@drawable/ic_search" />
+
+            <ImageView
+                android:id="@+id/map_image"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="7dp"
+                android:src="@drawable/ic_x_shape" />
+        </FrameLayout>
+
+    <LinearLayout
+        android:layout_toRightOf="@+id/map_image_layout"
+        android:layout_width="0dp"
+        android:layout_weight="3"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
 
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_weight="2"
             android:orientation="vertical"
-            android:padding="3dp">
+            android:paddingTop="3dp">
 
             <TextView
                 android:id="@+id/text_agencylist_district_name"
@@ -33,130 +67,134 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:padding="2dp"
-                tools:text="Yongsan-gu"
-                android:textColor="#FFFFFF"
-                android:textSize="35sp"
-                android:textStyle="bold" />
-
-            <android.support.design.button.MaterialButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:textColor="#666666"
+                android:textSize="31sp"
+                android:textStyle="bold"
+                tools:text="Yongsan-gu" />
+            <!--구의 이름과 밑의 버튼 두개(구의 주거정보&언어선택하기)-->
+            <!--우선 두 버튼의 레이아웃을 동일하게 해둠 -->
+            <Button
+                android:id="@+id/btn_living_info"
+                android:layout_width="150dp"
+                android:layout_height="30dp"
                 android:layout_gravity="center"
-                android:layout_margin="10dp"
+                android:layout_marginTop="20dp"
                 android:background="@drawable/agencybydistrict_livinginfobtn"
-                android:padding="1dp"
                 android:text="District Living Info."
                 android:textAllCaps="false"
-                android:textColor="#fdfdfe"
+                android:textColor="#666666"
                 android:textSize="12sp" />
 
+            <Button
+                android:id="@+id/btn_language_filter"
+                android:layout_width="150dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/agencybydistrict_livinginfobtn"
+                android:text="Language Filter"
+                android:textAllCaps="false"
+                android:textColor="#666666"
+                android:textSize="12sp" />
         </LinearLayout>
     </LinearLayout>
-
-    <TextView
+    </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="150dp"
+        android:layout_alignParentRight="true"
+        android:id="@+id/language_filter_page"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#a3b5bf"
+        android:visibility="gone">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <android.support.v7.widget.AppCompatCheckBox
+                android:id="@+id/select_eng"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="English"/>
+            <android.support.v7.widget.AppCompatCheckBox
+                android:id="@+id/select_kr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Korean"/>
+            <android.support.v7.widget.AppCompatCheckBox
+                android:id="@+id/select_ch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chinese"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <android.support.v7.widget.AppCompatCheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/select_jp"
+                android:text="Japanese"/>
+            <android.support.v7.widget.AppCompatCheckBox
+                android:id="@+id/select_etc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Etc"/>
+            <Button
+                android:id="@+id/btn_select_language"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Search"/>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/name_page"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:text="Global Real Estate Agencies"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        android:textStyle="bold" />
-
-    <!--흰 부분 시작-->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="10dp"
         android:orientation="vertical"
-        android:background="@drawable/agencybydistrict_content">
-
-        <LinearLayout
-            android:id="@+id/linearLayout"
+        android:layout_alignParentBottom="true">
+        <TextView
+            android:id="@+id/GlobalRealEstateAgencies"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
             android:gravity="center"
-            android:orientation="horizontal">
-
-            <RadioGroup
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_horizontal">
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="English"
-                    android:focusedByDefault="true"/>
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Japanese"/>
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Chinese"/>
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Etc."/>
-            </RadioGroup>
-
-            <!--<CheckBox-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_margin="3dp"-->
-                <!--android:text="English" />-->
-
-            <!--<CheckBox-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_margin="3dp"-->
-                <!--android:text="Japanese" />-->
-
-            <!--<CheckBox-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_margin="3dp"-->
-                <!--android:text="Chinese" />-->
-
-            <!--<CheckBox-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_margin="3dp"-->
-                <!--android:text="Etc." />-->
-        </LinearLayout>
-
-        <View
-            android:id="@+id/underline"
+            android:text="Global Real Estate Agencies"
+            android:textColor="#666666"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/updateDate"
             android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="#797979" />
-
+            android:layout_height="wrap_content"
+            android:text="(update: 2018.08.17)"
+            android:gravity="center"
+            android:textSize="15sp" />
+        <View
+            android:id="@+id/separater"
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:background="#000000"/>
+    </LinearLayout>
+</RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5">
         <ListView
+            android:layout_gravity="bottom"
             android:id="@+id/list_agency_by_district"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
         </ListView>
-
-        <!--<android.support.v4.view.ViewPager-->
-            <!--android:id="@+id/viewpager"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="170dp"-->
-            <!--android:layout_alignParentStart="true"-->
-            <!--android:layout_below="@+id/linearLayout">-->
-
-        <!--</android.support.v4.view.ViewPager>-->
-
-        <!--&lt;!&ndash;TODO: mapview 로 변경?&ndash;&gt;-->
-        <!--<ImageView-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:layout_below="@+id/viewpager"-->
-            <!--android:layout_margin="10dp"-->
-            <!--android:src="@drawable/ic_menu_send" />-->
     </LinearLayout>
-
 </LinearLayout>
+
+

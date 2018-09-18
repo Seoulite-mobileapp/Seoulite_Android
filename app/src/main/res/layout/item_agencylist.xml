@@ -3,12 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="70dp"
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:layout_margin="5dp"
         android:orientation="horizontal">
 
@@ -24,24 +25,63 @@
             android:id="@+id/agencylist_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
             android:layout_weight="1"
-            android:textSize="15sp"
-            tools:text="Reality 113 Samsung Certified Real Estate Agency Fuck Fuck Fuck" />
-
-        <ImageView
-            android:layout_margin="3dp"
-            android:id="@+id/agencylist_favorite"
-            android:layout_gravity="center"
+            android:textSize="15sp" />
+        <TextView
+            android:id="@+id/agency_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_x_shape" />
+            tools:text="111"
+            android:visibility="gone"/>
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_gravity="right">
+    <ImageView
+        android:id="@+id/imageview_agencyinfo_eng"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/language_us" />
 
-    <TextView
-        android:id="@+id/agencylist_language"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        tools:text="English" />
+    <ImageView
+        android:id="@+id/imageview_agencyinfo_chinese"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/language_china" />
+
+    <ImageView
+        android:id="@+id/imageview_agencyinfo_japanese"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/language_japan" />
+
+    <ImageView
+        android:id="@+id/imageview_agencyinfo_portuguese"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginRight="10dp"
+        android:visibility="gone"
+        android:background="@drawable/language_portugal" />
+
+    <ImageView
+        android:id="@+id/imageview_agencyinfo_russian"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginRight="10dp"
+        android:visibility="gone"
+        android:background="@drawable/language_russia" />
+
+    <ImageView
+        android:id="@+id/imageview_agencyinfo_spainish"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginRight="10dp"
+        android:visibility="gone"
+        android:background="@drawable/language_spain" />
+    </LinearLayout>
 </LinearLayout>
