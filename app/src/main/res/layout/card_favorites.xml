@@ -25,15 +25,19 @@
             android:paddingBottom="10dp">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_x_shape" />
+                android:id="@+id/fav_star_img"
+                android:layout_marginTop="2dp"
+                android:layout_marginStart="2dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/agencyinfo_star_on" />
 
             <TextView
                 android:id="@+id/fav_card_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:layout_gravity="center_vertical"
                 android:layout_marginStart="20dp"
                 tools:text="Nowon-gu" />
         </LinearLayout>

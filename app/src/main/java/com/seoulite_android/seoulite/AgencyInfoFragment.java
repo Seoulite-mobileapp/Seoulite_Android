@@ -62,7 +62,11 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
     //todo: favorite check
 
     private boolean favorite_check = true;
+<<<<<<< HEAD
     private int agencyId = 3; // 현재는 할당했지만 실제로는 전화면에서 받아와야
+=======
+    private int agencyId = 2; // 현재는 할당했지만 실제로는 전화면에서 받아와야
+>>>>>>> 0482821af2a3b6c4446387e57cf4ae12abb5624e
 
     //db test
     DbHelper dbHelper;
@@ -102,6 +106,8 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
         //setTelephoneTextViews();
 
         getAgencyInfo(agencyId); // db에서 전 화면에서 받아온 id를 이용해 sql select
+
+
 
         setTextViews(); //textview들을 setting
         setFlags(); // falg setting
@@ -148,6 +154,7 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
                     cursor.getInt(12), cursor.getInt(13), cursor.getString(14));
         } //cursor.getString(0) : return id
         cursor.close();
+        db.close();
     }
 
 
@@ -232,7 +239,7 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
         builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                (activity).replaceFragment(new FavAgencyFragment(), false);
+                (activity).replaceFragment(new FavoritesFragment(), false);
 
             }
         });
