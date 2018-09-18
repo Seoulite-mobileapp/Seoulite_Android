@@ -62,11 +62,11 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
     //todo: favorite check
 
     private boolean favorite_check = true;
-<<<<<<< HEAD
-    private int agencyId = 3; // 현재는 할당했지만 실제로는 전화면에서 받아와야
-=======
+//<<<<<<< HEAD
+//    private int agencyId = 3; // 현재는 할당했지만 실제로는 전화면에서 받아와야
+//=======
     private int agencyId = 2; // 현재는 할당했지만 실제로는 전화면에서 받아와야
->>>>>>> 0482821af2a3b6c4446387e57cf4ae12abb5624e
+//>>>>>>> 0482821af2a3b6c4446387e57cf4ae12abb5624e
 
     //db test
     DbHelper dbHelper;

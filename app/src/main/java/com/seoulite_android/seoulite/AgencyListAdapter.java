@@ -42,15 +42,15 @@ public class AgencyListAdapter extends BaseAdapter {
             convertView = inflater.inflate(R.layout.item_agencylist, parent, false);
         }
 
-        TextView numTextView = convertView.findViewById(R.id.agencylist_number);
-        TextView nameTextView = convertView.findViewById(R.id.agencylist_name);
-        TextView langTextview = convertView.findViewById(R.id.agencylist_language);
-        ImageView favoriteIcon = convertView.findViewById(R.id.agencylist_favorite);
-
-        AgencyEntry agency = mAgencyList.get(position);
-        numTextView.setText(String.valueOf(position + 1));
-        nameTextView.setText(agency.getName());
-        langTextview.setText(agency.getLanguage());
+//        TextView numTextView = convertView.findViewById(R.id.agencylist_number);
+//        TextView nameTextView = convertView.findViewById(R.id.agencylist_name);
+//        TextView langTextview = convertView.findViewById(R.id.agencylist_language);
+////        ImageView favoriteIcon = convertView.findViewById(R.id.agencylist_favorite);
+//
+//        AgencyEntry agency = mAgencyList.get(position);
+//        numTextView.setText(String.valueOf(position + 1));
+//        nameTextView.setText(agency.getName());
+//        langTextview.setText(agency.getLanguage());
 
         return convertView;
     }
