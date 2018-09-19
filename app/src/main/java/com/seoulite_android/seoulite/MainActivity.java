@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 
 import android.support.v4.view.GravityCompat;
@@ -30,6 +31,8 @@ import butterknife.OnClick;
 public class MainActivity extends AppCompatActivity implements NavigationHost,
         DistrictSelectionFragment.OnFragmentInteractionListener {
     private static final String TAG = "MainActivity";
+
+    public static FragmentManager fragmentManager;
 
     @BindView(R.id.drawer_layout) DrawerLayout mDrawer;
     @BindView(R.id.app_bar) Toolbar mToolbar;
@@ -63,6 +66,9 @@ public class MainActivity extends AppCompatActivity implements NavigationHost,
         mDrawer.addDrawerListener(mToggle);
         mToggle.syncState();
 
+
+        fragmentManager = getSupportFragmentManager();
+
 //        mNavIconView = getToolbarNavigationIcon(mToolbar);
 
 
@@ -73,7 +79,7 @@ public class MainActivity extends AppCompatActivity implements NavigationHost,
 //        mToolbar.setNavigationOnClickListener(mNavIconClickListener);
 
         if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
+            fragmentManager.beginTransaction()
                     .add(R.id.main_container, new HomeFragment())
                     .commit();
         }
@@ -95,17 +101,7 @@ public class MainActivity extends AppCompatActivity implements NavigationHost,
 
     }
 
-//    @Override
-//    public void onPostCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
-//        super.onPostCreate(savedInstanceState, persistentState);
-//        mToggle.syncState();
-//    }
-//
-//    @Override
-//    public void onConfigurationChanged(Configuration newConfig) {
-//        super.onConfigurationChanged(newConfig);
-//        mToggle.onConfigurationChanged(newConfig);
-//    }
+
 
     @Override
     public void onBackPressed() {
@@ -249,7 +245,7 @@ public class MainActivity extends AppCompatActivity implements NavigationHost,
     @Override
     public void replaceFragment(Fragment fragment, boolean addToBackstack) {
         FragmentTransaction transaction =
-                getSupportFragmentManager()
+                fragmentManager
                 .beginTransaction()
                 .replace(R.id.main_container, fragment);
         if (addToBackstack) {
