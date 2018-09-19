@@ -65,24 +65,33 @@ public class HomeFragment extends Fragment {
 
     }
 
-    @OnClick(R.id.agencyinfo_test_textview)
-    void moveToAgencyInfoFragment(){
-        ((MainActivity)getActivity()).replaceFragment(new AgencyInfoFragment(), false);
-    }
+//    @OnClick(R.id.agencyinfo_test_textview)
+//    void moveToAgencyInfoFragment(){
+//        ((MainActivity)getActivity()).replaceFragment(new AgencyInfoFragment(), false);
+//    }
 
     @OnClick(R.id.btn_home_search)
     void moveToDistrictSelectionFragment() {
-        ((MainActivity)getActivity()).replaceFragment(new DistrictSelectionFragment(), false);
+        MainActivity.fragmentManager.beginTransaction()
+                .replace(R.id.main_container, new DistrictSelectionFragment(), null)
+                .addToBackStack(null)
+                .commit();
     }
 
     @OnClick(R.id.btn_home_living_info)
     void moveToLivingInfoFragment() {
-        ((MainActivity)getActivity()).replaceFragment(new LivingInfoFragment(), false);
+        MainActivity.fragmentManager.beginTransaction()
+                .replace(R.id.main_container, new LivingInfoFragment(), null)
+                .addToBackStack(null)
+                .commit();
     }
 
     @OnClick(R.id.btn_home_favorites)
     void moveToFavoritesFragment() {
-        ((MainActivity)getActivity()).replaceFragment(new FavoritesFragment(), false);
+        MainActivity.fragmentManager.beginTransaction()
+                .replace(R.id.main_container, new FavoritesFragment(), null)
+                .addToBackStack(null)
+                .commit();
     }
 
 

@@ -7,4 +7,6 @@
     <color name="toolbarIconColor">#FFCF44</color>
     <color name="loginPageBackgroundColor">#ffffff</color>
     <color name="mainFragBackgroundColor">#ffffff</color>
+
+    <color name="transparent">#00000000</color>
 </resources>

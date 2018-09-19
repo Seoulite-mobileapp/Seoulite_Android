@@ -32,31 +32,43 @@
 
     </RelativeLayout>
 
-    <TextView
-        android:id="@+id/agencyinfo_test_textview"
-        style="@style/Widget.Shrine.Button.TextButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="------------ shortcut ------------" />
+    <!--<TextView-->
+        <!--android:id="@+id/agencyinfo_test_textview"-->
+        <!--style="@style/Widget.Shrine.Button.TextButton"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45; shortcut &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;" />-->
 
     <android.support.design.button.MaterialButton
         android:id="@+id/btn_home_search"
-        style="@style/Widget.MaterialComponents.Button.TextButton"
-        android:layout_width="match_parent"
+        app:backgroundTint="@color/transparent"
+        android:textColor="@color/colorPrimary"
+        app:cornerRadius="6dp"
+        android:layout_width="300dp"
+        android:layout_gravity="center"
         android:layout_height="wrap_content"
         android:text="@string/search_by_district_label" />
 
     <android.support.design.button.MaterialButton
+        android:layout_marginTop="7dp"
         android:id="@+id/btn_home_living_info"
-        style="@style/Widget.MaterialComponents.Button.TextButton"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
+        android:layout_gravity="center"
         android:layout_height="wrap_content"
-        android:text="@string/living_info_label" />
+        android:text="@string/living_info_label"
+        app:backgroundTint="@color/transparent"
+        android:textColor="@color/colorPrimaryDark"
+        app:cornerRadius="6dp"/>
 
     <android.support.design.button.MaterialButton
         android:id="@+id/btn_home_favorites"
-        style="@style/Widget.MaterialComponents.Button.TextButton"
-        android:layout_width="match_parent"
+        android:layout_marginTop="7dp"
+        android:layout_width="300dp"
+        android:layout_gravity="center"
         android:layout_height="wrap_content"
-        android:text="@string/favorites_label" />
+        android:text="@string/favorites_label"
+        android:layout_marginBottom="50dp"
+        app:cornerRadius="6dp"
+        app:backgroundTint="@color/transparent"
+        android:textColor="@color/colorPrimaryDark"/>
 </LinearLayout>
