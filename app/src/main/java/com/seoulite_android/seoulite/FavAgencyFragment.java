@@ -1,6 +1,7 @@
 package com.seoulite_android.seoulite;
 
 
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
@@ -25,7 +26,7 @@ public class FavAgencyFragment extends Fragment {
 
     @BindView(R.id.btn_fav_find_agency) Button mFindAgencyButton;
 
-    private ArrayList<FavVO> mMockList = new ArrayList<>();
+    private ArrayList<FavVO> mFavAgencyList = new ArrayList<>();
 
     public FavAgencyFragment() {
         // Required empty public constructor
@@ -38,16 +39,24 @@ public class FavAgencyFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_fav_agency, container, false);
         ButterKnife.bind(this, view);
 
-        // Push mock data
-        mMockList.add(new FavVO(1, "Fucking Good Agency", 0, 1, null));
-        mMockList.add(new FavVO(2, "Certified Real Estate Agency", 0, 1, null));
-        mMockList.add(new FavVO(3, "Shit shat shut Agency", 0, 1, "Pretty fucking shit !"));
+        DbHelper dbHelper = new DbHelper(getContext());
+        Cursor cursor = dbHelper.getReadableDatabase()
+                .query("FAVORITES", null, "is_agency=?", new String[] {"1"}, null, null, null);
+
+        while (cursor.moveToNext()) {
+            mFavAgencyList.add(new FavVO(cursor.getInt(0), // id
+                    cursor.getString(1), // name
+                    cursor.getInt(2), // is_district
+                    cursor.getInt(3), // is_agency
+                    cursor.getString(4))); // memo
+        }
+        cursor.close();
 
         // Set up the recycler view
         RecyclerView recyclerView = view.findViewById(R.id.fav_district_recycler);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 1, GridLayoutManager.VERTICAL, false));
-        FavCardRecyclerViewAdapter adapter = new FavCardRecyclerViewAdapter(mMockList);
+        FavCardRecyclerViewAdapter adapter = new FavCardRecyclerViewAdapter(mFavAgencyList);
         recyclerView.setAdapter(adapter);
         return view;
     }
