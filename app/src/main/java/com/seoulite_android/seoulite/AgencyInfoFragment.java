@@ -6,15 +6,18 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.location.Address;
 import android.location.Geocoder;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.TextViewCompat;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -62,16 +65,14 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
     //todo: favorite check
 
     private boolean favorite_check = true;
-//<<<<<<< HEAD
-//    private int agencyId = 3; // 현재는 할당했지만 실제로는 전화면에서 받아와야
-//=======
-    private int agencyId = 2; // 현재는 할당했지만 실제로는 전화면에서 받아와야
-//>>>>>>> 0482821af2a3b6c4446387e57cf4ae12abb5624e
+
+    private String stragcId;
+    private int agencyId; // 현재는 할당했지만 실제로는 전화면에서 받아와야
 
     //db test
     DbHelper dbHelper;
     AgencyVO agency;
-
+    Snackbar snackBar;
 
     private LatLng AGENCYLatLng;
 
@@ -93,6 +94,7 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
     @Override
     public void onDetach() {
         super.onDetach();
+        snackBar.dismiss();
         activity = null;
     }
 
@@ -103,15 +105,17 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
 
         ButterKnife.bind(this, rootView);
 
-        //setTelephoneTextViews();
+        //getting agency id from previous fragment.
+        if(savedInstanceState ==null) {
+            gettingAgencyId();
+        }
 
         getAgencyInfo(agencyId); // db에서 전 화면에서 받아온 id를 이용해 sql select
-
-
 
         setTextViews(); //textview들을 setting
         setFlags(); // falg setting
 
+        createSnackbar();//snackbar
         checkIsFavorite(agencyId); //Favorite인지 아닌지 체크
         matchingFavoriteStar(favorite_check);
 
@@ -126,6 +130,23 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
         //Toast.makeText(activity, "난수는"+rand_tel+"&" +agency.getAgncNmKr(), Toast.LENGTH_LONG).show();
         return rootView;
     }
+    //Snackbar
+    private void createSnackbar(){
+        String warning = "Please call the agency before the visit in case of the address is changed.";
+        snackBar = Snackbar.make(activity.findViewById(android.R.id.content), warning, Snackbar.LENGTH_LONG);
+
+        snackBar.setAction("Close", new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                snackBar.dismiss();
+            }
+        });
+        snackBar.setDuration(Snackbar.LENGTH_INDEFINITE);
+        View snackBarView = snackBar.getView();
+        snackBarView.setBackgroundColor(Color.parseColor("#cc323232"));
+        snackBar.setActionTextColor(Color.parseColor("#009a9b"));
+        snackBar.show();
+    }
 
     @OnClick(R.id.linearlaout_agencyinfo_favorite)
     void favoriteInteraction(){
@@ -138,6 +159,16 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
             favoriteDb("insert",agencyId);
             matchingFavoriteStar(favorite_check);
             showAddFavoriteAlert();
+        }
+    }
+
+    private void gettingAgencyId(){
+        Bundle bundle = getArguments();
+        if(bundle != null){
+            stragcId = bundle.getString("agcId");
+            agencyId = Integer.parseInt(stragcId);
+        }else{
+            Toast.makeText(activity, "Can't get data. Try again.", Toast.LENGTH_LONG).show();
         }
     }
 
@@ -280,19 +311,18 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
     private void checkIsFavorite(int agencyId){// db에서 전 화면에서 받아온 id를 이용해 favorite select
         dbHelper = new DbHelper(activity);
         SQLiteDatabase db = dbHelper.getReadableDatabase();
-        String sqlFavorite = "SELECT * FROM FAVORITES where is_agency = "+ agencyId+" and is_district is null;";
+        String sqlFavorite = "SELECT * FROM FAVORITES where is_agency = "+ agencyId+" and is_district = 0;";
         Cursor cursor = db.rawQuery(sqlFavorite, null);
         if(cursor.getCount()==1){
             favorite_check = true;
             cursor.moveToNext();
-            Toast.makeText(activity, cursor.getString(1), Toast.LENGTH_LONG).show();
+            Toast.makeText(activity, "즐겨찾기 등록된 agency name:"+cursor.getString(1), Toast.LENGTH_LONG).show();
         }else{
             favorite_check = false;
         }
         cursor.close();
+        db.close();
     }
-    //ddd
-    //is_district INTEGER, is_agency INTEGER
 
     private void favoriteDb(String mode, int id){
         SQLiteDatabase db =  dbHelper.getWritableDatabase();

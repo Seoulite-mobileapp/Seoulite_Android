@@ -47,17 +47,21 @@ public class FavDistrictFragment extends Fragment {
         ButterKnife.bind(this, view);
 
         DbHelper dbHelper = new DbHelper(getContext());
+
+
         Cursor cursor = dbHelper.getReadableDatabase()
                 .query("FAVORITES", null, "is_district=?", new String[] {"1"}, null, null, null);
-
-        while (cursor.moveToNext()) {
-            mFavDistrictList.add(new FavVO(cursor.getInt(0), // id
-                    cursor.getString(1), // name
-                    cursor.getInt(2), // is_district
-                    cursor.getInt(3), // is_agency
-                    cursor.getString(4))); // memo
+        if (mFavDistrictList.size() != cursor.getCount()) {
+            while (cursor.moveToNext()) {
+                mFavDistrictList.add(new FavVO(cursor.getInt(0), // id
+                        cursor.getString(1), // name
+                        cursor.getInt(2), // is_district
+                        cursor.getInt(3), // is_agency
+                        cursor.getString(4))); // memo
+            }
         }
         cursor.close();
+
 
 
         // Set up the recycler view
