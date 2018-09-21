@@ -16,8 +16,8 @@ public class DistrictEntry {
         String[] districts = {"Gangnam-gu", "Gangdong-gu", "Gangbuk-gu", "Gangseo-gu",
                 "Gwanak-gu", "Gwangjin-gu", "Guro-gu", "Geumcheon-gu",
                 "Nowon-gu", "Dobong-gu", "Dongdaemun-gu", "Dongjak-gu",
-                "Mapo-gu", "Seodaemun-gu", "Seocho-gu", "Sungdong-gu",
-                "Sungbuk-gu", "Songpa-gu", "Yangcheon-gu", "Yeongdeungpo-gu",
+                "Mapo-gu", "Seodaemun-gu", "Seocho-gu", "Seongdong-gu",
+                "Seongbuk-gu", "Songpa-gu", "Yangcheon-gu", "Yeongdeungpo-gu",
                 "Yongsan-gu", "Eunpyeong-gu", "Jongno-gu", "Jung-gu", "Jungnang-gu"};
 
         Arrays.sort(districts);
