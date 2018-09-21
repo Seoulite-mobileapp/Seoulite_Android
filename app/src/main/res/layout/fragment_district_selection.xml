@@ -7,6 +7,7 @@
     android:orientation="vertical"
     android:background="@color/mainFragBackgroundColor">
     <ImageView
+        android:id="@+id/district_loc_image"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="2"/>

@@ -169,7 +169,7 @@ public class MainActivity extends AppCompatActivity implements NavigationHost,
                 replaceFragment(new DistrictSelectionFragment(), true);
                 break;
             case R.id.nav_district_info:
-                replaceFragment(new LivingInfoFragment(), true);
+                replaceFragment(new DistrictSelectionLivingInfoFragment(), true);
                 break;
             case R.id.nav_favorites:
                 replaceFragment(new FavoritesFragment(), true);
