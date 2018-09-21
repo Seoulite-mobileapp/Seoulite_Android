@@ -80,7 +80,7 @@ public class HomeFragment extends Fragment {
     @OnClick(R.id.btn_home_living_info)
     void moveToLivingInfoFragment() {
         MainActivity.fragmentManager.beginTransaction()
-                .replace(R.id.main_container, new LivingInfoFragment(), null)
+                .replace(R.id.main_container, new DistrictSelectionLivingInfoFragment(), null)
                 .addToBackStack(null)
                 .commit();
     }
