@@ -1,6 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <android.support.design.button.MaterialButton
+        android:id="@+id/btn_language_setting_en"
+        android:background="@drawable/btn_transparent_bg_bordered"
+        android:textColor="#009a9b"
+        app:cornerRadius="6dp"
+        android:layout_marginTop="150dp"
+        android:layout_width="150dp"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:text="English" />
+
+    <android.support.design.button.MaterialButton
+        android:id="@+id/btn_language_setting_kr"
+        android:background="@drawable/btn_transparent_bg_bordered"
+        android:textColor="#009a9b"
+        app:cornerRadius="6dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="100dp"
+        android:layout_width="150dp"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:text="Korean" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Team Seoulite is trying our best
+        to provide more other languages."
+        android:textColor="#666666"
+        android:textSize="15sp"
+        android:textStyle="bold" />
 
 </LinearLayout>
