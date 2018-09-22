@@ -1,6 +1,7 @@
 package com.seoulite_android.seoulite;
 
 import android.app.AlertDialog;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -270,7 +271,7 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
         builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                (activity).replaceFragment(new FavoritesFragment(), false);
+                (activity).replaceFragment(new FavoritesFragment(), true);
 
             }
         });
@@ -328,9 +329,12 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
         SQLiteDatabase db =  dbHelper.getWritableDatabase();
         String sql;
         if(mode.equals("insert")){
-            sql = "INSERT INTO FAVORITES (name, is_district, is_agency, memo) values ('"
-                    + agency.getAgncNmEn() +"', 0, "+ id +", NULL);";
-            db.execSQL(sql);
+            ContentValues values = new ContentValues();
+            values.put("name", agency.getAgncNmEn());
+            values.put("is_district", 0);
+            values.put("is_agency", 1);
+            values.put("memo", "");
+            db.insert("FAVORITES", null, values);
         }else if(mode.equals("delete")){
             sql = "DELETE FROM FAVORITES WHERE is_agency = "+id+";";
             db.execSQL(sql);
