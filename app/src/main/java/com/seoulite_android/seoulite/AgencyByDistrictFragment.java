@@ -163,8 +163,11 @@ public class AgencyByDistrictFragment extends Fragment {
                     bundle2.putString("agcId", selectedAgcId);
                     agencyInfoFragment.setArguments(bundle2);
 
-                    getFragmentManager().beginTransaction().add(R.id.main_container, agencyInfoFragment).commit();
+                    getFragmentManager().beginTransaction().replace(R.id.main_container, agencyInfoFragment)
+                            .addToBackStack(null)
+                            .commit();
                     //((MainActivity)getActivity()).replaceFragment(new AgencyInfoFragment(), false);
+
                 }
             });
 
