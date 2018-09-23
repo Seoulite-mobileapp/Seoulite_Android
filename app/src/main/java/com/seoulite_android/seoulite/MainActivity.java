@@ -49,6 +49,9 @@ public class MainActivity extends AppCompatActivity implements NavigationHost,
     private LivingInfoFragment mLivingInfoFragment;
     private FavoritesFragment mFavoritesFragment;
 
+    private SearchView mSearchView;
+    private SearchView.SearchAutoComplete mSearchAutoComplete;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -117,10 +120,11 @@ public class MainActivity extends AppCompatActivity implements NavigationHost,
         getMenuInflater().inflate(R.menu.toolbar_menu, menu);
 
         MenuItem search = menu.findItem(R.id.app_bar_search);
-        SearchView searchView = (android.support.v7.widget.SearchView)search.getActionView();
-        searchView.setQueryHint("Search");
+        mSearchView = (android.support.v7.widget.SearchView)search.getActionView();
+        mSearchView.setQueryHint("Search");
 
         // TODO: Activate Search Action
+
 
         return true;
     }
@@ -175,7 +179,7 @@ public class MainActivity extends AppCompatActivity implements NavigationHost,
                 replaceFragment(new FavoritesFragment(), true);
                 break;
             case R.id.nav_languages:
-                // TODO: Language Settings Fragment
+                replaceFragment(new LanguageSettingFragment(), true);
                 break;
         }
 
