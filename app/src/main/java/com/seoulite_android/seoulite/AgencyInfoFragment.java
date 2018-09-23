@@ -67,11 +67,12 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
     private boolean favorite_check = true;
 
     private String stragcId;
-    private int agencyId; // 현재는 할당했지만 실제로는 전화면에서 받아와야
+    private int agencyId;
 
     //db test
     DbHelper dbHelper;
     AgencyVO agency;
+
     Snackbar snackBar;
 
     private LatLng AGENCYLatLng;
@@ -96,6 +97,18 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
         super.onDetach();
         snackBar.dismiss();
         activity = null;
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        snackBar.dismiss();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        snackBar.dismiss();
     }
 
     @Nullable
@@ -129,23 +142,6 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
         //for test
         //Toast.makeText(activity, "난수는"+rand_tel+"&" +agency.getAgncNmKr(), Toast.LENGTH_LONG).show();
         return rootView;
-    }
-    //Snackbar
-    private void createSnackbar(){
-        String warning = "Please call the agency before the visit in case of the address is changed.";
-        snackBar = Snackbar.make(activity.findViewById(android.R.id.content), warning, Snackbar.LENGTH_LONG);
-
-        snackBar.setAction("Close", new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                snackBar.dismiss();
-            }
-        });
-        snackBar.setDuration(Snackbar.LENGTH_INDEFINITE);
-        View snackBarView = snackBar.getView();
-        snackBarView.setBackgroundColor(Color.parseColor("#cc323232"));
-        snackBar.setActionTextColor(Color.parseColor("#009a9b"));
-        snackBar.show();
     }
 
     @OnClick(R.id.linearlaout_agencyinfo_favorite)
@@ -256,6 +252,24 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
         }
     }
 
+    //Snackbar
+    private void createSnackbar(){
+        String warning = "Please call the agency before the visit in case of the address is changed.";
+        snackBar = Snackbar.make(activity.findViewById(android.R.id.content), warning, Snackbar.LENGTH_LONG);
+
+        snackBar.setAction("Close", new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                snackBar.dismiss();
+            }
+        });
+        snackBar.setDuration(Snackbar.LENGTH_INDEFINITE);
+        View snackBarView = snackBar.getView();
+        snackBarView.setBackgroundColor(Color.parseColor("#cc323232"));
+        snackBar.setActionTextColor(Color.parseColor("#009a9b"));
+        snackBar.show();
+    }
+
     private void matchingFavoriteStar(boolean check){
         if(check) favorite_star.setImageResource(R.drawable.agencyinfo_star_on);
         else favorite_star.setImageResource(R.drawable.agencyinfo_star_off);
@@ -270,8 +284,11 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
         builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                (activity).replaceFragment(new FavoritesFragment(), false);
-
+                //(activity).replaceFragment(new FavoritesFragment(), false);
+                activity.getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.main_container, new FavoritesFragment(), null)
+                        .addToBackStack(null)
+                        .commit();
             }
         });
         builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
@@ -352,8 +369,8 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
     private void addMarkerToMap() {
         mAgency = mMap.addMarker(new MarkerOptions()
                 .position(AGENCYLatLng)
-                .title("Eden Agency")
-                .snippet("Eng, Jap"));
+                .title("Click")
+                .snippet("to open Google Maps"));
     }
 
     @Override
