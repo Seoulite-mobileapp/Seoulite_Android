@@ -39,9 +39,10 @@ public class HomeFragment extends Fragment {
         // Create images array
         mImages = new ArrayList<>();
         // TODO: Temp Code, Needs Refactoring
-        mImages.add(getResources().getDrawable(R.drawable.sample_1));
-        mImages.add(getResources().getDrawable(R.drawable.sample_2));
-        mImages.add(getResources().getDrawable(R.drawable.sample_3));
+
+        mImages.add(getResources().getDrawable(R.drawable.home_01));
+        mImages.add(getResources().getDrawable(R.drawable.home_02));
+        mImages.add(getResources().getDrawable(R.drawable.home_03));
 
         mViewPager.setAdapter(new SliderAdapter(getContext(), mImages));
         mIndicator.setupWithViewPager(mViewPager, true);
@@ -81,7 +82,7 @@ public class HomeFragment extends Fragment {
     @OnClick(R.id.btn_home_living_info)
     void moveToLivingInfoFragment() {
         MainActivity.fragmentManager.beginTransaction()
-                .replace(R.id.main_container, new LivingInfoFragment(), null)
+                .replace(R.id.main_container, new DistrictSelectionLivingInfoFragment(), null)
                 .addToBackStack(null)
                 .commit();
     }

@@ -1,6 +1,7 @@
 package com.seoulite_android.seoulite;
 
 import android.app.AlertDialog;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -284,11 +285,16 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
         builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
+<<<<<<< HEAD
                 //(activity).replaceFragment(new FavoritesFragment(), false);
                 activity.getSupportFragmentManager().beginTransaction()
                         .replace(R.id.main_container, new FavoritesFragment(), null)
                         .addToBackStack(null)
                         .commit();
+=======
+                (activity).replaceFragment(new FavoritesFragment(), true);
+
+>>>>>>> 45effe9003147a8f5de923e21defcaddaf7ab772
             }
         });
         builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
@@ -345,9 +351,12 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
         SQLiteDatabase db =  dbHelper.getWritableDatabase();
         String sql;
         if(mode.equals("insert")){
-            sql = "INSERT INTO FAVORITES (name, is_district, is_agency, memo) values ('"
-                    + agency.getAgncNmEn() +"', 0, "+ id +", NULL);";
-            db.execSQL(sql);
+            ContentValues values = new ContentValues();
+            values.put("name", agency.getAgncNmEn());
+            values.put("is_district", 0);
+            values.put("is_agency", 1);
+            values.put("memo", "");
+            db.insert("FAVORITES", null, values);
         }else if(mode.equals("delete")){
             sql = "DELETE FROM FAVORITES WHERE is_agency = "+id+";";
             db.execSQL(sql);
