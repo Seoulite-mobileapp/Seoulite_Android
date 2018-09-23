@@ -5,6 +5,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
@@ -45,6 +46,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Locale;
 import java.util.Random;
 
 import butterknife.BindView;
@@ -55,6 +57,10 @@ import butterknife.OnClick;
 public class AgencyInfoFragment extends Fragment implements OnMarkerClickListener, OnMapReadyCallback {
     ViewGroup rootView;
     MainActivity activity;
+
+    //Declaration for getLanguage
+    private Locale systemLocale;
+    private String currentLangauge;
 
     private Geocoder geocoder;
     private GoogleMap mMap;
@@ -96,14 +102,7 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
     @Override
     public void onDetach() {
         super.onDetach();
-        snackBar.dismiss();
         activity = null;
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        snackBar.dismiss();
     }
 
     @Override
@@ -116,6 +115,11 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         rootView = (ViewGroup) inflater.inflate(R.layout.fragment_agency_info, container, false);
+        //getLanguage
+        systemLocale = activity.getResources().getConfiguration().locale;
+        currentLangauge = systemLocale.getLanguage();
+
+        Toast.makeText(activity, "현재"+currentLangauge, Toast.LENGTH_LONG).show();
 
         ButterKnife.bind(this, rootView);
 
@@ -126,10 +130,10 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
 
         getAgencyInfo(agencyId); // db에서 전 화면에서 받아온 id를 이용해 sql select
 
-        setTextViews(); //textview들을 setting
+        setTextViews(currentLangauge); //textview들을 setting
         setFlags(); // falg setting
 
-        createSnackbar();//snackbar
+        createSnackbar(currentLangauge);//snackbar
         checkIsFavorite(agencyId); //Favorite인지 아닌지 체크
         matchingFavoriteStar(favorite_check);
 
@@ -185,20 +189,29 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
         db.close();
     }
 
+    private void setTextViews(String currentLangauge){ //textview들을 setting
 
-    private void setTextViews(){ //textview들을 setting
-        //set agencyName
         TextView textviewAgencyName = (TextView) rootView.findViewById(R.id.textview_agencyinfo_agencyName);
-        textviewAgencyName.setText(agency.getAgncNmEn());
-
-        //set agencyAddress
         TextView textviewAgencyAddress = (TextView) rootView.findViewById(R.id.textview_agencyinfo_address);
-        agencyAddress = agency.getAdrDtEn();
-        textviewAgencyAddress.setText(agencyAddress);
-
-        //set ownerName
         TextView textviewOwner = (TextView) rootView.findViewById(R.id.textview_agencyinfo_representative);
-        textviewOwner.setText(agency.getOwnEn());
+
+
+        agencyAddress = agency.getAdrDtEn();
+
+        if(currentLangauge.equals("en")){
+            //set agencyName
+            textviewAgencyName.setText(agency.getAgncNmEn());
+
+            //set agencyAddress
+            textviewAgencyAddress.setText(agencyAddress);
+
+            //set ownerName
+            textviewOwner.setText(agency.getOwnEn());
+        }else if(currentLangauge.equals("ko")){
+            textviewAgencyName.setText(agency.getAgncNmKr());
+            textviewAgencyAddress.setText(agency.getAdrDtKr());
+            textviewOwner.setText(agency.getOwnKr());
+        }
 
         //set fax
         TextView textviewFax = (TextView) rootView.findViewById(R.id.textview_agencyinfo_fax);
@@ -254,8 +267,13 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
     }
 
     //Snackbar
-    private void createSnackbar(){
-        String warning = "Please call the agency before the visit in case of the address is changed.";
+    private void createSnackbar(String currentLangauge){
+        String warning = null;
+        if(currentLangauge.equals("en")){
+            warning = "Please call the agency before the visit in case of the address is changed.";
+        }else if(currentLangauge.equals("ko")){
+            warning = "주소가 바뀌었을 수 있으니 전화 후 방문해주세요.";
+        }
         snackBar = Snackbar.make(activity.findViewById(android.R.id.content), warning, Snackbar.LENGTH_LONG);
 
         snackBar.setAction("Close", new View.OnClickListener() {
@@ -285,16 +303,15 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
         builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-<<<<<<< HEAD
+
                 //(activity).replaceFragment(new FavoritesFragment(), false);
-                activity.getSupportFragmentManager().beginTransaction()
+             /*   activity.getSupportFragmentManager().beginTransaction()
                         .replace(R.id.main_container, new FavoritesFragment(), null)
                         .addToBackStack(null)
-                        .commit();
-=======
+                        .commit();*/
+
                 (activity).replaceFragment(new FavoritesFragment(), true);
 
->>>>>>> 45effe9003147a8f5de923e21defcaddaf7ab772
             }
         });
         builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
@@ -354,7 +371,7 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
             ContentValues values = new ContentValues();
             values.put("name", agency.getAgncNmEn());
             values.put("is_district", 0);
-            values.put("is_agency", 1);
+            values.put("is_agency", id);
             values.put("memo", "");
             db.insert("FAVORITES", null, values);
         }else if(mode.equals("delete")){
