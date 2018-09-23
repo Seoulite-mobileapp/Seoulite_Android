@@ -175,7 +175,7 @@ public class MainActivity extends AppCompatActivity implements NavigationHost,
                 replaceFragment(new FavoritesFragment(), true);
                 break;
             case R.id.nav_languages:
-                // TODO: Language Settings Fragment
+                replaceFragment(new LanguageSettingFragment(), true);
                 break;
         }
 
