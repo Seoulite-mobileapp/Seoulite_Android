@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Seoulite</string>
+    <string name="search_by_district_label">글로벌 부동산</string>
+    <string name="living_info_label">자치구 거주 정보</string>
+    <string name="favorites_label">즐겨찾기</string>
+
+
+    <string name="agencyinfo_addtofavorites">즐겨찾기 추가</string>
+    <string name="agencyinfo_address">주소</string>
+    <string name="agencyinfo_representative">대표자명</string>
+    <string name="agencyinfo_phone">전화번호</string>
+    <string name="agencyinfo_fax">팩스</string>
+    <string name="agencyinfo_languageAvailable">서비스 언어</string>
+    <string name="agencyinfo_notice">주소가 바뀌었을 수 있으니 전화 후 방문해주세요.</string>
+
+    <string name="languageSetting_eng">영어</string>
+    <string name="languageSetting_kor">한국어</string>
+    <string name="languageSetting_info">서울라이트는 더 많은 언어로 서비스를 제공할 예정입니다. 감사합니다.</string>
+</resources>

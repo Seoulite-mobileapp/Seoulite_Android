@@ -1,9 +1,11 @@
 package com.seoulite_android.seoulite;
 
 import android.app.AlertDialog;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
@@ -44,6 +46,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Locale;
 import java.util.Random;
 
 import butterknife.BindView;
@@ -54,6 +57,10 @@ import butterknife.OnClick;
 public class AgencyInfoFragment extends Fragment implements OnMarkerClickListener, OnMapReadyCallback {
     ViewGroup rootView;
     MainActivity activity;
+
+    //Declaration for getLanguage
+    private Locale systemLocale;
+    private String currentLangauge;
 
     private Geocoder geocoder;
     private GoogleMap mMap;
@@ -67,11 +74,12 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
     private boolean favorite_check = true;
 
     private String stragcId;
-    private int agencyId; // 현재는 할당했지만 실제로는 전화면에서 받아와야
+    private int agencyId;
 
     //db test
     DbHelper dbHelper;
     AgencyVO agency;
+
     Snackbar snackBar;
 
     private LatLng AGENCYLatLng;
@@ -94,14 +102,24 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
     @Override
     public void onDetach() {
         super.onDetach();
-        snackBar.dismiss();
         activity = null;
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        snackBar.dismiss();
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         rootView = (ViewGroup) inflater.inflate(R.layout.fragment_agency_info, container, false);
+        //getLanguage
+        systemLocale = activity.getResources().getConfiguration().locale;
+        currentLangauge = systemLocale.getLanguage();
+
+        Toast.makeText(activity, "현재"+currentLangauge, Toast.LENGTH_LONG).show();
 
         ButterKnife.bind(this, rootView);
 
@@ -112,10 +130,10 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
 
         getAgencyInfo(agencyId); // db에서 전 화면에서 받아온 id를 이용해 sql select
 
-        setTextViews(); //textview들을 setting
+        setTextViews(currentLangauge); //textview들을 setting
         setFlags(); // falg setting
 
-        createSnackbar();//snackbar
+        createSnackbar(currentLangauge);//snackbar
         checkIsFavorite(agencyId); //Favorite인지 아닌지 체크
         matchingFavoriteStar(favorite_check);
 
@@ -129,23 +147,6 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
         //for test
         //Toast.makeText(activity, "난수는"+rand_tel+"&" +agency.getAgncNmKr(), Toast.LENGTH_LONG).show();
         return rootView;
-    }
-    //Snackbar
-    private void createSnackbar(){
-        String warning = "Please call the agency before the visit in case of the address is changed.";
-        snackBar = Snackbar.make(activity.findViewById(android.R.id.content), warning, Snackbar.LENGTH_LONG);
-
-        snackBar.setAction("Close", new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                snackBar.dismiss();
-            }
-        });
-        snackBar.setDuration(Snackbar.LENGTH_INDEFINITE);
-        View snackBarView = snackBar.getView();
-        snackBarView.setBackgroundColor(Color.parseColor("#cc323232"));
-        snackBar.setActionTextColor(Color.parseColor("#009a9b"));
-        snackBar.show();
     }
 
     @OnClick(R.id.linearlaout_agencyinfo_favorite)
@@ -188,20 +189,29 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
         db.close();
     }
 
+    private void setTextViews(String currentLangauge){ //textview들을 setting
 
-    private void setTextViews(){ //textview들을 setting
-        //set agencyName
         TextView textviewAgencyName = (TextView) rootView.findViewById(R.id.textview_agencyinfo_agencyName);
-        textviewAgencyName.setText(agency.getAgncNmEn());
-
-        //set agencyAddress
         TextView textviewAgencyAddress = (TextView) rootView.findViewById(R.id.textview_agencyinfo_address);
-        agencyAddress = agency.getAdrDtEn();
-        textviewAgencyAddress.setText(agencyAddress);
-
-        //set ownerName
         TextView textviewOwner = (TextView) rootView.findViewById(R.id.textview_agencyinfo_representative);
-        textviewOwner.setText(agency.getOwnEn());
+
+
+        agencyAddress = agency.getAdrDtEn();
+
+        if(currentLangauge.equals("en")){
+            //set agencyName
+            textviewAgencyName.setText(agency.getAgncNmEn());
+
+            //set agencyAddress
+            textviewAgencyAddress.setText(agencyAddress);
+
+            //set ownerName
+            textviewOwner.setText(agency.getOwnEn());
+        }else if(currentLangauge.equals("ko")){
+            textviewAgencyName.setText(agency.getAgncNmKr());
+            textviewAgencyAddress.setText(agency.getAdrDtKr());
+            textviewOwner.setText(agency.getOwnKr());
+        }
 
         //set fax
         TextView textviewFax = (TextView) rootView.findViewById(R.id.textview_agencyinfo_fax);
@@ -256,6 +266,29 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
         }
     }
 
+    //Snackbar
+    private void createSnackbar(String currentLangauge){
+        String warning = null;
+        if(currentLangauge.equals("en")){
+            warning = "Please call the agency before the visit in case of the address is changed.";
+        }else if(currentLangauge.equals("ko")){
+            warning = "주소가 바뀌었을 수 있으니 전화 후 방문해주세요.";
+        }
+        snackBar = Snackbar.make(activity.findViewById(android.R.id.content), warning, Snackbar.LENGTH_LONG);
+
+        snackBar.setAction("Close", new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                snackBar.dismiss();
+            }
+        });
+        snackBar.setDuration(Snackbar.LENGTH_INDEFINITE);
+        View snackBarView = snackBar.getView();
+        snackBarView.setBackgroundColor(Color.parseColor("#cc323232"));
+        snackBar.setActionTextColor(Color.parseColor("#009a9b"));
+        snackBar.show();
+    }
+
     private void matchingFavoriteStar(boolean check){
         if(check) favorite_star.setImageResource(R.drawable.agencyinfo_star_on);
         else favorite_star.setImageResource(R.drawable.agencyinfo_star_off);
@@ -270,7 +303,14 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
         builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                (activity).replaceFragment(new FavoritesFragment(), false);
+
+                //(activity).replaceFragment(new FavoritesFragment(), false);
+             /*   activity.getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.main_container, new FavoritesFragment(), null)
+                        .addToBackStack(null)
+                        .commit();*/
+
+                (activity).replaceFragment(new FavoritesFragment(), true);
 
             }
         });
@@ -328,9 +368,12 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
         SQLiteDatabase db =  dbHelper.getWritableDatabase();
         String sql;
         if(mode.equals("insert")){
-            sql = "INSERT INTO FAVORITES (name, is_district, is_agency, memo) values ('"
-                    + agency.getAgncNmEn() +"', 0, "+ id +", NULL);";
-            db.execSQL(sql);
+            ContentValues values = new ContentValues();
+            values.put("name", agency.getAgncNmEn());
+            values.put("is_district", 0);
+            values.put("is_agency", id);
+            values.put("memo", "");
+            db.insert("FAVORITES", null, values);
         }else if(mode.equals("delete")){
             sql = "DELETE FROM FAVORITES WHERE is_agency = "+id+";";
             db.execSQL(sql);
@@ -352,8 +395,8 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
     private void addMarkerToMap() {
         mAgency = mMap.addMarker(new MarkerOptions()
                 .position(AGENCYLatLng)
-                .title("Eden Agency")
-                .snippet("Eng, Jap"));
+                .title("Click")
+                .snippet("to open Google Maps"));
     }
 
     @Override

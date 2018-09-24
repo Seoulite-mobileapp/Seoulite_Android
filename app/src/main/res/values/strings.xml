@@ -30,4 +30,7 @@
     <string name="agencyinfo_languageAvailable">Language Available</string>
     <string name="agencyinfo_notice">Please call the agency before the visit in case of the address is changed.</string>
 
+    <string name="languageSetting_kor">Korean</string>
+    <string name="languageSetting_eng">English</string>
+    <string name="languageSetting_info">Team Seoulite is trying our best to provide more other languages.</string>
 </resources>
