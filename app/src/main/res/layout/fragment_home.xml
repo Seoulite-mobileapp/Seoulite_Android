@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/mainFragBackgroundColor"
     android:elevation="8dp"
     android:orientation="vertical">
@@ -22,53 +23,53 @@
 
         <android.support.design.widget.TabLayout
             android:id="@+id/indicator"
-            app:tabBackground="@drawable/indicator_selector"
-            app:tabGravity="center"
-            app:tabIndicatorHeight="0dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_centerInParent="true" />
+            android:layout_centerInParent="true"
+            app:tabBackground="@drawable/indicator_selector"
+            app:tabGravity="center"
+            app:tabIndicatorHeight="0dp" />
 
     </RelativeLayout>
 
     <!--<TextView-->
-        <!--android:id="@+id/agencyinfo_test_textview"-->
-        <!--style="@style/Widget.Shrine.Button.TextButton"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45; shortcut &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;" />-->
+    <!--android:id="@+id/agencyinfo_test_textview"-->
+    <!--style="@style/Widget.Shrine.Button.TextButton"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45; shortcut &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;" />-->
 
     <android.support.design.button.MaterialButton
         android:id="@+id/btn_home_search"
-        app:backgroundTint="@color/transparent"
-        android:textColor="@color/colorPrimary"
-        app:cornerRadius="6dp"
         android:layout_width="300dp"
-        android:layout_gravity="center"
         android:layout_height="wrap_content"
-        android:text="@string/search_by_district_label" />
+        android:layout_gravity="center"
+        android:text="@string/search_by_district_label"
+        android:textColor="@color/colorPrimary"
+        app:backgroundTint="@color/transparent"
+        app:cornerRadius="6dp" />
 
     <android.support.design.button.MaterialButton
-        android:layout_marginTop="7dp"
         android:id="@+id/btn_home_living_info"
         android:layout_width="300dp"
-        android:layout_gravity="center"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="7dp"
         android:text="@string/living_info_label"
-        app:backgroundTint="@color/transparent"
         android:textColor="@color/colorPrimaryDark"
-        app:cornerRadius="6dp"/>
+        app:backgroundTint="@color/transparent"
+        app:cornerRadius="6dp" />
 
     <android.support.design.button.MaterialButton
         android:id="@+id/btn_home_favorites"
-        android:layout_marginTop="7dp"
         android:layout_width="300dp"
-        android:layout_gravity="center"
         android:layout_height="wrap_content"
-        android:text="@string/favorites_label"
+        android:layout_gravity="center"
         android:layout_marginBottom="50dp"
-        app:cornerRadius="6dp"
+        android:layout_marginTop="7dp"
+        android:text="@string/favorites_label"
+        android:textColor="@color/colorPrimaryDark"
         app:backgroundTint="@color/transparent"
-        android:textColor="@color/colorPrimaryDark"/>
+        app:cornerRadius="6dp" />
 </LinearLayout>

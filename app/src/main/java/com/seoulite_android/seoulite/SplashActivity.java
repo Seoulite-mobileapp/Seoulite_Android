@@ -11,23 +11,18 @@ import android.widget.TextView;
 
 public class SplashActivity extends AppCompatActivity {
 
-    private ImageView mManIcon;
-    private ImageView mWomanIcon;
-    private TextView mAppName;
+    private ImageView mAppLogo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        mManIcon = findViewById(R.id.man_image);
-        mWomanIcon = findViewById(R.id.woman_image);
-        mAppName = findViewById(R.id.appname_text);
+        mAppLogo = findViewById(R.id.splash_app_logo);
+
 
         Animation splashAnim = AnimationUtils.loadAnimation(this, R.anim.anim_splash);
-        mManIcon.startAnimation(splashAnim);
-        mWomanIcon.startAnimation(splashAnim);
-        mAppName.startAnimation(splashAnim);
+        mAppLogo.startAnimation(splashAnim);
 
         Thread timer = new Thread() {
             @Override
