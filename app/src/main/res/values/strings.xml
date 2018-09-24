@@ -13,7 +13,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-    <string name="search_title">Search</string>
+    <string name="search_hint">Please enter District name.</string>
 
     <string name="search_by_district_label">Search Agencies</string>
     <string name="living_info_label">Living Info</string>

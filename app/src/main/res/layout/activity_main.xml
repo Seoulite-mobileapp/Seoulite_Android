@@ -1,68 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
-    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
-    <!--xmlns:tools="http://schemas.android.com/tools"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="match_parent"-->
-    <!--android:orientation="vertical"-->
-    <!--tools:context=".MainActivity">-->
-
-    <!--<LinearLayout-->
-        <!--style="@style/Widget.Shrine.Backdrop"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:gravity="center_horizontal"-->
-        <!--android:orientation="vertical"-->
-        <!--android:paddingTop="88dp">-->
-
-        <!--<include layout="@layout/backdrop_menu" />-->
-
-    <!--</LinearLayout>-->
-
-
-    <!--<android.support.design.widget.AppBarLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--app:elevation="0dp">-->
-
-        <!--<android.support.v7.widget.Toolbar-->
-            <!--android:id="@+id/app_bar"-->
-            <!--style="@style/Widget.Shrine.Toolbar"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="?attr/actionBarSize"-->
-            <!--app:navigationIcon="@drawable/ic_hamburger_menu"-->
-            <!--app:title="@string/app_name" />-->
-    <!--</android.support.design.widget.AppBarLayout>-->
-
-
-    <!--<FrameLayout-->
-        <!--android:id="@+id/main_container"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:layout_marginTop="56dp"-->
-        <!--android:elevation="8dp">-->
-
-
-        <!--<android.support.v4.widget.NestedScrollView-->
-        <!--android:id="@+id/main_container"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:background="@color/productGridBackgroundColor"-->
-        <!--android:elevation="8dp"-->
-        <!--app:layout_behavior="@string/appbar_scrolling_view_behavior">-->
-
-        <!--<android.support.v7.widget.RecyclerView-->
-        <!--android:id="@+id/recycler_view"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent" />-->
-
-        <!--</android.support.v4.widget.NestedScrollView>-->
-
-    <!--</FrameLayout>-->
-
-
-<!--</FrameLayout>-->
-
 <android.support.v4.widget.DrawerLayout android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -73,27 +9,47 @@
     tools:openDrawer="start"
     tools:context=".MainActivity">
 
+
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-
-
-            <android.support.v7.widget.Toolbar
-                android:id="@+id/app_bar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                app:title="@string/app_name"
-                android:fitsSystemWindows="true"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize" />
 
 
         <FrameLayout
             android:id="@+id/main_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
+
+
+
     </LinearLayout>
+
+
+
+    <FrameLayout
+        android:id="@+id/toolbar_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="5dp">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="@string/app_name"
+            android:fitsSystemWindows="true"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+        <com.miguelcatalan.materialsearchview.MaterialSearchView
+            android:id="@+id/search_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </FrameLayout>
 
     <android.support.design.widget.NavigationView
         android:id="@+id/nav_view"
@@ -101,7 +57,9 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         app:headerLayout="@layout/nav_header"
-        app:menu="@menu/drawer_menu" >
+        app:theme="@style/ThemeOverlay.AppCompat.navTheme"
+        app:menu="@menu/drawer_menu"
+        app:itemBackground="@android:color/transparent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -118,6 +76,7 @@
 
         </LinearLayout>
     </android.support.design.widget.NavigationView>
+
 
 
 </android.support.v4.widget.DrawerLayout>
