@@ -39,8 +39,10 @@ public class LivingInfoFragment extends Fragment {
         //getting agency id from previous fragment.
         if(savedInstanceState ==null) {
             gettingDistName();
+            TextView mLivingInfoDistrictName = (TextView) view.findViewById(R.id.text_living_info_district_name);
+            mLivingInfoDistrictName.setText(distName);
 
-            /*changeImage(distName);*/
+            changeImageLivingInfo(distName);
 
             /*living_info_map_image.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -51,8 +53,7 @@ public class LivingInfoFragment extends Fragment {
             }*/
 
         }
-        TextView mLivingInfoDistrictName = (TextView) view.findViewById(R.id.text_living_info_district_name);
-        mLivingInfoDistrictName.setText(distName);
+
 
 
         return view;
@@ -73,9 +74,10 @@ public class LivingInfoFragment extends Fragment {
         }
     }
 
-    /*private void changeImage(String distName) {
+    private void changeImageLivingInfo (String distName) {
         switch (distName) {
             case "Gangnam-gu":
+                //living_info_map_image.setImageResource(R.drawable.gangnamgu);
                 living_info_map_image.setImageDrawable(getResources().getDrawable(R.drawable.gangnamgu));
                 break;
             case "Gangdong-gu":
@@ -154,7 +156,7 @@ public class LivingInfoFragment extends Fragment {
                 living_info_map_image.setImageDrawable(getResources().getDrawable(R.drawable.agencyinfo_fax));
                 break;
         }
-    }*/
+    }
 
     /*public void showPopUp(String distName){
         Dialog dialog = new Dialog(getActivity());
