@@ -1,40 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".SplashActivity" >
 
-    <TextView
-        android:id="@+id/appname_text"
-        android:layout_width="wrap_content"
+
+    <ImageView
+        android:id="@+id/splash_app_logo"
+        android:layout_centerInParent="true"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/advent_pro_semibold"
-        android:text="Seoulite"
-        android:textColor="#ffffff"
-        android:textSize="35dp"
-         />
-
-    <ImageView
-        android:id="@+id/man_image"
-        android:layout_width="110dp"
-        android:layout_height="110dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="8dp"
-        app:srcCompat="@drawable/korean_man" />
-
-    <ImageView
-        android:id="@+id/woman_image"
-        android:layout_width="110dp"
-        android:layout_height="110dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="80dp"
-        android:layout_marginTop="8dp"
-        app:srcCompat="@drawable/korean_woman" />
-</LinearLayout>
+        android:src="@drawable/seoulite_logo"/>
+</RelativeLayout>

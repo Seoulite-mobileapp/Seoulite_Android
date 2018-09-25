@@ -13,6 +13,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.ViewCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -22,8 +23,12 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
+
+import com.miguelcatalan.materialsearchview.MaterialSearchView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -41,6 +46,7 @@ public class MainActivity extends AppCompatActivity implements NavigationHost,
 
     ActionBarDrawerToggle mToggle;
 
+    List<String> mDistrictList = DistrictEntry.getDistrictList();
 
     // Fragments
     private HomeFragment mHomeFragment;
@@ -49,7 +55,7 @@ public class MainActivity extends AppCompatActivity implements NavigationHost,
     private LivingInfoFragment mLivingInfoFragment;
     private FavoritesFragment mFavoritesFragment;
 
-    private SearchView mSearchView;
+    @BindView(R.id.search_view) MaterialSearchView mSearchView;
     private SearchView.SearchAutoComplete mSearchAutoComplete;
 
 
@@ -63,6 +69,7 @@ public class MainActivity extends AppCompatActivity implements NavigationHost,
         setSupportActionBar(mToolbar);
         mToggle = new ActionBarDrawerToggle(this, mDrawer, mToolbar,
                 R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+
 
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -79,10 +86,8 @@ public class MainActivity extends AppCompatActivity implements NavigationHost,
         }
         setNavigationViewListener();
 
-        // Set cut corner background for API 23+
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-//            findViewById(R.id.main_container).setBackground(getDrawable(R.drawable.toolbar_shape));
-//        }
+        setSearchView();
+
 
         // Initialize Fragments
         mDistrictSelectionFragment = new DistrictSelectionFragment();
@@ -103,6 +108,8 @@ public class MainActivity extends AppCompatActivity implements NavigationHost,
     public void onBackPressed() {
         if (mDrawer.isDrawerOpen(GravityCompat.START)) {
             mDrawer.closeDrawer(GravityCompat.START);
+        } else if (mSearchView.isSearchOpen()){
+            mSearchView.closeSearch();
         } else {
             super.onBackPressed();
         }
@@ -120,11 +127,7 @@ public class MainActivity extends AppCompatActivity implements NavigationHost,
         getMenuInflater().inflate(R.menu.toolbar_menu, menu);
 
         MenuItem search = menu.findItem(R.id.app_bar_search);
-        mSearchView = (android.support.v7.widget.SearchView)search.getActionView();
-        mSearchView.setQueryHint("Search");
-
-        // TODO: Activate Search Action
-
+        mSearchView.setMenuItem(search);
 
         return true;
     }
@@ -161,6 +164,58 @@ public class MainActivity extends AppCompatActivity implements NavigationHost,
     private void setNavigationViewListener() {
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+    }
+
+    private void setSearchView() {
+        mSearchView.setSuggestions((String[])mDistrictList.toArray());
+        mSearchView.setOnQueryTextListener(new MaterialSearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                if (query.charAt(0) >= 'a' && query.charAt(0) <= 'z') {
+                    query = Character.toUpperCase(query.charAt(0)) + query.substring(1);
+                }
+                if (query.length() < 4) {
+                    Toast.makeText(MainActivity.this, "Result not found. Please Try Again.", Toast.LENGTH_SHORT).show();
+                    return false;
+                }
+                if (query.substring(query.length() - 2, query.length()).equals("gu")
+                        && (query.charAt(query.length()-3) != '-')) {
+                    query = query.substring(0, query.length() - 2) + "-gu";
+                }
+                if (!query.substring(query.length() - 3, query.length()).equals("-gu")) {
+                    query += "-gu";
+                }
+                for (String district : mDistrictList) {
+                    if (district.equals(query)) {
+                        Bundle bundle = new Bundle();
+                        bundle.putString("distName", query);
+                        LivingInfoFragment f = new LivingInfoFragment();
+                        f.setArguments(bundle);
+                        replaceFragment(f, true);
+                        return false;
+                    }
+                }
+                Toast.makeText(MainActivity.this, "Result not found. Please Try Again.", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return false;
+            }
+        });
+
+        mSearchView.setOnSearchViewListener(new MaterialSearchView.SearchViewListener() {
+            @Override
+            public void onSearchViewShown() {
+
+            }
+
+            @Override
+            public void onSearchViewClosed() {
+
+            }
+        });
     }
 
     @Override
