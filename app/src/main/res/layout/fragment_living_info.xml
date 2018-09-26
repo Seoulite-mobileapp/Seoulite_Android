@@ -20,7 +20,7 @@
             android:layout_margin="10dp"
             android:layout_marginLeft="30dp"
             android:layout_weight="1"
-            android:src="@drawable/yongsangu" />
+            android:src="@drawable/ic_x_shape"/>
 
         <LinearLayout
             android:layout_width="0dp"
