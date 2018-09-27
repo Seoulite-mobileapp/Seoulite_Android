@@ -13,14 +13,14 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:id="@+id/map_image"
+            android:id="@+id/living_info_map_image"
             android:layout_width="0dp"
             android:layout_height="70dp"
             android:layout_gravity="center_vertical"
             android:layout_margin="10dp"
             android:layout_marginLeft="30dp"
             android:layout_weight="1"
-            android:src="@drawable/livinginfo_seoulmap_jongno" />
+            android:src="@drawable/ic_x_shape"/>
 
         <LinearLayout
             android:layout_width="0dp"
@@ -93,9 +93,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_gravity="center"
+                android:layout_margin="5dp"
                 android:layout_marginLeft="0dp"
                 android:layout_marginRight="0dp"
-                android:src="@drawable/sample_1"/>
+                android:src="@drawable/living_info_ci_yongsangu"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -106,7 +107,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:gravity="center"
+                    android:gravity="right"
                     android:text="Population"
                     android:textColor="#666666"
                     android:textSize="15sp"
@@ -135,8 +136,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:gravity="center"
-                    android:text="Foreigner raio"
+                    android:gravity="right"
+                    android:text="Foreigner ratio"
                     android:textColor="#666666"
                     android:textSize="15sp"
                     android:textStyle="bold"
@@ -164,10 +165,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:gravity="center"
+                    android:gravity="right"
                     android:text="Average monthly pay"
                     android:textColor="#666666"
-                    android:textSize="15sp"
+                    android:textSize="12sp"
                     android:textStyle="bold"
                     android:layout_weight="1.3" />
                 <TextView
@@ -193,7 +194,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:gravity="center"
+                    android:gravity="right"
                     android:text="Rank of monthly pay"
                     android:textColor="#666666"
                     android:textSize="12sp"
@@ -222,7 +223,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:gravity="center"
+                    android:gravity="right"
                     android:text="Districts nearby"
                     android:textColor="#666666"
                     android:textSize="15sp"
@@ -251,7 +252,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:gravity="center"
+                    android:gravity="right"
                     android:text="Features"
                     android:textColor="#666666"
                     android:textSize="15sp"
@@ -271,7 +272,7 @@
             </LinearLayout>
             <!--sixth row finished-->
 
-            <LinearLayout
+            <!--<LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -280,7 +281,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:gravity="center"
+                    android:gravity="right"
                     android:text="Recommend to"
                     android:textColor="#666666"
                     android:textSize="15sp"
@@ -298,7 +299,7 @@
                     android:textStyle="bold"
                     android:layout_weight="0.7" />
             </LinearLayout>
-            <!--last and seventh row finished-->
+            &lt;!&ndash;last and seventh row finished&ndash;&gt;-->
 
         </LinearLayout>
     </ScrollView>
