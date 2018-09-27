@@ -51,7 +51,7 @@ public class SearchResultFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_search_result, container, false);
         ButterKnife.bind(this, view);
         myDb = myDbHelper.getReadableDatabase();
-        String searched = "certified";
+        String searched = "-576-";
         String uppersearched = searched.toUpperCase();
         String finalSearched = StringReplace(uppersearched);
         Log.d("regex후:", finalSearched);
@@ -76,8 +76,9 @@ public class SearchResultFragment extends Fragment {
                 Bundle bundle2 = new Bundle();
                 bundle2.putString("agcId", selectedItemId);
                 agencyInfoFragment.setArguments(bundle2);
-
-                getFragmentManager().beginTransaction().add(R.id.main_container, agencyInfoFragment).commit();
+                getFragmentManager().beginTransaction().replace(R.id.main_container, agencyInfoFragment)
+                        .addToBackStack(null)
+                        .commit();
             }
         });
 
@@ -95,7 +96,7 @@ public class SearchResultFragment extends Fragment {
     }
     public static String StringReplace(String str){
 //        String match = "[^\uAC00-\uD7A3xfe0-9a-zA-Z\\s]";
-     //   str =str.replaceAll("-", "");
+        str =str.replaceAll("-", "");
      //   Log.d("특수문자 제거후:", str);
         str =  str.replaceAll("\\s{2,}", " ").trim();
 
