@@ -235,41 +235,4 @@ public class LivingInfoFragment extends Fragment {
         }
     }*/
 
-    /*private void setTextViews(String currentLangauge){ //textview들을 setting
-
-        TextView textviewAgencyName = (TextView) view.findViewById(R.id.textview_agencyinfo_agencyName);
-        TextView textviewAgencyAddress = (TextView) view.findViewById(R.id.textview_agencyinfo_address);
-        TextView textviewOwner = (TextView) view.findViewById(R.id.textview_agencyinfo_representative);
-
-
-        agencyAddress = agency.getAdrDtEn();
-
-        if(currentLangauge.equals("en")){
-            //set agencyName
-            textviewAgencyName.setText(agency.getAgncNmEn());
-
-            //set agencyAddress
-            textviewAgencyAddress.setText(agencyAddress);
-
-            //set ownerName
-            textviewOwner.setText(agency.getOwnEn());
-        }else if(currentLangauge.equals("ko")){
-            textviewAgencyName.setText(agency.getAgncNmKr());
-            textviewAgencyAddress.setText(agency.getAdrDtKr());
-            textviewOwner.setText(agency.getOwnKr());
-        }
-
-        //set fax
-        TextView textviewFax = (TextView) view.findViewById(R.id.textview_agencyinfo_fax);
-        textviewFax.setText(agency.getFax());
-
-        TextView textviewPhone1 = (TextView) view.findViewById(R.id.textview_agencyinfo_phone1);
-        String phone[] = getPhoneNum();
-        textviewPhone1.setText(phone[0]);
-        if(phone.length == 2){ //번호가 2개 있다.
-            second_tel_layout.setVisibility(View.VISIBLE);
-            TextView textviewPhone2 = (TextView) view.findViewById(R.id.textview_agencyinfo_phone2);
-            textviewPhone2.setText(phone[1]);
-        }
-    }*/
 }
