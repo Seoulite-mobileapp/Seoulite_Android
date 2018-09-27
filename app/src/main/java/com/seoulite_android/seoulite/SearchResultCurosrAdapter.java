@@ -91,18 +91,15 @@ public class SearchResultCurosrAdapter extends CursorAdapter {
         final String mdistrict = cursor.getString(9);
         int AgencyId = cursor.getInt(0);
         String mPhoneNum = cursor.getString(5);
-        msetAgencyNum = 1;
 
 
-        //mResultNum.setText(String.valueOf(mcount+1));
-        //구 이름에 밑줄긋기
         SpannableString content = new SpannableString(mdistrict);
         content.setSpan(new UnderlineSpan(), 0, mdistrict.length(), 0);
         mResultDistrict.setText(content);
         mResultId.setText(String.valueOf(AgencyId));
         mResultName.setText(mAgencyName);
         mResultPhone.setText(mPhoneNum);
-        mResultNum.setText(String.valueOf(msetAgencyNum));
+
         if (mEngExist != 1) {
             mResultEng.setVisibility(View.GONE);
         } else {
@@ -165,7 +162,10 @@ public class SearchResultCurosrAdapter extends CursorAdapter {
                     fragment.setArguments(bundle);
 
                     FragmentManager manager = ((AppCompatActivity)context).getSupportFragmentManager();
-                    manager.beginTransaction().add(R.id.main_container, fragment).commit();
+                   // manager.beginTransaction().add(R.id.main_container, fragment).commit();
+                    manager.beginTransaction().replace(R.id.main_container, fragment)
+                            .addToBackStack(null)
+                            .commit();
                    // mainActivity.replaceFragment(fragment, false);
                 }
             }
@@ -183,10 +183,5 @@ public class SearchResultCurosrAdapter extends CursorAdapter {
             }
             return false;
         }
-
-    private int getStratAgencyNum(){
-
-        return msetAgencyNum;
-    }
-    }
+}
 
