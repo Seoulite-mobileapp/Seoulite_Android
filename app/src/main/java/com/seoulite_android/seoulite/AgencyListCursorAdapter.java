@@ -16,17 +16,19 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.util.Locale;
+
 import static java.security.AccessController.getContext;
 
 
 
 @SuppressWarnings("deprecation")
 public class AgencyListCursorAdapter extends CursorAdapter {
-
+    MainActivity activity;
+    String AgencyName;
     private LayoutInflater mInflater;
-    Drawable selectedImage;
     String selectedName;
-//    가장 많이 사용되는 커서 어뎁터 사용..
+    //    가장 많이 사용되는 커서 어뎁터 사용..
     public AgencyListCursorAdapter(Context context, Cursor c){
         super(context, c, 0);
     }
@@ -39,7 +41,7 @@ public class AgencyListCursorAdapter extends CursorAdapter {
 
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
-       TextView agency_num= view.findViewById(R.id.agencylist_number);
+        TextView agency_num= view.findViewById(R.id.agencylist_number);
         TextView agency_name = view.findViewById(R.id.agencylist_name);
         //ImageView agency_language = view.findViewById(R.id.agencylist_language);
         ImageView engImage = view.findViewById(R.id.imageview_agencyinfo_eng);
@@ -52,15 +54,14 @@ public class AgencyListCursorAdapter extends CursorAdapter {
 
 
         int cnt = cursor.getPosition();
-        final String AgencyName = cursor.getString(2);
+        AgencyName = cursor.getString(2);
         int EngExist = cursor.getInt(11);
         int ChExist = cursor.getInt(12);
         int JpExist = cursor.getInt(13);
         String EtcExist = cursor.getString(14);
+        String district =cursor.getString(9);
 
         int AgencyId = cursor.getInt(0);
-
-        Log.d("리스트 결과값 확인", AgencyId+AgencyName +","+ EngExist);
 
         agencyId.setText(String.valueOf(AgencyId));
         agency_num.setText(String.valueOf(cnt +1)+".");
@@ -68,20 +69,32 @@ public class AgencyListCursorAdapter extends CursorAdapter {
 //        String etc = agency.getLangEtc();
         if(EngExist != 1){
             engImage.setVisibility(View.GONE);
+        }else{
+            engImage.setVisibility(View.VISIBLE);
         }
         if(ChExist != 1){
             chImage.setVisibility(View.GONE);
+        }else{
+            chImage.setVisibility(View.VISIBLE);
         }
         if(JpExist != 1){
             jpImage.setVisibility(View.GONE);
+        }else{
+            jpImage.setVisibility(View.VISIBLE);
         }
-        if(EtcExist == "Russian"){
+        if(EtcExist.equals("러시아어")){
             russianImage.setVisibility(View.VISIBLE);
-        } else if(EtcExist == "Portuguese"){
-            portImage.setVisibility(View.VISIBLE);
-        } else if(EtcExist == "Spanish"){
+        } else if(EtcExist.equals("포르투갈어")){
+            portImage.setVisibility
+                    (View.VISIBLE);
+        } else if(EtcExist.equals("스페인어")){
             spainImage.setVisibility(View.VISIBLE);
+        }else{
+            russianImage.setVisibility(View.GONE);
+            portImage.setVisibility(View.GONE);
+            spainImage.setVisibility(View.GONE);
         }
 
     }
+
 }
