@@ -310,7 +310,7 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
                         .addToBackStack(null)
                         .commit();*/
 
-                (activity).replaceFragment(new FavoritesFragment(), true);
+                (activity).replaceFragment(new FavAgencyFragment(), true);
 
             }
         });

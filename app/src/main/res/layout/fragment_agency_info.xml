@@ -28,7 +28,7 @@
     <!-- address -->
     <LinearLayout
         android:id="@+id/linearlaout_agencyinfo_favorite"
-        android:layout_width="wrap_content"
+        android:layout_width="170dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:background="@drawable/agencyinfo_btn_border"
@@ -52,7 +52,8 @@
             android:layout_height="20dp"
             android:paddingRight="10dp"
             android:text="@string/agencyinfo_addtofavorites"
-            android:textColor="@android:color/black"
+            android:textColor="#009a9b"
+            android:autoSizeTextType="uniform"
             android:textSize="15dp" />
 
     </LinearLayout>
