@@ -53,16 +53,32 @@ public class LivingInfoFragment extends Fragment {
         systemLocale = activity.getResources().getConfiguration().locale;
         currentLangauge = systemLocale.getLanguage();
 
-        Toast.makeText(activity, "현재"+currentLangauge, Toast.LENGTH_LONG).show();
         ButterKnife.bind(this, view);
         //getting agency id from previous fragment.
         if(savedInstanceState ==null) {
             gettingDistName();
         }
 
-        getDistrictInfo(districtId); // db에서 전 화면에서 받아온 id를 이용해 sql select
+        getDistrictInfo(distName); // db에서 전 화면에서 받아온 id를 이용해 sql select
 
-        setTextViews(currentLangauge); //textview들을 setting
+        TextView textviewDistrictName = view.findViewById(R.id.text_living_info_district_name);
+        textviewDistrictName.setText(district.getDistrictEn());
+        TextView textviewNearby = view.findViewById(R.id.text_living_info_nearby);
+        textviewNearby.setText(district.getDistNearEn());
+        TextView textviewFeatures = view.findViewById(R.id.text_living_info_features);
+        textviewFeatures.setText(district.getFeatsEn());
+
+        TextView textviewPopulation = view.findViewById(R.id.text_living_info_population);
+        textviewPopulation.setText(String.valueOf(district.getForeignPop()));
+        TextView textviewForeignerRatio = view.findViewById(R.id.text_living_info_foreigner_ratio);
+        textviewForeignerRatio.setText(String.valueOf(district.getForeignRate()));
+        TextView textviewAverageFee = view.findViewById(R.id.text_living_info_average_fee);
+        textviewAverageFee.setText(String.valueOf(district.getAvgRent()));
+        TextView textviewRank = view.findViewById(R.id.text_living_info_rank);
+        textviewRank.setText(String.valueOf(district.getRentRank()));
+
+
+        /*setTextViews(currentLangauge); //textview들을 setting*/
 
         return view;
     }
@@ -77,16 +93,15 @@ public class LivingInfoFragment extends Fragment {
         Bundle bundle = getArguments();
         if(bundle != null){
             distName = bundle.getString("distName");
-            districtId = Integer.parseInt(distName);
         }else{
             Toast.makeText(activity, "Can't get data. Try again.", Toast.LENGTH_LONG).show();
         }
     }
 
-    private void getDistrictInfo(int districtId){// db에서 전 화면에서 받아온 id를 이용해 select 후 agencyVO에 저장
+    private void getDistrictInfo(String distName){// db에서 전 화면에서 받아온 id를 이용해 select 후 agencyVO에 저장
         dbHelper = new DbHelper(activity);
         SQLiteDatabase db = dbHelper.getReadableDatabase();
-        String sqlDistrict = "SELECT * FROM DISTRICTS where _id = "+ districtId+";";
+        String sqlDistrict = "SELECT * FROM DISTRICTS where dist_en = '"+ distName+"'";
         Cursor cursor = db.rawQuery(sqlDistrict, null);
         while (cursor.moveToNext()) {
             district = new DistrictVO(cursor.getString(1), cursor.getString(2),
@@ -98,13 +113,15 @@ public class LivingInfoFragment extends Fragment {
         db.close();
     }
 
-    private void setTextViews(String currentLangauge){
+    /*private void setTextViews(String currentLangauge){
 
-        TextView textviewDistictName = view.findViewById(R.id.text_living_info_district_name);
+        TextView textviewDistrictName = view.findViewById(R.id.text_living_info_district_name);
+        textviewDistrictName.setText(district.getDistrictEn());
         TextView textviewNearby = view.findViewById(R.id.text_living_info_nearby);
+        textviewNearby.setText(district.getDistNearEn());
         TextView textviewFeatures = view.findViewById(R.id.text_living_info_features);
-
-        if(currentLangauge.equals("en")){
+        textviewFeatures.setText(district.getFeatsEn());
+        *//*if(currentLangauge.equals("en")){
             textviewDistictName.setText(district.getDistrictEn());
             textviewNearby.setText(district.getDistNearEn());
             textviewFeatures.setText(district.getFeatsEn());
@@ -112,7 +129,7 @@ public class LivingInfoFragment extends Fragment {
             textviewDistictName.setText(district.getDistrictKr());
             textviewNearby.setText(district.getDistNearKr());
             textviewFeatures.setText(district.getFeatsKr());
-        }
+        }*//*
 
         TextView textviewPopulation = view.findViewById(R.id.text_living_info_population);
         textviewPopulation.setText(district.getForeignPop());
@@ -123,7 +140,7 @@ public class LivingInfoFragment extends Fragment {
         TextView textviewRank = view.findViewById(R.id.text_living_info_rank);
         textviewRank.setText(district.getRentRank());
 
-    }
+    }*/
     /*private void changeImage(String distName) {
         Bundle bundle = getArguments();
         String value = bundle.getString("distName");
