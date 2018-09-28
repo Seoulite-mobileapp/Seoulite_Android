@@ -40,6 +40,37 @@
                 android:textStyle="bold"
                 android:text="Yongsan-gu" />
 
+            <LinearLayout
+                android:id="@+id/linearlayout_livingInfo_favorite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/agencyinfo_btn_border"
+                android:layout_gravity="end"
+                android:orientation="horizontal"
+                android:layout_marginEnd="30dp"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp"
+                android:layout_marginBottom="10dp">
+
+                <ImageView
+                    android:id="@+id/agencyinfo_favorite_star"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="13dp"
+                    android:background="@drawable/agencyinfo_star_off" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:paddingRight="10dp"
+                    android:text="@string/agencyinfo_addtofavorites"
+                    android:textColor="@android:color/black"
+                    android:textSize="15dp" />
+
+            </LinearLayout>
+
             <android.support.design.button.MaterialButton
                 android:id="@+id/btn_living_info_moveToAgencies"
                 android:background="@drawable/btn_transparent_bg_bordered"
@@ -47,9 +78,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:padding="1dp"
-                android:text="Real Estate Agencies"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:text="  Real Estate Agencies  "
                 android:textAllCaps="false"
                 android:textSize="12sp" />
         </LinearLayout>
@@ -109,7 +140,6 @@
                     android:layout_margin="10dp"
                     android:gravity="right"
                     android:text="Population"
-                    android:textColor="#666666"
                     android:textSize="15sp"
                     android:textStyle="bold"
                     android:layout_weight="1.3" />
@@ -138,21 +168,36 @@
                     android:layout_margin="10dp"
                     android:gravity="right"
                     android:text="Foreigner ratio"
-                    android:textColor="#666666"
                     android:textSize="15sp"
                     android:textStyle="bold"
+                    android:textColor="#666666"
                     android:layout_weight="1.3" />
-                <TextView
-                    android:id="@+id/text_living_info_foreigner_ratio"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:gravity="left"
-                    android:text="put foreigner ratio data here"
-                    android:textColor="#666666"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:layout_weight="0.7" />
+                    android:orientation="horizontal"
+                    android:layout_weight="0.7">
+                    <TextView
+                        android:id="@+id/text_living_info_foreigner_ratio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="left"
+                        android:text="put foreigner ratio data here"
+                        android:textColor="#666666"
+                        android:textSize="15sp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="left"
+                        android:text=" %"
+                        android:textColor="#666666"
+                        android:textSize="15sp"/>
+                </LinearLayout>
             </LinearLayout>
             <!--second row finished-->
 
@@ -171,17 +216,33 @@
                     android:textSize="12sp"
                     android:textStyle="bold"
                     android:layout_weight="1.3" />
-                <TextView
-                    android:id="@+id/text_living_info_average_fee"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:gravity="left"
-                    android:text="put average fee data here"
-                    android:textColor="#666666"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:layout_weight="0.7" />
+                    android:orientation="horizontal"
+                    android:layout_weight="0.7">
+                    <TextView
+                        android:id="@+id/text_living_info_average_fee"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="left"
+                        android:text="put average fee data here"
+                        android:textColor="#666666"
+                        android:textSize="15sp"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="left"
+                        android:text=" ￦"
+                        android:textColor="#666666"
+                        android:textSize="15sp"/>
+                </LinearLayout>
             </LinearLayout>
             <!--third row finished-->
 
@@ -200,17 +261,33 @@
                     android:textSize="12sp"
                     android:textStyle="bold"
                     android:layout_weight="1.3" />
-                <TextView
-                    android:id="@+id/text_living_info_rank"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:gravity="left"
-                    android:text="put rank of pay data here"
-                    android:textColor="#666666"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:layout_weight="0.7" />
+                    android:orientation="horizontal"
+                    android:layout_weight="0.7">
+                    <TextView
+                        android:id="@+id/text_living_info_rank"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="left"
+                        android:text="put rank of pay"
+                        android:textColor="#666666"
+                        android:textSize="15sp"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="left"
+                        android:text=" / 25 districts"
+                        android:textColor="#666666"
+                        android:textSize="15sp"/>
+                </LinearLayout>
             </LinearLayout>
             <!--fourth row finished-->
 

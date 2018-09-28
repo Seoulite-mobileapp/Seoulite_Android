@@ -80,7 +80,7 @@ public class LivingInfoFragment extends Fragment {
     private void gettingDistName(){
         Bundle bundle = getArguments();
         if(bundle != null){
-            distName = bundle.getString("distName");
+            distName = bundle.getString("districtName");
         }else{
             Toast.makeText(activity, "Can't get data. Try again.", Toast.LENGTH_LONG).show();
         }

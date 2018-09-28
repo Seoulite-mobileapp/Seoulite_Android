@@ -59,7 +59,7 @@ public class DistrictSelectionLivingInfoFragment extends Fragment {
 
         LivingInfoFragment livingInfoFragment = new LivingInfoFragment();
         Bundle bundle = new Bundle();
-        bundle.putString("distName", mSelectedDistrictName);
+        bundle.putString("districtName", mSelectedDistrictName);
         livingInfoFragment.setArguments(bundle);
 
         getFragmentManager().beginTransaction().replace(R.id.main_container, livingInfoFragment)
