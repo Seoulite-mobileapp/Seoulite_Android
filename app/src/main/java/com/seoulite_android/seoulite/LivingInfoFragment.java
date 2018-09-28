@@ -116,8 +116,10 @@ public class LivingInfoFragment extends Fragment {
             textviewFeatures.setText(district.getFeatsKr());
         }
 
-        TextView textviewPopulation = view.findViewById(R.id.text_living_info_population);
-        textviewPopulation.setText(String.valueOf(district.getForeignPop()));
+        TextView textviewTotalPop = view.findViewById(R.id.text_living_info_totalPop);
+        textviewTotalPop.setText(String.valueOf(district.getTotalPop()));
+        TextView textviewForeignPop= view.findViewById(R.id.text_living_info_foreignPop);
+        textviewForeignPop.setText(String.valueOf(district.getForeignPop()));
         TextView textviewForeignerRatio = view.findViewById(R.id.text_living_info_foreigner_ratio);
         textviewForeignerRatio.setText(String.valueOf(district.getForeignRate()));
         TextView textviewAverageFee = view.findViewById(R.id.text_living_info_average_fee);
