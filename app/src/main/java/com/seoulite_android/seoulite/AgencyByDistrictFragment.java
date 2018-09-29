@@ -85,11 +85,9 @@ public class AgencyByDistrictFragment extends Fragment {
     Button btn_living_info;
     @BindView(R.id.btn_language_filter)
     Button btn_language_filter;
-    @BindView(R.id.map_image)
-    ImageView map_image;
+    @BindView(R.id.map_image) ImageView map_image;
     LinearLayout mlayout;
     Bundle bundle;
-    List<AgencyEntry> mAgencyList;
     String districtName;
     AgencyListCursorAdapter mcursorAdapter;
     Cursor cursor;
@@ -97,8 +95,6 @@ public class AgencyByDistrictFragment extends Fragment {
     Dialog dialog;
     DbHelper mDbHelper;
     SQLiteDatabase mDb;
-    // private GestureDetector gestureDetector;
-    ImageView mapPopupImage;
 
     LinearLayout layout;
 
@@ -135,10 +131,8 @@ public class AgencyByDistrictFragment extends Fragment {
         chCheckBox = view.findViewById(R.id.select_ch);
         jpCheckBox = view.findViewById(R.id.select_jp);
         etcCheckBox =view.findViewById(R.id.select_etc);
-
         btn_checkBox_lang = view.findViewById(R.id.btn_select_language);
-
-        mTestGoTo = view.findViewById(R.id.testToResult);
+        ImageView mSetInvisible = view.findViewById(R.id.language_invisible);
 
         if (savedInstanceState == null) {
             Bundle args = getArguments();
@@ -159,17 +153,50 @@ public class AgencyByDistrictFragment extends Fragment {
             Log.d("처음의 cursor:", cursor.toString());
             mAgencyListView.setAdapter(mcursorAdapter);
 
-            //구별 거주 정보 페이지로 넘어가기
-            mTestGoTo.setOnClickListener(new View.OnClickListener() {
+            mSetInvisible.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    SearchResultFragment resultFragment = new SearchResultFragment();
-                    ((MainActivity) getActivity()).replaceFragment(resultFragment, false);
+                    if (!engCheckBox.isChecked() && !chCheckBox.isChecked() && !jpCheckBox.isChecked()&& !etcCheckBox.isChecked()) {
+                    }else if(!engCheckBox.isChecked() && !chCheckBox.isChecked() && !jpCheckBox.isChecked() && etcCheckBox.isChecked()){
+                        etcCheckBox.toggle();
+                    }else if (!engCheckBox.isChecked() && !chCheckBox.isChecked() && jpCheckBox.isChecked()&& !etcCheckBox.isChecked()){
+                        jpCheckBox.toggle();
+                    }else if(!engCheckBox.isChecked() && chCheckBox.isChecked() && !jpCheckBox.isChecked()&& !etcCheckBox.isChecked()){
+                        chCheckBox.toggle();
+                    }else if(engCheckBox.isChecked() && !chCheckBox.isChecked() && !jpCheckBox.isChecked()&& !etcCheckBox.isChecked()){
+                        engCheckBox.toggle();
+                    }else if(!engCheckBox.isChecked() && !chCheckBox.isChecked() && jpCheckBox.isChecked()&& etcCheckBox.isChecked()){
+                        jpCheckBox.toggle(); etcCheckBox.toggle();
+                    }else  if(!engCheckBox.isChecked() && chCheckBox.isChecked() && !jpCheckBox.isChecked()&& etcCheckBox.isChecked()){
+                        chCheckBox.toggle(); etcCheckBox.toggle();
+                    }else if(engCheckBox.isChecked() && !chCheckBox.isChecked() && !jpCheckBox.isChecked()&& etcCheckBox.isChecked()){
+                        engCheckBox.toggle(); etcCheckBox.toggle();
+                    }else  if(engCheckBox.isChecked() && !chCheckBox.isChecked() && jpCheckBox.isChecked()&& !etcCheckBox.isChecked()){
+                        engCheckBox.toggle();  jpCheckBox.toggle();
+                    }else if(!engCheckBox.isChecked() && chCheckBox.isChecked() && jpCheckBox.isChecked()&& !etcCheckBox.isChecked()){
+                        chCheckBox.toggle();  jpCheckBox.toggle();
+                    }else if(engCheckBox.isChecked() && chCheckBox.isChecked() && !jpCheckBox.isChecked()&& !etcCheckBox.isChecked()) {
+                        engCheckBox.toggle();  chCheckBox.toggle();
+                    }else  if(!engCheckBox.isChecked() && chCheckBox.isChecked() && jpCheckBox.isChecked()&& etcCheckBox.isChecked()){
+                        chCheckBox.toggle(); jpCheckBox.toggle(); etcCheckBox.toggle();
+                    }else if(engCheckBox.isChecked() && !chCheckBox.isChecked() && jpCheckBox.isChecked()&& etcCheckBox.isChecked()){
+                        engCheckBox.toggle(); jpCheckBox.toggle(); etcCheckBox.toggle();
+                    }else if(engCheckBox.isChecked() && chCheckBox.isChecked() && !jpCheckBox.isChecked()&& etcCheckBox.isChecked()){
+                        engCheckBox.toggle(); chCheckBox.toggle(); etcCheckBox.toggle();
+                    }else  if(engCheckBox.isChecked() && chCheckBox.isChecked() && jpCheckBox.isChecked()&& !etcCheckBox.isChecked()){
+                        engCheckBox.toggle(); chCheckBox.toggle(); jpCheckBox.toggle();
+                    }else{
+                        engCheckBox.toggle(); chCheckBox.toggle(); etcCheckBox.toggle(); jpCheckBox.toggle();
+                    }
+                    layout.setVisibility(GONE);
                 }
             });
+
             btn_living_info.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    if (layout.getVisibility() == GONE) {
+                        btn_living_info.setClickable(true);
                         LivingInfoFragment fragment = new LivingInfoFragment();
                         Bundle bundle = new Bundle();
                         bundle.putString("disName", selected);
@@ -180,17 +207,13 @@ public class AgencyByDistrictFragment extends Fragment {
                                 .addToBackStack(null)
                                 .commit();
                         //((MainActivity) getActivity()).replaceFragment(fragment, false);
-
+                        btn_living_info.setClickable(true);
+                    } else {
+                        btn_living_info.setClickable(false);
+                    }
                 }
             });
 
-
-            map_image.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-//                        showPopUp(districtName);
-                }
-            });
 
             mAgencyListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -224,6 +247,7 @@ public class AgencyByDistrictFragment extends Fragment {
 
                 }
             });
+
 
             btn_checkBox_lang.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -291,10 +315,10 @@ public class AgencyByDistrictFragment extends Fragment {
                     cursor = mcursorAdapter.swapCursor(langCursor);
                     mcursorAdapter.notifyDataSetChanged();
                     layout.setVisibility(GONE);
+                    btn_living_info.setClickable(true);
                 }
             });
             mAgencyListView.setAdapter(mcursorAdapter);
-
         }
         return view;
     }
@@ -378,111 +402,12 @@ public class AgencyByDistrictFragment extends Fragment {
             case "Mapo-gu":
                 map_image.setImageDrawable(getResources().getDrawable(R.drawable.mapogu));
                 break;
-            default:
-                map_image.setImageDrawable(getResources().getDrawable(R.drawable.agencyinfo_fax));
-                break;
         }
     }
+
     Context context;
 
-    public void showPopUp(String districtName) {
-        AgencyByDistrictFragment agencyByDistrictFragment = new AgencyByDistrictFragment();
-        //dialog = new Dialog();
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        dialog.setContentView(R.layout.dialog_map_image);
-        mapPopupImage = dialog.findViewById(R.id.map_popup_image);
 
-        switch (districtName) {
-//            case "Gangnam-gu":
-//                mapPopupImage.setImageDrawable(getResources().getDrawable(R.drawable.gangnamgu));
-//                dialog.show();
-//                break;
-//            default:
-//                mapPopupImage.setImageDrawable(getResources().getDrawable(R.drawable.ic_menu_camera));
-//                dialog.show();
-//                break;
-            case "Gangnam-gu":
-                mapPopupImage.setImageDrawable(getResources().getDrawable(R.drawable.gangnamgu));
-                break;
-            case "Gangdong-gu":
-                mapPopupImage.setImageDrawable(getResources().getDrawable(R.drawable.gangdonggu));
-                break;
-            case "Gangbuk-gu":
-                mapPopupImage.setImageDrawable(getResources().getDrawable(R.drawable.gangbukgu));
-                break;
-            case "Gangseo-gu":
-                mapPopupImage.setImageDrawable(getResources().getDrawable(R.drawable.gangseogu));
-                break;
-            case "Gwangjin-gu":
-                mapPopupImage.setImageDrawable(getResources().getDrawable(R.drawable.gwangjingu));
-                break;
-            case "Guro-gu":
-                mapPopupImage.setImageDrawable(getResources().getDrawable(R.drawable.gurogu));
-                break;
-            case "Geumcheon-gu":
-                mapPopupImage.setImageDrawable(getResources().getDrawable(R.drawable.geumcheongu));
-                break;
-            case "Nowon-gu":
-                mapPopupImage.setImageDrawable(getResources().getDrawable(R.drawable.nowongu));
-                break;
-            case "Dobong-gu":
-                mapPopupImage.setImageDrawable(getResources().getDrawable(R.drawable.dobonggu));
-                break;
-            case "Dongdaemun-gu":
-                mapPopupImage.setImageDrawable(getResources().getDrawable(R.drawable.dongdaemungu));
-                break;
-            case "Dongjak-gu":
-                mapPopupImage.setImageDrawable(getResources().getDrawable(R.drawable.dongjakgu));
-                break;
-            case "Seodaemun-gu":
-                mapPopupImage.setImageDrawable(getResources().getDrawable(R.drawable.seodaemungu));
-                break;
-            case "Seocho-gu":
-                mapPopupImage.setImageDrawable(getResources().getDrawable(R.drawable.seochogu));
-                break;
-            case "Seongdong-gu":
-                mapPopupImage.setImageDrawable(getResources().getDrawable(R.drawable.seongdonggu));
-                break;
-            case "Seongbuk-gu":
-                mapPopupImage.setImageDrawable(getResources().getDrawable(R.drawable.seongbukgu));
-                break;
-            case "Songpa-gu":
-                mapPopupImage.setImageDrawable(getResources().getDrawable(R.drawable.songpagu));
-                break;
-            case "Yangcheon-gu":
-                mapPopupImage.setImageDrawable(getResources().getDrawable(R.drawable.yangcheongu));
-                break;
-            case "Yeongdeungpo-gu":
-                mapPopupImage.setImageDrawable(getResources().getDrawable(R.drawable.yeongdeungpogu));
-                break;
-            case "Yongsan-gu":
-                mapPopupImage.setImageDrawable(getResources().getDrawable(R.drawable.yongsangu));
-                break;
-            case "Eunpyeong-gu":
-                mapPopupImage.setImageDrawable(getResources().getDrawable(R.drawable.eunpyeonggu));
-                break;
-            case "Jongno-gu":
-                mapPopupImage.setImageDrawable(getResources().getDrawable(R.drawable.jongnogu));
-                break;
-            case "Jung-gu":
-                mapPopupImage.setImageDrawable(getResources().getDrawable(R.drawable.junggu));
-                break;
-            case "Jungnang-gu":
-                mapPopupImage.setImageDrawable(getResources().getDrawable(R.drawable.jungnanggu));
-                break;
-            case "Gwanak-gu":
-                mapPopupImage.setImageDrawable(getResources().getDrawable(R.drawable.gwanakgu));
-                break;
-            case "Mapo-gu":
-                mapPopupImage.setImageDrawable(getResources().getDrawable(R.drawable.mapogu));
-                break;
-            default:
-                mapPopupImage.setImageDrawable(getResources().getDrawable(R.drawable.agencyinfo_fax));
-                break;
-        }
-
-
-    }
 
     @Override
     public void onDetach() {

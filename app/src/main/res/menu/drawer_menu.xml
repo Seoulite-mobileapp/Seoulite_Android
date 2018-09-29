@@ -22,10 +22,10 @@
             android:icon="@drawable/ic_star_black_24dp"
             android:title="Favorites" />
 
-        <item
-            android:id="@+id/nav_languages"
-            android:icon="@drawable/ic_language_black_24dp"
-            android:title="Languages" />
+        <!--<item-->
+            <!--android:id="@+id/nav_languages"-->
+            <!--android:icon="@drawable/ic_language_black_24dp"-->
+            <!--android:title="Languages" />-->
     </group>
 
 </menu>

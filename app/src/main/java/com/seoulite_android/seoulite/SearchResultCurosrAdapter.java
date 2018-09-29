@@ -69,7 +69,7 @@ public class SearchResultCurosrAdapter extends CursorAdapter {
     @Override
     public void bindView(final View view, final Context context, final Cursor cursor) {
         //xml에서 뷰 가져오기
-        mResultNum = view.findViewById(R.id.result_agency_number);  //이름앞에 번호 123
+        //mResultNum = view.findViewById(R.id.result_agency_number);  //이름앞에 번호 123
         TextView mResultName = view.findViewById(R.id.result_agency_name);  //결과 에이전시의 이름
         ImageView mResultEng = view.findViewById(R.id.result_agency_eng);
         ImageView mResultCh = view.findViewById(R.id.result_agency_ch);
