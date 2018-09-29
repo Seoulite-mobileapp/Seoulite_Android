@@ -39,6 +39,7 @@ public class LivingInfoFragment extends Fragment {
 
     /*ImageView mapPopupImage;*/
     @BindView(R.id.living_info_map_image) ImageView living_info_map_image;
+    @BindView(R.id.living_info_district_image) ImageView living_info_district_image;
 
 
     @Override
@@ -65,11 +66,10 @@ public class LivingInfoFragment extends Fragment {
         setTextViews(currentLangauge); //textview들을 setting
 
         changeImage(distName);
+        changeDistrictImage(distName);
 
         return view;
     }
-
-
 
     @Override
     public void onDetach() {
@@ -213,4 +213,86 @@ public class LivingInfoFragment extends Fragment {
         }
     }
 
+    private void changeDistrictImage(String distName) {
+        switch (distName) {
+            case "Gangnam-gu":
+                living_info_district_image.setImageDrawable(getResources().getDrawable(R.drawable.living_info_ci_gangnamgu));
+                break;
+            case "Gangdong-gu":
+                living_info_district_image.setImageDrawable(getResources().getDrawable(R.drawable.living_info_ci_gangdonggu));
+                break;
+            case "Gangbuk-gu":
+                living_info_district_image.setImageDrawable(getResources().getDrawable(R.drawable.living_info_ci_gangbukgu));
+                break;
+            case "Gangseo-gu":
+                living_info_district_image.setImageDrawable(getResources().getDrawable(R.drawable.living_info_ci_gangseogu));
+                break;
+            case "Gwangjin-gu":
+                living_info_district_image.setImageDrawable(getResources().getDrawable(R.drawable.living_info_ci_gwangjingu));
+                break;
+            case "Guro-gu":
+                living_info_district_image.setImageDrawable(getResources().getDrawable(R.drawable.living_info_ci_gurogu));
+                break;
+            case "Geumcheon-gu":
+                living_info_district_image.setImageDrawable(getResources().getDrawable(R.drawable.living_info_ci_geumcheongu));
+                break;
+            case "Nowon-gu":
+                living_info_district_image.setImageDrawable(getResources().getDrawable(R.drawable.living_info_ci_nowongu));
+                break;
+            case "Dobong-gu":
+                living_info_district_image.setImageDrawable(getResources().getDrawable(R.drawable.living_info_ci_dobonggu));
+                break;
+            case "Dongdaemun-gu":
+                living_info_district_image.setImageDrawable(getResources().getDrawable(R.drawable.living_info_ci_dongdaemungu));
+                break;
+            case "Dongjak-gu":
+                living_info_district_image.setImageDrawable(getResources().getDrawable(R.drawable.living_info_ci_dongjakgu));
+                break;
+            case "Seodaemun-gu":
+                living_info_district_image.setImageDrawable(getResources().getDrawable(R.drawable.living_info_ci_seodaemungu));
+                break;
+            case "Seocho-gu":
+                living_info_district_image.setImageDrawable(getResources().getDrawable(R.drawable.living_info_ci_seochogu));
+                break;
+            case "Sungdong-gu":
+                living_info_district_image.setImageDrawable(getResources().getDrawable(R.drawable.living_info_ci_sungdonggu));
+                break;
+            case "Sungbuk-gu":
+                living_info_district_image.setImageDrawable(getResources().getDrawable(R.drawable.living_info_ci_sungbukgu));
+                break;
+            case "Songpa-gu":
+                living_info_district_image.setImageDrawable(getResources().getDrawable(R.drawable.living_info_ci_songpa));
+                break;
+            case "Yangcheon-gu":
+                living_info_district_image.setImageDrawable(getResources().getDrawable(R.drawable.living_info_ci_yangcheongu));
+                break;
+            case "Yeongdeungpo-gu":
+                living_info_district_image.setImageDrawable(getResources().getDrawable(R.drawable.living_info_ci_yeongdeungpogu));
+                break;
+            case "Yongsan-gu":
+                living_info_district_image.setImageDrawable(getResources().getDrawable(R.drawable.living_info_ci_yongsangu));
+                break;
+            case "Eunpyeong-gu":
+                living_info_district_image.setImageDrawable(getResources().getDrawable(R.drawable.living_info_ci_eunpyeonggu));
+                break;
+            case "Jongno-gu":
+                living_info_district_image.setImageDrawable(getResources().getDrawable(R.drawable.living_info_ci_jongnogu));
+                break;
+            case "Jung-gu":
+                living_info_district_image.setImageDrawable(getResources().getDrawable(R.drawable.living_info_ci_junggu));
+                break;
+            case "Jungnang-gu":
+                living_info_district_image.setImageDrawable(getResources().getDrawable(R.drawable.living_info_ci_jungnanggu));
+                break;
+            case "Gwanak-gu":
+                living_info_district_image.setImageDrawable(getResources().getDrawable(R.drawable.living_info_ci_gwanakgu));
+                break;
+            case "Mapo-gu":
+                living_info_district_image.setImageDrawable(getResources().getDrawable(R.drawable.living_info_ci_mapogu));
+                break;
+            default:
+                living_info_district_image.setImageDrawable(getResources().getDrawable(R.drawable.ic_x_shape));
+                break;
+        }
+    }
 }
