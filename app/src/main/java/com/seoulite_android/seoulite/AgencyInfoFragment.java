@@ -78,8 +78,6 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
 
     Snackbar snackBar;
 
-    private LatLng AGENCYLatLng;
-
     @BindView(R.id.agencyinfo_favorite_star) ImageView favorite_star;
     @BindView(R.id.agencyinfo_second_tel_layout) LinearLayout second_tel_layout;
     @BindView(R.id.imageview_agencyinfo_us) ImageView us_flag;
@@ -112,8 +110,6 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         rootView = (ViewGroup) inflater.inflate(R.layout.fragment_agency_info, container, false);
         //getLanguage
-        Locale systemLocale = activity.getResources().getConfiguration().locale;
-        String currentLangauge = systemLocale.getLanguage();
 
         ButterKnife.bind(this, rootView);
 
@@ -124,10 +120,10 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
 
         getAgencyInfo(agencyId); // db에서 전 화면에서 받아온 id를 이용해 sql select
 
-        setTextViews(currentLangauge); //textview들을 setting
+        setTextViews(); //textview들을 setting
         setFlags(); // falg setting
 
-        createSnackbar(currentLangauge);//snackbar
+        createSnackbar();//snackbar
         checkIsFavorite(agencyId); //Favorite인지 아닌지 체크
         matchingFavoriteStar(favorite_check);
 
@@ -186,7 +182,7 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
         db.close();
     }
 
-    private void setTextViews(String currentLangauge){ //textview들을 setting
+    private void setTextViews(){ //textview들을 setting
 
         TextView textviewAgencyName = (TextView) rootView.findViewById(R.id.textview_agencyinfo_agencyName);
         TextView textviewAgencyAddress = (TextView) rootView.findViewById(R.id.textview_agencyinfo_address);
@@ -195,20 +191,14 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
 
         agencyAddress = agency.getAdrDtEn();
 
-        if(currentLangauge.equals("en")){
-            //set agencyName
-            textviewAgencyName.setText(agency.getAgncNmEn());
+        //set agencyName
+        textviewAgencyName.setText(agency.getAgncNmEn());
 
-            //set agencyAddress
-            textviewAgencyAddress.setText(agencyAddress);
+        //set agencyAddress
+        textviewAgencyAddress.setText(agencyAddress);
 
-            //set ownerName
-            textviewOwner.setText(agency.getOwnEn());
-        }else if(currentLangauge.equals("ko")){
-            textviewAgencyName.setText(agency.getAgncNmKr());
-            textviewAgencyAddress.setText(agency.getAdrDtKr());
-            textviewOwner.setText(agency.getOwnKr());
-        }
+        //set ownerName
+        textviewOwner.setText(agency.getOwnEn());
 
         //set fax
         TextView textviewFax = (TextView) rootView.findViewById(R.id.textview_agencyinfo_fax);
@@ -264,13 +254,10 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
     }
 
     //Snackbar
-    private void createSnackbar(String currentLangauge){
+    private void createSnackbar(){
         String warning = null;
-        if(currentLangauge.equals("en")){
-            warning = "Please call the agency before the visit in case of the address is changed.";
-        }else if(currentLangauge.equals("ko")){
-            warning = "주소가 바뀌었을 수 있으니 전화 후 방문해주세요.";
-        }
+        warning = "Please call the agency before the visit in case of the address is changed.";
+
         snackBar = Snackbar.make(activity.findViewById(android.R.id.content), warning, Snackbar.LENGTH_LONG);
 
         snackBar.setAction("Close", new View.OnClickListener() {
@@ -295,8 +282,8 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
         AlertDialog.Builder builder = new AlertDialog.Builder(activity);
         builder.setTitle("Notification");
         builder.setMessage("Agency is successfully added to your favorites!"+
-            ""+
-            "Would you like to check your favorite?");
+                ""+
+                "Would you like to check your favorite?");
         builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
@@ -340,7 +327,6 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
                 Address addr = list.get(0);
                 lat = addr.getLatitude();
                 lon = addr.getLongitude();
-                AGENCYLatLng = new LatLng(lat,lon);
             }
         }
     }
@@ -383,14 +369,14 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
         mMap = googleMap;
 
         addMarkerToMap();
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(AGENCYLatLng));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(lat,lon)));
         mMap.animateCamera(CameraUpdateFactory.zoomTo(16));
         mMap.setOnMarkerClickListener(this);
     }
 
     private void addMarkerToMap() {
         mAgency = mMap.addMarker(new MarkerOptions()
-                .position(AGENCYLatLng)
+                .position(new LatLng(lat,lon))
                 .title("Click")
                 .snippet("to open Google Maps"));
     }
@@ -399,13 +385,11 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
     @Override
     public boolean onMarkerClick(final Marker marker) {
         if(marker.equals(mAgency)){
-            Uri naviToAgency = Uri.parse("google.navigation:q="+lat+","+lon);
-            Intent intent = new Intent(Intent.ACTION_VIEW, naviToAgency);
-      //      intent.setClassName("com.google.android.apps.maps",
-        //            "com.google.android.maps.MapsActivity");
+            Uri agencyGoogleMap = Uri.parse("geo:0,0?q="+lat+","+lon+"("+agency.getAgncNmEn()+")");
+            Intent intent = new Intent(Intent.ACTION_VIEW, agencyGoogleMap);
+            intent.setPackage("com.google.android.apps.maps");
             startActivity(intent);
         }
         return false;
     }
 }
-
