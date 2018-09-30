@@ -28,7 +28,7 @@ import butterknife.OnClick;
  * A simple {@link Fragment} subclass.
  */
 public class FavAgencyFragment extends Fragment {
-    private String sql = "select * from FAVORITES where is_agency is not null";
+    //private String sql = "select * from FAVORITES where is_agency is not null";
 
     @BindView(R.id.btn_fav_find_agency) Button mFindAgencyButton;
 
@@ -51,7 +51,7 @@ public class FavAgencyFragment extends Fragment {
 
         DbHelper dbHelper = new DbHelper(getContext());
         Cursor cursor = dbHelper.getReadableDatabase()
-                    .rawQuery(sql, null);
+                .query("FAVORITES", null, "is_district=?", new String[] {"0"}, null, null, null);
 
         if (mFavAgencyList.size() != cursor.getCount()) {
             while (cursor.moveToNext()) {
