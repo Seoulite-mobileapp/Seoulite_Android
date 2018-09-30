@@ -79,7 +79,7 @@ public class FavCardRecyclerViewAdapter extends RecyclerView.Adapter<FavCardView
                         ((MainActivity)v.getContext()).replaceFragment(f, true);
                     } else {
                         Bundle bundle = new Bundle();
-                        bundle.putString("agcId", String.valueOf(fav.getId()));
+                        bundle.putString("agcId", String.valueOf(fav.getIsAgency()));
                         AgencyInfoFragment f = new AgencyInfoFragment();
                         f.setArguments(bundle);
                         ((MainActivity)v.getContext()).replaceFragment(f, true);
