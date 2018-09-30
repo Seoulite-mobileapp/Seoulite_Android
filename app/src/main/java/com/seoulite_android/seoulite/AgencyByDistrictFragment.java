@@ -134,7 +134,7 @@ public class AgencyByDistrictFragment extends Fragment {
         ImageView mSetInvisible = view.findViewById(R.id.language_invisible);
         if (savedInstanceState == null) {
             Bundle args = getArguments();
-            districtName = args.getString("districtName");
+            districtName = args.getString("disName");
             if (districtName == null) {
                 Log.d(TAG, "setDistrirctName: districtName is null.");
             }
