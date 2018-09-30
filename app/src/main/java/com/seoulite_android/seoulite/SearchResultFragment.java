@@ -60,7 +60,7 @@ public class SearchResultFragment extends Fragment {
         String finalSearched = StringReplace(uppersearched);
         Log.d("regex후:", finalSearched);
         searchCursor = myDb.rawQuery("SELECT * FROM AGENCIES Where Upper(adr_gu_en) LIKE '%"+finalSearched+"%' OR Upper(agnc_nm_en) LIKE" +
-                "'%"+finalSearched+"%' OR phone LIKE '%"+finalSearched+"%' order by adr_gu_en", null);
+                "'%"+finalSearched+"%' order by adr_gu_en", null);
         mSearchResultCursorAdapter = new SearchResultCurosrAdapter(getActivity(), searchCursor);
         searchCursor.getCount();
 
@@ -112,8 +112,6 @@ public class SearchResultFragment extends Fragment {
     public static String StringReplace(String str){
         String match = "[^\uAC00-\uD7A3xfe0-9a-zA-Z\\s]";
         str = str.replaceAll(match, "");
-        str =str.replaceAll("-", "");
-        Log.d("특수문자 제거후:", str);
         str =  str.replaceAll("\\s{2,}", " ").trim();
 
         return str;

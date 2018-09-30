@@ -109,7 +109,6 @@ public class AgencyByDistrictFragment extends Fragment {
     Button btn_checkBox_lang;
     Cursor langCursor;
 
-    TextView mTestGoTo;
     @Override
     @SuppressWarnings("deprecation")
     public void onCreate(Bundle savedInstanceState) {
@@ -133,7 +132,6 @@ public class AgencyByDistrictFragment extends Fragment {
         etcCheckBox =view.findViewById(R.id.select_etc);
         btn_checkBox_lang = view.findViewById(R.id.btn_select_language);
         ImageView mSetInvisible = view.findViewById(R.id.language_invisible);
-
         if (savedInstanceState == null) {
             Bundle args = getArguments();
             districtName = args.getString("districtName");
@@ -145,16 +143,13 @@ public class AgencyByDistrictFragment extends Fragment {
             Log.d("선택된 구이름", selected);
 
             changeImage(districtName);
-
             mDb = mDbHelper.getReadableDatabase();
-            cursor = mDb.rawQuery("SELECT * FROM AGENCIES WHERE adr_gu_en='" + selected + "'", null);
+            cursor = mDb.rawQuery("SELECT * FROM AGENCIES WHERE adr_gu_en='" + selected + "' order by agnc_nm_en", null);
             // final AgencyListCursorAdapter mcursorAdapter = new AgencyListCursorAdapter(getActivity(), cursor);
             mcursorAdapter = new AgencyListCursorAdapter(getActivity(), cursor);
-            Log.d("처음의 cursor:", cursor.toString());
             mAgencyListView.setAdapter(mcursorAdapter);
 
             mSetInvisible.setOnClickListener(new View.OnClickListener() {
-                @Override
                 public void onClick(View view) {
                     if (!engCheckBox.isChecked() && !chCheckBox.isChecked() && !jpCheckBox.isChecked()&& !etcCheckBox.isChecked()) {
                     }else if(!engCheckBox.isChecked() && !chCheckBox.isChecked() && !jpCheckBox.isChecked() && etcCheckBox.isChecked()){
@@ -193,7 +188,6 @@ public class AgencyByDistrictFragment extends Fragment {
             });
 
             btn_living_info.setOnClickListener(new View.OnClickListener() {
-                @Override
                 public void onClick(View view) {
                     if (layout.getVisibility() == GONE) {
                         btn_living_info.setClickable(true);
@@ -250,7 +244,6 @@ public class AgencyByDistrictFragment extends Fragment {
 
 
             btn_checkBox_lang.setOnClickListener(new View.OnClickListener() {
-                @Override
                 public void onClick(View view) {
                     //모든 언어를 선택하지 않았을 경우
                     if (!engCheckBox.isChecked() && !chCheckBox.isChecked() && !jpCheckBox.isChecked()&& !etcCheckBox.isChecked()) {
@@ -311,7 +304,7 @@ public class AgencyByDistrictFragment extends Fragment {
 
                     Log.d("새로운 sql: ", langSql);
                     //커서 업데이트 하기
-                    langCursor = mDb.rawQuery("SELECT * FROM AGENCIES WHERE adr_gu_en='" + selected + "'" +langSql, null);
+                    langCursor = mDb.rawQuery("SELECT * FROM AGENCIES WHERE adr_gu_en='" + selected + "'" +langSql+" order by agnc_nm_en", null);
                     cursor = mcursorAdapter.swapCursor(langCursor);
                     mcursorAdapter.notifyDataSetChanged();
                     layout.setVisibility(GONE);
