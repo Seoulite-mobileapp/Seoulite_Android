@@ -13,6 +13,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -36,11 +37,13 @@ public class LivingInfoFragment extends Fragment {
     DistrictVO district;
 
     String distName;
+    private boolean favorite_check = true;
 
     /*ImageView mapPopupImage;*/
     @BindView(R.id.living_info_map_image) ImageView living_info_map_image;
     @BindView(R.id.living_info_district_image) ImageView living_info_district_image;
-
+    @BindView(R.id.living_info_favorite_star) ImageView living_info_favorite_star;
+    @BindView(R.id.btn_living_info_moveToAgencies) Button mMoveToAgencies;
 
     @Override
     public void onAttach(Context context) {
@@ -67,6 +70,21 @@ public class LivingInfoFragment extends Fragment {
 
         changeImage(distName);
         changeDistrictImage(distName);
+
+        mMoveToAgencies.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AgencyByDistrictFragment fragment = new AgencyByDistrictFragment();
+                Bundle bundle = new Bundle();
+                bundle.putString("districtName", distName);
+                fragment.setArguments(bundle);
+
+                getFragmentManager().beginTransaction().replace(R.id.main_container, fragment)
+                        .addToBackStack(null)
+                        .commit();
+
+            }
+        });
 
         return view;
     }

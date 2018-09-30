@@ -54,7 +54,7 @@
                 android:layout_marginBottom="5dp">
 
                 <ImageView
-                    android:id="@+id/agencyinfo_favorite_star"
+                    android:id="@+id/living_info_favorite_star"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_marginStart="5dp"
