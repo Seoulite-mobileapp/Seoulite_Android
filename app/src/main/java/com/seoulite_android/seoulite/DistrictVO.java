@@ -5,7 +5,7 @@ public class DistrictVO {
     private String districtEn;
     private int totalPop;
     private int foreignPop;
-    private int foreignRate;
+    private float foreignRate;
     private int avgRent;
     private int rentRank;
     private String distNearKr;
@@ -14,7 +14,7 @@ public class DistrictVO {
     private String featsEn;
 
     public DistrictVO(String districtKr, String districtEn, int totalPop, int foreignPop,
-                      int foreignRate, int avgRent, int rentRank, String distNearKr,
+                      float foreignRate, int avgRent, int rentRank, String distNearKr,
                       String distNearEn, String featsKr, String featsEn) {
         setDistrictKr(districtKr);
         setDistrictEn(districtEn);
@@ -61,11 +61,11 @@ public class DistrictVO {
         this.foreignPop = foreignPop;
     }
 
-    public int getForeignRate() {
+    public float getForeignRate() {
         return foreignRate;
     }
 
-    public void setForeignRate(int foreignRate) {
+    public void setForeignRate(float foreignRate) {
         this.foreignRate = foreignRate;
     }
 

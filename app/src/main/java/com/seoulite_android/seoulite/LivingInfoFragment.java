@@ -4,6 +4,8 @@ import android.app.Dialog;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -20,6 +22,7 @@ import java.util.Locale;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class LivingInfoFragment extends Fragment {
     ViewGroup view;
@@ -33,10 +36,10 @@ public class LivingInfoFragment extends Fragment {
     DistrictVO district;
 
     String distName;
-    private int districtId;
 
     /*ImageView mapPopupImage;*/
     @BindView(R.id.living_info_map_image) ImageView living_info_map_image;
+    @BindView(R.id.living_info_district_image) ImageView living_info_district_image;
 
 
     @Override
@@ -53,16 +56,17 @@ public class LivingInfoFragment extends Fragment {
         systemLocale = activity.getResources().getConfiguration().locale;
         currentLangauge = systemLocale.getLanguage();
 
-        Toast.makeText(activity, "현재"+currentLangauge, Toast.LENGTH_LONG).show();
         ButterKnife.bind(this, view);
         //getting agency id from previous fragment.
         if(savedInstanceState ==null) {
             gettingDistName();
         }
 
-        getDistrictInfo(districtId); // db에서 전 화면에서 받아온 id를 이용해 sql select
-
+        getDistrictInfo(distName); // db에서 전 화면에서 받아온 id를 이용해 sql select
         setTextViews(currentLangauge); //textview들을 setting
+
+        changeImage(distName);
+        changeDistrictImage(distName);
 
         return view;
     }
@@ -76,21 +80,20 @@ public class LivingInfoFragment extends Fragment {
     private void gettingDistName(){
         Bundle bundle = getArguments();
         if(bundle != null){
-            distName = bundle.getString("distName");
-            districtId = Integer.parseInt(distName);
+            distName = bundle.getString("districtName");
         }else{
             Toast.makeText(activity, "Can't get data. Try again.", Toast.LENGTH_LONG).show();
         }
     }
 
-    private void getDistrictInfo(int districtId){// db에서 전 화면에서 받아온 id를 이용해 select 후 agencyVO에 저장
+    private void getDistrictInfo(String distName){// db에서 전 화면에서 받아온 id를 이용해 select 후 agencyVO에 저장
         dbHelper = new DbHelper(activity);
         SQLiteDatabase db = dbHelper.getReadableDatabase();
-        String sqlDistrict = "SELECT * FROM DISTRICTS where _id = "+ districtId+";";
+        String sqlDistrict = "SELECT * FROM DISTRICTS where dist_en = '"+ distName+"'";
         Cursor cursor = db.rawQuery(sqlDistrict, null);
         while (cursor.moveToNext()) {
             district = new DistrictVO(cursor.getString(1), cursor.getString(2),
-                    cursor.getInt(3), cursor.getInt(4), cursor.getInt(5),
+                    cursor.getInt(3), cursor.getInt(4), cursor.getFloat(5),
                     cursor.getInt(6), cursor.getInt(7), cursor.getString(8),
                     cursor.getString(9), cursor.getString(10), cursor.getString(11));
         } //cursor.getString(0) : return id
@@ -99,51 +102,42 @@ public class LivingInfoFragment extends Fragment {
     }
 
     private void setTextViews(String currentLangauge){
-
-        TextView textviewDistictName = view.findViewById(R.id.text_living_info_district_name);
+        TextView textviewDistrictName = view.findViewById(R.id.text_living_info_district_name);
         TextView textviewNearby = view.findViewById(R.id.text_living_info_nearby);
         TextView textviewFeatures = view.findViewById(R.id.text_living_info_features);
 
         if(currentLangauge.equals("en")){
-            textviewDistictName.setText(district.getDistrictEn());
+            textviewDistrictName.setText(district.getDistrictEn());
             textviewNearby.setText(district.getDistNearEn());
             textviewFeatures.setText(district.getFeatsEn());
         }else if(currentLangauge.equals("ko")){
-            textviewDistictName.setText(district.getDistrictKr());
+            textviewDistrictName.setText(district.getDistrictKr());
             textviewNearby.setText(district.getDistNearKr());
             textviewFeatures.setText(district.getFeatsKr());
         }
 
-        TextView textviewPopulation = view.findViewById(R.id.text_living_info_population);
-        textviewPopulation.setText(district.getForeignPop());
+        TextView textviewTotalPop = view.findViewById(R.id.text_living_info_totalPop);
+        textviewTotalPop.setText(String.valueOf(district.getTotalPop()));
+        TextView textviewForeignPop= view.findViewById(R.id.text_living_info_foreignPop);
+        textviewForeignPop.setText(String.valueOf(district.getForeignPop()));
         TextView textviewForeignerRatio = view.findViewById(R.id.text_living_info_foreigner_ratio);
-        textviewForeignerRatio.setText(district.getForeignRate());
+        textviewForeignerRatio.setText(String.valueOf(district.getForeignRate()));
         TextView textviewAverageFee = view.findViewById(R.id.text_living_info_average_fee);
-        textviewAverageFee.setText(district.getAvgRent());
+        textviewAverageFee.setText(String.valueOf(district.getAvgRent()));
         TextView textviewRank = view.findViewById(R.id.text_living_info_rank);
-        textviewRank.setText(district.getRentRank());
+        textviewRank.setText(String.valueOf(district.getRentRank()));
+
 
     }
-    /*private void changeImage(String distName) {
-        Bundle bundle = getArguments();
-        String value = bundle.getString("distName");
-        if(value.equalsIgnoreCase("Gangnam-gu")){
-            living_info_map_image.setImageDrawable(getResources().getDrawable(R.drawable.dobonggu));
-        }else{
-            living_info_map_image.setImageDrawable(getResources().getDrawable(R.drawable.nowongu));
-        }
-    }*/
 
-    /*private void changeImage (String distName) {
+    private void changeImage (String distName) {
         switch (distName) {
             case "Gangnam-gu":
-                living_info_map_image.setImageResource(R.drawable.dobonggu);
-                *//*living_info_map_image.setImageDrawable(getResources().getDrawable(R.drawable.gangnamgu));
-                break;*//*
+                living_info_map_image.setImageDrawable(getResources().getDrawable(R.drawable.gangnamgu));
+                break;
             case "Gangdong-gu":
-                living_info_map_image.setImageResource(R.drawable.dobonggu);
-                *//*living_info_map_image.setImageDrawable(getResources().getDrawable(R.drawable.gangdonggu));
-                break;*//*
+                living_info_map_image.setImageDrawable(getResources().getDrawable(R.drawable.gangdonggu));
+                break;
             case "Gangbuk-gu":
                 living_info_map_image.setImageDrawable(getResources().getDrawable(R.drawable.gangbukgu));
                 break;
@@ -217,22 +211,88 @@ public class LivingInfoFragment extends Fragment {
                 living_info_map_image.setImageDrawable(getResources().getDrawable(R.drawable.agencyinfo_fax));
                 break;
         }
-    }*/
+    }
 
-    /*public void showPopUp(String distName){
-        Dialog dialog = new Dialog(getActivity());
-        dialog.setContentView(R.layout.dialog_map_image);
-        mapPopupImage = dialog.findViewById(R.id.map_popup_image);
+    private void changeDistrictImage(String distName) {
         switch (distName) {
             case "Gangnam-gu":
-                mapPopupImage.setImageDrawable(getResources().getDrawable(R.drawable.gangnamgu));
-                dialog.show();
+                living_info_district_image.setImageDrawable(getResources().getDrawable(R.drawable.living_info_ci_gangnamgu));
+                break;
+            case "Gangdong-gu":
+                living_info_district_image.setImageDrawable(getResources().getDrawable(R.drawable.living_info_ci_gangdonggu));
+                break;
+            case "Gangbuk-gu":
+                living_info_district_image.setImageDrawable(getResources().getDrawable(R.drawable.living_info_ci_gangbukgu));
+                break;
+            case "Gangseo-gu":
+                living_info_district_image.setImageDrawable(getResources().getDrawable(R.drawable.living_info_ci_gangseogu));
+                break;
+            case "Gwangjin-gu":
+                living_info_district_image.setImageDrawable(getResources().getDrawable(R.drawable.living_info_ci_gwangjingu));
+                break;
+            case "Guro-gu":
+                living_info_district_image.setImageDrawable(getResources().getDrawable(R.drawable.living_info_ci_gurogu));
+                break;
+            case "Geumcheon-gu":
+                living_info_district_image.setImageDrawable(getResources().getDrawable(R.drawable.living_info_ci_geumcheongu));
+                break;
+            case "Nowon-gu":
+                living_info_district_image.setImageDrawable(getResources().getDrawable(R.drawable.living_info_ci_nowongu));
+                break;
+            case "Dobong-gu":
+                living_info_district_image.setImageDrawable(getResources().getDrawable(R.drawable.living_info_ci_dobonggu));
+                break;
+            case "Dongdaemun-gu":
+                living_info_district_image.setImageDrawable(getResources().getDrawable(R.drawable.living_info_ci_dongdaemungu));
+                break;
+            case "Dongjak-gu":
+                living_info_district_image.setImageDrawable(getResources().getDrawable(R.drawable.living_info_ci_dongjakgu));
+                break;
+            case "Seodaemun-gu":
+                living_info_district_image.setImageDrawable(getResources().getDrawable(R.drawable.living_info_ci_seodaemungu));
+                break;
+            case "Seocho-gu":
+                living_info_district_image.setImageDrawable(getResources().getDrawable(R.drawable.living_info_ci_seochogu));
+                break;
+            case "Sungdong-gu":
+                living_info_district_image.setImageDrawable(getResources().getDrawable(R.drawable.living_info_ci_sungdonggu));
+                break;
+            case "Sungbuk-gu":
+                living_info_district_image.setImageDrawable(getResources().getDrawable(R.drawable.living_info_ci_sungbukgu));
+                break;
+            case "Songpa-gu":
+                living_info_district_image.setImageDrawable(getResources().getDrawable(R.drawable.living_info_ci_songpa));
+                break;
+            case "Yangcheon-gu":
+                living_info_district_image.setImageDrawable(getResources().getDrawable(R.drawable.living_info_ci_yangcheongu));
+                break;
+            case "Yeongdeungpo-gu":
+                living_info_district_image.setImageDrawable(getResources().getDrawable(R.drawable.living_info_ci_yeongdeungpogu));
+                break;
+            case "Yongsan-gu":
+                living_info_district_image.setImageDrawable(getResources().getDrawable(R.drawable.living_info_ci_yongsangu));
+                break;
+            case "Eunpyeong-gu":
+                living_info_district_image.setImageDrawable(getResources().getDrawable(R.drawable.living_info_ci_eunpyeonggu));
+                break;
+            case "Jongno-gu":
+                living_info_district_image.setImageDrawable(getResources().getDrawable(R.drawable.living_info_ci_jongnogu));
+                break;
+            case "Jung-gu":
+                living_info_district_image.setImageDrawable(getResources().getDrawable(R.drawable.living_info_ci_junggu));
+                break;
+            case "Jungnang-gu":
+                living_info_district_image.setImageDrawable(getResources().getDrawable(R.drawable.living_info_ci_jungnanggu));
+                break;
+            case "Gwanak-gu":
+                living_info_district_image.setImageDrawable(getResources().getDrawable(R.drawable.living_info_ci_gwanakgu));
+                break;
+            case "Mapo-gu":
+                living_info_district_image.setImageDrawable(getResources().getDrawable(R.drawable.living_info_ci_mapogu));
                 break;
             default:
-                mapPopupImage.setImageDrawable(getResources().getDrawable(R.drawable.ic_menu_camera));
-                dialog.show();
+                living_info_district_image.setImageDrawable(getResources().getDrawable(R.drawable.ic_x_shape));
                 break;
         }
-    }*/
-
+    }
 }

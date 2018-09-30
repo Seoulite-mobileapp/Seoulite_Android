@@ -40,18 +40,49 @@
                 android:textStyle="bold"
                 android:text="Yongsan-gu" />
 
-            <android.support.design.button.MaterialButton
+            <LinearLayout
+                android:id="@+id/linearlayout_livingInfo_favorite"
+                android:layout_width="170dp"
+                android:layout_height="30dp"
+                android:background="@drawable/agencyinfo_btn_border"
+                android:layout_gravity="end"
+                android:orientation="horizontal"
+                android:layout_marginEnd="30dp"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp">
+
+                <ImageView
+                    android:id="@+id/agencyinfo_favorite_star"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="13dp"
+                    android:background="@drawable/agencyinfo_star_off" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:paddingRight="10dp"
+                    android:text="@string/agencyinfo_addtofavorites"
+                    android:textColor="@android:color/black"
+                    android:autoSizeTextType="uniform"/>
+
+            </LinearLayout>
+
+            <android.support.v7.widget.AppCompatButton
                 android:id="@+id/btn_living_info_moveToAgencies"
-                android:background="@drawable/btn_transparent_bg_bordered"
-                android:textColor="#009a9b"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="170dp"
+                android:layout_height="30dp"
                 android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:padding="1dp"
-                android:text="Real Estate Agencies"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/agencyinfo_btn_border"
+                android:textColor="#009a9b"
+                android:text="  Real Estate Agencies  "
                 android:textAllCaps="false"
-                android:textSize="12sp" />
+                android:textSize="15sp" />
         </LinearLayout>
     </LinearLayout>
 
@@ -90,6 +121,7 @@
             android:orientation="vertical">
 
             <ImageView
+                android:id="@+id/living_info_district_image"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_gravity="center"
@@ -109,21 +141,48 @@
                     android:layout_margin="10dp"
                     android:gravity="right"
                     android:text="Population"
-                    android:textColor="#666666"
-                    android:textSize="15sp"
+                    android:textSize="16sp"
                     android:textStyle="bold"
                     android:layout_weight="1.3" />
-                <TextView
-                    android:id="@+id/text_living_info_population"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:gravity="left"
-                    android:text="put population data here"
-                    android:textColor="#666666"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:layout_weight="0.7" />
+                    android:orientation="horizontal"
+                    android:layout_weight="0.7">
+                    <TextView
+                        android:id="@+id/text_living_info_foreignPop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="left"
+                        android:text="foreigner pop"
+                        android:textColor="#666666"
+                        android:textSize="16sp"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="center"
+                        android:text="/ "
+                        android:textColor="#666666"
+                        android:textSize="16sp"/>
+                    <TextView
+                        android:id="@+id/text_living_info_totalPop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="left"
+                        android:text="total pop"
+                        android:textColor="#666666"
+                        android:textSize="16sp"/>
+                </LinearLayout>
             </LinearLayout>
             <!--first row finished-->
 
@@ -138,21 +197,37 @@
                     android:layout_margin="10dp"
                     android:gravity="right"
                     android:text="Foreigner ratio"
-                    android:textColor="#666666"
-                    android:textSize="15sp"
+                    android:textSize="16sp"
                     android:textStyle="bold"
+                    android:textColor="#666666"
                     android:layout_weight="1.3" />
-                <TextView
-                    android:id="@+id/text_living_info_foreigner_ratio"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:gravity="left"
-                    android:text="put foreigner ratio data here"
-                    android:textColor="#666666"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:layout_weight="0.7" />
+                    android:orientation="horizontal"
+                    android:layout_weight="0.7">
+                    <TextView
+                        android:id="@+id/text_living_info_foreigner_ratio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="left"
+                        android:text="put foreigner ratio data here"
+                        android:textColor="#666666"
+                        android:textSize="16sp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="left"
+                        android:text=" %"
+                        android:textColor="#666666"
+                        android:textSize="16sp"
+                        android:textStyle="bold"/>
+                </LinearLayout>
             </LinearLayout>
             <!--second row finished-->
 
@@ -168,20 +243,35 @@
                     android:gravity="right"
                     android:text="Average monthly pay"
                     android:textColor="#666666"
-                    android:textSize="12sp"
+                    android:textSize="16sp"
                     android:textStyle="bold"
                     android:layout_weight="1.3" />
-                <TextView
-                    android:id="@+id/text_living_info_average_fee"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:gravity="left"
-                    android:text="put average fee data here"
-                    android:textColor="#666666"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:layout_weight="0.7" />
+                    android:orientation="horizontal"
+                    android:layout_weight="0.7">
+                    <TextView
+                        android:id="@+id/text_living_info_average_fee"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="left"
+                        android:text="put average fee data here"
+                        android:textColor="#666666"
+                        android:textSize="16sp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="left"
+                        android:text="0000 ￦"
+                        android:textColor="#666666"
+                        android:textSize="16sp"/>
+                </LinearLayout>
             </LinearLayout>
             <!--third row finished-->
 
@@ -197,20 +287,36 @@
                     android:gravity="right"
                     android:text="Rank of monthly pay"
                     android:textColor="#666666"
-                    android:textSize="12sp"
+                    android:textSize="16sp"
                     android:textStyle="bold"
                     android:layout_weight="1.3" />
-                <TextView
-                    android:id="@+id/text_living_info_rank"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:gravity="left"
-                    android:text="put rank of pay data here"
-                    android:textColor="#666666"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:layout_weight="0.7" />
+                    android:orientation="horizontal"
+                    android:layout_weight="0.7">
+                    <TextView
+                        android:id="@+id/text_living_info_rank"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="left"
+                        android:text="put rank of pay"
+                        android:textColor="#666666"
+                        android:textSize="16sp"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="left"
+                        android:text=" / 25 districts"
+                        android:textColor="#666666"
+                        android:textSize="16sp"/>
+                </LinearLayout>
             </LinearLayout>
             <!--fourth row finished-->
 
@@ -226,7 +332,7 @@
                     android:gravity="right"
                     android:text="Districts nearby"
                     android:textColor="#666666"
-                    android:textSize="15sp"
+                    android:textSize="16sp"
                     android:textStyle="bold"
                     android:layout_weight="1.3" />
                 <TextView
@@ -237,8 +343,7 @@
                     android:gravity="left"
                     android:text="put district nearby data here"
                     android:textColor="#666666"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
+                    android:textSize="16sp"
                     android:layout_weight="0.7" />
             </LinearLayout>
             <!--fifth row finished-->
@@ -255,7 +360,7 @@
                     android:gravity="right"
                     android:text="Features"
                     android:textColor="#666666"
-                    android:textSize="15sp"
+                    android:textSize="16sp"
                     android:textStyle="bold"
                     android:layout_weight="1.3" />
                 <TextView
@@ -266,40 +371,10 @@
                     android:gravity="left"
                     android:text="put features data here"
                     android:textColor="#666666"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
+                    android:textSize="16sp"
                     android:layout_weight="0.7" />
             </LinearLayout>
             <!--sixth row finished-->
-
-            <!--<LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="2" >
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:gravity="right"
-                    android:text="Recommend to"
-                    android:textColor="#666666"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:layout_weight="1.3" />
-                <TextView
-                    android:id="@+id/text_living_info_recommend"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:gravity="left"
-                    android:text="put recommend to data here"
-                    android:textColor="#666666"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:layout_weight="0.7" />
-            </LinearLayout>
-            &lt;!&ndash;last and seventh row finished&ndash;&gt;-->
 
         </LinearLayout>
     </ScrollView>
