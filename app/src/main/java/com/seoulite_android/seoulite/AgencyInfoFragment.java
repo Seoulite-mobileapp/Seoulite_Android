@@ -57,6 +57,7 @@ import butterknife.OnClick;
 public class AgencyInfoFragment extends Fragment implements OnMarkerClickListener, OnMapReadyCallback {
     ViewGroup rootView;
     MainActivity activity;
+    SupportMapFragment mapFragment;
 
     private Geocoder geocoder;
     private GoogleMap mMap;
@@ -133,12 +134,16 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
         setAddressLatLng(agencyAddress); // 주소를 google map parameter에 맞추기.
 
         //google maps
-        SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager()
+        mapFragment = (SupportMapFragment) getChildFragmentManager()
                 .findFragmentById(R.id.agencyinfo_map);
-        mapFragment.getMapAsync(this);
-
 
         return rootView;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        mapFragment.getMapAsync(this);
     }
 
     @OnClick(R.id.linearlaout_agencyinfo_favorite)
