@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Select  for living info"
+        android:text="Select  for Living info"
         android:textColor="#009a9b"
         android:textSize="18sp"
         android:textStyle="bold" />
