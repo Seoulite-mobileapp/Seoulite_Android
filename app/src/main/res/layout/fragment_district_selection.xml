@@ -20,11 +20,12 @@
 
     <android.support.design.button.MaterialButton
         android:id="@+id/btn_district_selection_search"
-        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:theme="@style/AppTheme.Button"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:text="@string/btn_search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+    <!--style="@style/Widget.MaterialComponents.Button.TextButton"-->
 
 </LinearLayout>
