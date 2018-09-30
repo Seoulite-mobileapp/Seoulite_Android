@@ -5,7 +5,9 @@ import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -63,6 +65,25 @@ public class FavCardRecyclerViewAdapter extends RecyclerView.Adapter<FavCardView
                             })
                             .create();
                     dialog.show();
+                }
+            });
+
+            holder.mNameTextView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (fav.getIsDistrict() != 0) {
+                        Bundle bundle = new Bundle();
+                        bundle.putString("districtName", fav.getName());
+                        LivingInfoFragment f = new LivingInfoFragment();
+                        f.setArguments(bundle);
+                        ((MainActivity)v.getContext()).replaceFragment(f, true);
+                    } else {
+                        Bundle bundle = new Bundle();
+                        bundle.putString("agcId", String.valueOf(fav.getId()));
+                        AgencyInfoFragment f = new AgencyInfoFragment();
+                        f.setArguments(bundle);
+                        ((MainActivity)v.getContext()).replaceFragment(f, true);
+                    }
                 }
             });
 

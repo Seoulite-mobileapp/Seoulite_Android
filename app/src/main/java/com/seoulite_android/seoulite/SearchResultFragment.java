@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -30,7 +31,8 @@ public class SearchResultFragment extends Fragment {
     ListView mResultListView;
     SearchResultCurosrAdapter mSearchResultCursorAdapter;
     String msearched;
-
+    String searched;
+    MainActivity activity;
 
     public SearchResultFragment() {
         // Required empty public constructor
@@ -51,17 +53,21 @@ public class SearchResultFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_search_result, container, false);
         ButterKnife.bind(this, view);
         myDb = myDbHelper.getReadableDatabase();
-        String searched = "-576-";
+        if(savedInstanceState ==null){
+            gettigSearching();
+        }
         String uppersearched = searched.toUpperCase();
         String finalSearched = StringReplace(uppersearched);
         Log.d("regex후:", finalSearched);
         searchCursor = myDb.rawQuery("SELECT * FROM AGENCIES Where Upper(adr_gu_en) LIKE '%"+finalSearched+"%' OR Upper(agnc_nm_en) LIKE" +
-                "'%"+finalSearched+"%' OR phone LIKE '%"+finalSearched+"%' order by adr_gu_en", null);
+                "'%"+finalSearched+"%' order by adr_gu_en", null);
         mSearchResultCursorAdapter = new SearchResultCurosrAdapter(getActivity(), searchCursor);
         searchCursor.getCount();
 
         int mToalNum = searchCursor.getCount();
-
+        if(mToalNum<1){
+            Toast.makeText(getActivity(), "Result not found. Please Try Again.", Toast.LENGTH_SHORT).show();
+        }
         mTotalResult.setText("Result:  "+String.valueOf(mToalNum));
 
         mResultListView.setAdapter(mSearchResultCursorAdapter);
@@ -85,6 +91,15 @@ public class SearchResultFragment extends Fragment {
         return view;
     }
 
+    private void gettigSearching(){
+        Bundle bundle = getArguments();
+        if(bundle != null){
+            searched = bundle.getString("searching");
+        }else{
+            Toast.makeText(activity, "Can't get data. Try again.", Toast.LENGTH_LONG).show();
+        }
+    }
+
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -95,9 +110,8 @@ public class SearchResultFragment extends Fragment {
         super.onDetach();
     }
     public static String StringReplace(String str){
-//        String match = "[^\uAC00-\uD7A3xfe0-9a-zA-Z\\s]";
-        str =str.replaceAll("-", "");
-     //   Log.d("특수문자 제거후:", str);
+        String match = "[^\uAC00-\uD7A3xfe0-9a-zA-Z\\s]";
+        str = str.replaceAll(match, "");
         str =  str.replaceAll("\\s{2,}", " ").trim();
 
         return str;

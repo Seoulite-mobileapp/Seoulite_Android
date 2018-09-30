@@ -12,12 +12,6 @@
         android:layout_height="0dp"
         android:layout_weight="3.3"
         android:padding="0dp">
-        <TextView
-            android:id="@+id/testToResult"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Plz"
-            android:visibility="visible"/>
         <!--여기와 -->
         <LinearLayout
             android:id="@+id/title_part"
@@ -37,13 +31,6 @@
                     android:layout_weight="2"
                     android:layout_height="170dp"
                     android:layout_alignParentStart="true">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="bottom|right"
-                        android:src="@drawable/ic_search" />
-
                     <ImageView
                         android:id="@+id/map_image"
                         android:layout_width="match_parent"
@@ -79,28 +66,30 @@
                             tools:text="Yongsan-gu" />
                         <!--구의 이름과 밑의 버튼 두개(구의 주거정보&언어선택하기)-->
                         <!--우선 두 버튼의 레이아웃을 동일하게 해둠 -->
-                        <Button
+                        <android.support.v7.widget.AppCompatButton
                             android:id="@+id/btn_living_info"
-                            android:layout_width="150dp"
+                            android:layout_width="170dp"
                             android:layout_height="30dp"
                             android:layout_gravity="center"
                             android:layout_marginTop="10dp"
-                            android:background="@drawable/agencyinfo_btn_border"
+                            android:background="@drawable/all_btn_selector"
                             android:text="District Living Info."
+                            android:autoSizeTextType="uniform"
                             android:textAllCaps="false"
-                            android:textColor="#666666"
+                            android:textColor="#009a9b"
                             android:textSize="12sp" />
 
-                        <Button
+                        <android.support.v7.widget.AppCompatButton
                             android:id="@+id/btn_language_filter"
-                            android:layout_width="150dp"
+                            android:layout_width="170dp"
                             android:layout_height="30dp"
                             android:layout_gravity="center"
                             android:layout_marginTop="15dp"
-                            android:background="@drawable/agencyinfo_btn_border"
+                            android:autoSizeTextType="uniform"
+                            android:background="@drawable/all_btn_selector"
                             android:text="Language Filter"
                             android:textAllCaps="false"
-                            android:textColor="#666666"
+                            android:textColor="#009a9b"
                             android:textSize="12sp" />
                     </LinearLayout>
 
@@ -139,7 +128,7 @@
         </LinearLayout>
         <LinearLayout
             android:layout_marginRight="30dp"
-            android:layout_marginTop="126dp"
+            android:layout_marginTop="125dp"
             android:layout_alignParentRight="true"
             android:id="@+id/language_filter_page"
             android:layout_width="wrap_content"
@@ -162,6 +151,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Chinese"/>
+                <ImageView
+                    android:id="@+id/language_invisible"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/language_invisible"
+                    android:layout_marginLeft="35dp"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -177,15 +172,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Etc"/>
-                <Button
+                <android.support.v7.widget.AppCompatButton
                     android:layout_marginLeft="13dp"
                     android:id="@+id/btn_select_language"
                     android:layout_width="70dp"
                     android:layout_height="30dp"
+                    android:autoSizeTextType="uniform"
                     android:background="@drawable/agencybydistyrict_btn_search"
+                    android:maxLines="1"
+                    android:padding="7dp"
                     android:textColor="#FFFFFF"
-                    android:textSize="11sp"
-                    android:text="Search"/>
+                    android:text="@string/btn_search"/>
             </LinearLayout>
         </LinearLayout>
     </RelativeLayout>
@@ -203,5 +200,3 @@
         </ListView>
     </LinearLayout>
 </LinearLayout>
-
-
