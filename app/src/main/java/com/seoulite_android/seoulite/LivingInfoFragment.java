@@ -264,10 +264,10 @@ public class LivingInfoFragment extends Fragment {
             case "Seocho-gu":
                 living_info_district_image.setImageDrawable(getResources().getDrawable(R.drawable.living_info_ci_seochogu));
                 break;
-            case "Sungdong-gu":
+            case "Seongdong-gu":
                 living_info_district_image.setImageDrawable(getResources().getDrawable(R.drawable.living_info_ci_sungdonggu));
                 break;
-            case "Sungbuk-gu":
+            case "Seongbuk-gu":
                 living_info_district_image.setImageDrawable(getResources().getDrawable(R.drawable.living_info_ci_sungbukgu));
                 break;
             case "Songpa-gu":

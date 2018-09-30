@@ -34,7 +34,7 @@
     "avg_rent": 36,
     "rent_rank": 2,
     "dist_near_kr": "도봉구, 노원구, 성북구",
-    "dist_near_en": "Dobong-gu, Nowon-gu, Sungbuk-gu",
+    "dist_near_en": "Dobong-gu, Nowon-gu, Seongbuk-gu",
     "feats_kr": "북서울 꿈의 숲 공원 (생태공원), 북산,  419 국립 묘지",
     "feats_en": "Northern Seoul dream forest park(ecological park), Bukhansan(famous mountain), April 19th National Cemetery"
   },
@@ -73,7 +73,7 @@
     "avg_rent": 51,
     "rent_rank": 17,
     "dist_near_kr": "성동구, 중랑구",
-    "dist_near_en": "Sungdong-gu, Jungnang-gu",
+    "dist_near_en": "Seongdong-gu, Jungnang-gu",
     "feats_kr": "어린이 대공원, 뚝섬유원지 (한강 인근 피크닉 장소), 아차산 성",
     "feats_en": "Children's Grand Park(theme park), Ttukseom Resort(picnic spot near Han-river), Achasanseong(old Korean fortress)"
   },
@@ -138,7 +138,7 @@
     "avg_rent": 43,
     "rent_rank": 10,
     "dist_near_kr": "광진구, 성동구, 성북구, 중랑구",
-    "dist_near_en": "Gwangjin-gu, Sungdong-gu, Sungbuk-gu, Jungnang-gu",
+    "dist_near_en": "Gwangjin-gu, Seongdong-gu, Seongbuk-gu, Jungnang-gu",
     "feats_kr": "동대문 디자인 플라자 (의류 쇼핑 플라자), 청계천 (시민 쉼터), 서울 풍물 시장 (전통 시장)",
     "feats_en": "Dongdaemun design plaza(apparel shopping plaza), Cheonggyecheon(modern public recreation space), Seoul pungmul market(traditional market)"
   },
@@ -196,7 +196,7 @@
   },
   {
     "district_kr": "성동구",
-    "district_en": "Sungdong-gu",
+    "district_en": "Seongdong-gu",
     "total_pop": 316068,
     "foreign_pop": 8002,
     "foreign_rate": 2.53,
@@ -209,7 +209,7 @@
   },
   {
     "district_kr": "성북구",
-    "district_en": "Sungbuk-gu",
+    "district_en": "Seongbuk-gu",
     "total_pop": 451829,
     "foreign_pop": 11557,
     "foreign_rate": 2.56,
@@ -294,7 +294,7 @@
     "avg_rent": 52,
     "rent_rank": 19,
     "dist_near_kr": "성북구, 서대문구, 중구, 은평구, 동대문구",
-    "dist_near_en": "Sungbuk-gu, Seodaemun-gu, Jung-gu, Eunpyeong-gu, Dongdaemun-gu",
+    "dist_near_en": "Seongbuk-gu, Seodaemun-gu, Jung-gu, Eunpyeong-gu, Dongdaemun-gu",
     "feats_kr": "경복궁 (왕궁), 혜화 극장 거리, 북촌 한옥 마을 (한국 전통 가옥 마을)",
     "feats_en": "Gyeongbokgung Palace(royal palace), Hyehwa playhouse street, Bukchon Hanok village(korean traditional house village)"
   },
@@ -307,7 +307,7 @@
     "avg_rent": 50,
     "rent_rank": 15,
     "dist_near_kr": "동대문구, 마포구, 서대문구, 성동구, 용산구, 종로구",
-    "dist_near_en": "Dongdaemun-gu, Mapo-gu, Seodaemun-gu, Sungdong-gu, Yongsan-gu, Jongno-gu",
+    "dist_near_en": "Dongdaemun-gu, Mapo-gu, Seodaemun-gu, Seongdong-gu, Yongsan-gu, Jongno-gu",
     "feats_kr": "서울 시청, 덕수궁 (왕궁), 신당 떡볶이 타운",
     "feats_en": "Seoul City Hall, Deoksugung Palace(royal palace), Sindang Tteok-bokki town"
   },
