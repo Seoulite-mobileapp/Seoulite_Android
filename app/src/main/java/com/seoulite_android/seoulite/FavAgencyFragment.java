@@ -52,7 +52,6 @@ public class FavAgencyFragment extends Fragment {
         DbHelper dbHelper = new DbHelper(getContext());
         Cursor cursor = dbHelper.getReadableDatabase()
                     .rawQuery(sql, null);
-//                .query("FAVORITES", null, "is_agency=?",new String[] {"1"}, null, null, null, null);
 
         if (mFavAgencyList.size() != cursor.getCount()) {
             while (cursor.moveToNext()) {
@@ -90,7 +89,7 @@ public class FavAgencyFragment extends Fragment {
                 if (intent.getBooleanExtra("isUpdate", false)) {
                     mFavAgencyList.clear();
                     Cursor cursor = new DbHelper(getContext()).getReadableDatabase()
-                            .query("FAVORITES", null, "is_district=?", new String[] {"1"}, null, null, null);
+                            .query("FAVORITES", null, "is_agency!=?", new String[] {"0"}, null, null, null);
                     if (mFavAgencyList.size() != cursor.getCount()) {
                         while (cursor.moveToNext()) {
                             mFavAgencyList.add(new FavVO(cursor.getInt(0), // id
@@ -105,7 +104,7 @@ public class FavAgencyFragment extends Fragment {
                 } else {
                     mFavAgencyList.clear();
                     Cursor cursor = new DbHelper(getContext()).getReadableDatabase()
-                            .query("FAVORITES", null, "is_district=?", new String[] {"1"}, null, null, null);
+                            .query("FAVORITES", null, "is_agency!=?", new String[] {"0"}, null, null, null);
                     while (cursor.moveToNext()) {
                         mFavAgencyList.add(new FavVO(cursor.getInt(0), // id
                                 cursor.getString(1), // name

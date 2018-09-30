@@ -108,7 +108,7 @@ private static final String TAG = "FavDistrictFragment";
                     Log.d(TAG, "onReceive: broadcastreceiver - isupdate");
                     mFavDistrictList.clear();
                     Cursor cursor = new DbHelper(getContext()).getReadableDatabase()
-                            .query("FAVORITES", null, "is_district=?", new String[] {"1"}, null, null, null);
+                            .query("FAVORITES", null, "is_district!=?", new String[] {"0"}, null, null, null);
                     if (mFavDistrictList.size() != cursor.getCount()) {
                         while (cursor.moveToNext()) {
                             mFavDistrictList.add(new FavVO(cursor.getInt(0), // id
@@ -123,7 +123,7 @@ private static final String TAG = "FavDistrictFragment";
                 } else {
                     mFavDistrictList.clear();
                     Cursor cursor = new DbHelper(getContext()).getReadableDatabase()
-                            .query("FAVORITES", null, "is_district=?", new String[] {"1"}, null, null, null);
+                            .query("FAVORITES", null, "is_district!=?", new String[] {"0"}, null, null, null);
                     while (cursor.moveToNext()) {
                         mFavDistrictList.add(new FavVO(cursor.getInt(0), // id
                                 cursor.getString(1), // name

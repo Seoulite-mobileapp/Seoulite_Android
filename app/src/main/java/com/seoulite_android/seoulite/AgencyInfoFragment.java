@@ -119,8 +119,6 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
         systemLocale = activity.getResources().getConfiguration().locale;
         currentLangauge = systemLocale.getLanguage();
 
-        //Toast.makeText(activity, "현재"+currentLangauge, Toast.LENGTH_LONG).show();
-
         ButterKnife.bind(this, rootView);
 
         //getting agency id from previous fragment.
@@ -144,8 +142,7 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
                 .findFragmentById(R.id.agencyinfo_map);
         mapFragment.getMapAsync(this);
 
-        //for test
-        //Toast.makeText(activity, "난수는"+rand_tel+"&" +agency.getAgncNmKr(), Toast.LENGTH_LONG).show();
+
         return rootView;
     }
 
@@ -310,7 +307,7 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
                         .addToBackStack(null)
                         .commit();*/
 
-                (activity).replaceFragment(new FavAgencyFragment(), true);
+                (activity).replaceFragment(new FavoritesFragment(), true);
 
             }
         });
