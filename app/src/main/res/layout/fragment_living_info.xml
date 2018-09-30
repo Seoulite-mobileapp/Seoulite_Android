@@ -152,6 +152,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
+                    android:padding="1dp"
                     android:layout_weight="0.7">
                     <TextView
                         android:id="@+id/text_living_info_foreignPop"
@@ -163,7 +164,7 @@
                         android:gravity="left"
                         android:text="foreigner pop"
                         android:textColor="#666666"
-                        android:textSize="16sp"
+                        android:textSize="18sp"
                         android:textStyle="bold"/>
                     <TextView
                         android:layout_width="wrap_content"
@@ -175,7 +176,7 @@
                         android:gravity="center"
                         android:text="/ "
                         android:textColor="#666666"
-                        android:textSize="16sp"/>
+                        android:textSize="18sp"/>
                     <TextView
                         android:id="@+id/text_living_info_totalPop"
                         android:layout_width="wrap_content"
@@ -185,7 +186,7 @@
                         android:gravity="left"
                         android:text="total pop"
                         android:textColor="#666666"
-                        android:textSize="16sp"/>
+                        android:textSize="18sp"/>
                 </LinearLayout>
             </LinearLayout>
             <!--first row finished-->
@@ -218,9 +219,9 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginBottom="10dp"
                         android:gravity="left"
-                        android:text="put foreigner ratio data here"
+                        android:text="foreigner ratio data here"
                         android:textColor="#666666"
-                        android:textSize="16sp"/>
+                        android:textSize="18sp"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -229,7 +230,7 @@
                         android:gravity="left"
                         android:text=" %"
                         android:textColor="#666666"
-                        android:textSize="16sp"
+                        android:textSize="18sp"
                         android:textStyle="bold"/>
                 </LinearLayout>
             </LinearLayout>
@@ -254,6 +255,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
+                    android:padding="1dp"
                     android:layout_weight="0.7">
                     <TextView
                         android:id="@+id/text_living_info_average_fee"
@@ -263,18 +265,18 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginBottom="10dp"
                         android:gravity="left"
-                        android:text="put average fee data here"
+                        android:text="average fee data"
                         android:textColor="#666666"
-                        android:textSize="16sp"/>
+                        android:textSize="18sp"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="10dp"
                         android:gravity="left"
-                        android:text="0000 ￦"
+                        android:text="0,000 ￦"
                         android:textColor="#666666"
-                        android:textSize="16sp"/>
+                        android:textSize="18sp"/>
                 </LinearLayout>
             </LinearLayout>
             <!--third row finished-->
@@ -298,6 +300,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
+                    android:padding="1dp"
                     android:layout_weight="0.7">
                     <TextView
                         android:id="@+id/text_living_info_rank"
@@ -307,9 +310,9 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginBottom="10dp"
                         android:gravity="left"
-                        android:text="put rank of pay"
+                        android:text="rank of pay"
                         android:textColor="#666666"
-                        android:textSize="16sp"
+                        android:textSize="18sp"
                         android:textStyle="bold"/>
                     <TextView
                         android:layout_width="wrap_content"
@@ -345,9 +348,9 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
                     android:gravity="left"
-                    android:text="put district nearby data here"
+                    android:text="district nearby data"
                     android:textColor="#666666"
-                    android:textSize="16sp"
+                    android:textSize="18sp"
                     android:layout_weight="0.7" />
             </LinearLayout>
             <!--fifth row finished-->
@@ -373,9 +376,9 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
                     android:gravity="left"
-                    android:text="put features data here"
+                    android:text="features data"
                     android:textColor="#666666"
-                    android:textSize="16sp"
+                    android:textSize="18sp"
                     android:layout_weight="0.7" />
             </LinearLayout>
             <!--sixth row finished-->
