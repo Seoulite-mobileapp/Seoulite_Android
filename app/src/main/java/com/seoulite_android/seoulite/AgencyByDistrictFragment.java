@@ -134,7 +134,7 @@ public class AgencyByDistrictFragment extends Fragment {
         ImageView mSetInvisible = view.findViewById(R.id.language_invisible);
         if (savedInstanceState == null) {
             Bundle args = getArguments();
-            districtName = args.getString("disName");
+            districtName = args.getString("districtName");
             if (districtName == null) {
                 Log.d(TAG, "setDistrirctName: districtName is null.");
             }
@@ -147,7 +147,9 @@ public class AgencyByDistrictFragment extends Fragment {
             cursor = mDb.rawQuery("SELECT * FROM AGENCIES WHERE adr_gu_en='" + selected + "' order by agnc_nm_en", null);
             // final AgencyListCursorAdapter mcursorAdapter = new AgencyListCursorAdapter(getActivity(), cursor);
             mcursorAdapter = new AgencyListCursorAdapter(getActivity(), cursor);
+            mcursorAdapter.notifyDataSetChanged();
             mAgencyListView.setAdapter(mcursorAdapter);
+
 
             mSetInvisible.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View view) {
@@ -210,6 +212,7 @@ public class AgencyByDistrictFragment extends Fragment {
 
 
             mAgencyListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
                 public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                     TextView id = view.findViewById(R.id.agency_id);
                     String selectedAgcId = id.getText().toString();
@@ -313,6 +316,7 @@ public class AgencyByDistrictFragment extends Fragment {
             });
             mAgencyListView.setAdapter(mcursorAdapter);
         }
+
         return view;
     }
 
