@@ -1,8 +1,10 @@
 package com.seoulite_android.seoulite;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
@@ -338,7 +340,7 @@ public class LivingInfoFragment extends Fragment {
         else living_info_favorite_star.setImageResource(R.drawable.agencyinfo_star_off);
     }
 
-    /*private void favoriteDb(String mode, int id){
+    private void favoriteDb(String mode, String distName){
         SQLiteDatabase db =  dbHelper.getWritableDatabase();
         String sql;
         if(mode.equals("insert")){
@@ -349,24 +351,47 @@ public class LivingInfoFragment extends Fragment {
             values.put("memo", "");
             db.insert("FAVORITES", null, values);
         }else if(mode.equals("delete")){
-            sql = "DELETE FROM FAVORITES WHERE is_agency = "+id+";";
+            sql = "DELETE FROM FAVORITES WHERE name = '"+distName+"';";
             db.execSQL(sql);
         }
         db.close();
-    }*/
+    }
 
-    /*@OnClick(R.id.linearlaout_agencyinfo_favorite)
+    @OnClick(R.id.linearlayout_livingInfo_favorite)
     void favoriteInteraction(){
         if(favorite_check){ // 있는데 눌렀다 -> 삭제
             favorite_check = false;
-            favoriteDb("delete", agencyId);
+            favoriteDb("delete", distName);
             matchingFavoriteStar(favorite_check);
         } else { // 추가
             favorite_check = true;
-            favoriteDb("insert",agencyId);
+            favoriteDb("insert", distName);
             matchingFavoriteStar(favorite_check);
             showAddFavoriteAlert();
         }
-    }*/
+    }
+
+    private void showAddFavoriteAlert(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+        builder.setTitle("Notification");
+        builder.setMessage("District is successfully added to your favorites!"+
+                ""+
+                "Would you like to check your favorite?");
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+                (activity).replaceFragment(new FavoritesFragment(), true);
+
+            }
+        });
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+            }
+        });
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
 
 }
