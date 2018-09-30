@@ -193,7 +193,7 @@ public class AgencyByDistrictFragment extends Fragment {
                         btn_living_info.setClickable(true);
                         LivingInfoFragment fragment = new LivingInfoFragment();
                         Bundle bundle = new Bundle();
-                        bundle.putString("disName", selected);
+                        bundle.putString("districtName", selected);
                         fragment.setArguments(bundle);
 
                         //getFragmentManager().beginTransaction().add(R.id.main_container, fragment).commit();

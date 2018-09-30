@@ -1,6 +1,7 @@
 package com.seoulite_android.seoulite;
 
 import android.app.Dialog;
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -71,12 +72,15 @@ public class LivingInfoFragment extends Fragment {
         changeImage(distName);
         changeDistrictImage(distName);
 
+        checkIsFavorite(distName); //Favorite인지 아닌지 체크
+        matchingFavoriteStar(favorite_check);
+
         mMoveToAgencies.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 AgencyByDistrictFragment fragment = new AgencyByDistrictFragment();
                 Bundle bundle = new Bundle();
-                bundle.putString("districtName", distName);
+                bundle.putString("disName", distName);
                 fragment.setArguments(bundle);
 
                 getFragmentManager().beginTransaction().replace(R.id.main_container, fragment)
@@ -313,4 +317,56 @@ public class LivingInfoFragment extends Fragment {
                 break;
         }
     }
+
+    private void checkIsFavorite(String distName){// db에서 전 화면에서 받아온 String를 이용해 favorite select
+        dbHelper = new DbHelper(activity);
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        String sqlFavorite = "SELECT * FROM FAVORITES where name = '"+ distName +"' and is_agency = 0;";
+        Cursor cursor = db.rawQuery(sqlFavorite, null);
+        if(cursor.getCount()==1){
+            favorite_check = true;
+            cursor.moveToNext();
+        }else{
+            favorite_check = false;
+        }
+        cursor.close();
+        db.close();
+    }
+
+    private void matchingFavoriteStar(boolean check){
+        if(check) living_info_favorite_star.setImageResource(R.drawable.agencyinfo_star_on);
+        else living_info_favorite_star.setImageResource(R.drawable.agencyinfo_star_off);
+    }
+
+    /*private void favoriteDb(String mode, int id){
+        SQLiteDatabase db =  dbHelper.getWritableDatabase();
+        String sql;
+        if(mode.equals("insert")){
+            ContentValues values = new ContentValues();
+            values.put("name", district.getDistrictEn());
+            values.put("is_district", 1);
+            values.put("is_agency", 0);
+            values.put("memo", "");
+            db.insert("FAVORITES", null, values);
+        }else if(mode.equals("delete")){
+            sql = "DELETE FROM FAVORITES WHERE is_agency = "+id+";";
+            db.execSQL(sql);
+        }
+        db.close();
+    }*/
+
+    /*@OnClick(R.id.linearlaout_agencyinfo_favorite)
+    void favoriteInteraction(){
+        if(favorite_check){ // 있는데 눌렀다 -> 삭제
+            favorite_check = false;
+            favoriteDb("delete", agencyId);
+            matchingFavoriteStar(favorite_check);
+        } else { // 추가
+            favorite_check = true;
+            favoriteDb("insert",agencyId);
+            matchingFavoriteStar(favorite_check);
+            showAddFavoriteAlert();
+        }
+    }*/
+
 }
