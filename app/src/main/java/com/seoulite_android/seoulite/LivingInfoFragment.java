@@ -36,11 +36,12 @@ public class LivingInfoFragment extends Fragment {
     DistrictVO district;
 
     String distName;
+    private boolean favorite_check = true;
 
     /*ImageView mapPopupImage;*/
     @BindView(R.id.living_info_map_image) ImageView living_info_map_image;
     @BindView(R.id.living_info_district_image) ImageView living_info_district_image;
-
+    /*@BindView(R.id.living_info_favorite_star) ImageView living_info_favorite_star;*/
 
     @Override
     public void onAttach(Context context) {
@@ -75,6 +76,18 @@ public class LivingInfoFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         activity=null;
+    }
+
+    @OnClick(R.id.btn_living_info_moveToAgencies)
+    void moveToAgencyByDistrictFragment() {
+        AgencyByDistrictFragment agencyByDistrictFragment = new AgencyByDistrictFragment();
+        Bundle bundle = new Bundle();
+        bundle.putString("districtName", distName);
+        agencyByDistrictFragment.setArguments(bundle);
+
+        getFragmentManager().beginTransaction().replace(R.id.main_container, agencyByDistrictFragment)
+                .addToBackStack(null).commit();
+
     }
 
     private void gettingDistName(){
