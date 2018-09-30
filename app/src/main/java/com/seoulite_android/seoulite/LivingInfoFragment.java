@@ -32,10 +32,6 @@ public class LivingInfoFragment extends Fragment {
     ViewGroup view;
     MainActivity activity;
 
-    //Declaration for getLanguage
-    private Locale systemLocale;
-    private String currentLangauge;
-
     DbHelper dbHelper;
     DistrictVO district;
 
@@ -58,9 +54,6 @@ public class LivingInfoFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = (ViewGroup) inflater.inflate(R.layout.fragment_living_info, container, false);
-        //getLanguage
-        systemLocale = activity.getResources().getConfiguration().locale;
-        currentLangauge = systemLocale.getLanguage();
 
         ButterKnife.bind(this, view);
         //getting agency id from previous fragment.
@@ -69,7 +62,7 @@ public class LivingInfoFragment extends Fragment {
         }
 
         getDistrictInfo(distName); // db에서 전 화면에서 받아온 id를 이용해 sql select
-        setTextViews(currentLangauge); //textview들을 setting
+        setTextViews(); //textview들을 setting
 
         changeImage(distName);
         changeDistrictImage(distName);
@@ -82,7 +75,7 @@ public class LivingInfoFragment extends Fragment {
             public void onClick(View view) {
                 AgencyByDistrictFragment fragment = new AgencyByDistrictFragment();
                 Bundle bundle = new Bundle();
-                bundle.putString("districtName", distName);
+                bundle.putString("disName", distName);
                 fragment.setArguments(bundle);
 
                 getFragmentManager().beginTransaction().replace(R.id.main_container, fragment)
@@ -125,20 +118,13 @@ public class LivingInfoFragment extends Fragment {
         db.close();
     }
 
-    private void setTextViews(String currentLangauge){
+    private void setTextViews(){
         TextView textviewDistrictName = view.findViewById(R.id.text_living_info_district_name);
+        textviewDistrictName.setText(district.getDistrictEn());
         TextView textviewNearby = view.findViewById(R.id.text_living_info_nearby);
+        textviewNearby.setText(district.getDistNearEn());
         TextView textviewFeatures = view.findViewById(R.id.text_living_info_features);
-
-        if(currentLangauge.equals("en")){
-            textviewDistrictName.setText(district.getDistrictEn());
-            textviewNearby.setText(district.getDistNearEn());
-            textviewFeatures.setText(district.getFeatsEn());
-        }else if(currentLangauge.equals("ko")){
-            textviewDistrictName.setText(district.getDistrictKr());
-            textviewNearby.setText(district.getDistNearKr());
-            textviewFeatures.setText(district.getFeatsKr());
-        }
+        textviewFeatures.setText(district.getFeatsEn());
 
         TextView textviewTotalPop = view.findViewById(R.id.text_living_info_totalPop);
         textviewTotalPop.setText(String.valueOf(district.getTotalPop()));
