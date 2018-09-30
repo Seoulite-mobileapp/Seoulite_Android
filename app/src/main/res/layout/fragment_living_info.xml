@@ -52,7 +52,7 @@
                 android:paddingTop="5dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="5dp"
-                android:layout_marginLeft="5dp">
+                android:layout_marginStart="5dp">
 
                 <ImageView
                     android:id="@+id/living_info_favorite_star"
@@ -76,9 +76,10 @@
                 android:id="@+id/btn_living_info_moveToAgencies"
                 android:layout_width="170dp"
                 android:layout_height="30dp"
-                android:layout_gravity="center"
+                android:layout_gravity="end"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="5dp"
+                android:layout_marginEnd="25dp"
                 android:background="@drawable/agencyinfo_btn_border"
                 android:textColor="#009a9b"
                 android:text="  Real Estate Agencies  "
