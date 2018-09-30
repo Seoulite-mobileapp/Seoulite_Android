@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,7 +26,7 @@ import butterknife.OnClick;
 public class DistrictSelectionLivingInfoFragment extends Fragment {
     @BindView(R.id.list_district_living_info) ListView mDistrictListView;
     @BindView(R.id.btn_district_selection_search_living_info) Button mSearchButton;
-
+    @BindView(R.id.district_image) ImageView mSelectedDistrictImage;
     private int mSelectedDistrictPos = -1;
     private String mSelectedDistrictName;
 
@@ -178,13 +179,100 @@ public class DistrictSelectionLivingInfoFragment extends Fragment {
                 separatorView.setVisibility(View.GONE);
             }
 
+//            districtNameTextView.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    mSelectedDistrictName = districtNameTextView.getText().toString();
+//                    mSelectedDistrictPos = position;
+//                    notifyDataSetChanged();
+//                    Toast.makeText(mContext, mSelectedDistrictName + " clicked.", Toast.LENGTH_SHORT).show();
+//                }
+//            });
             districtNameTextView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     mSelectedDistrictName = districtNameTextView.getText().toString();
                     mSelectedDistrictPos = position;
                     notifyDataSetChanged();
-                    Toast.makeText(mContext, mSelectedDistrictName + " clicked.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(mContext, mSelectedDistrictName + " selected.", Toast.LENGTH_SHORT).show();
+
+                    switch(mSelectedDistrictName) {
+                        case "Gangnam-gu":
+                            mSelectedDistrictImage.setImageDrawable(getResources().getDrawable(R.drawable.gangnamgu));
+                            break;
+                        case "Gangdong-gu":
+                            mSelectedDistrictImage.setImageDrawable(getResources().getDrawable(R.drawable.gangdonggu));
+                            break;
+                        case "Gangbuk-gu":
+                            mSelectedDistrictImage.setImageDrawable(getResources().getDrawable(R.drawable.gangbukgu));
+                            break;
+                        case "Gangseo-gu":
+                            mSelectedDistrictImage.setImageDrawable(getResources().getDrawable(R.drawable.gangseogu));
+                            break;
+                        case "Gwanak-gu":
+                            mSelectedDistrictImage.setImageDrawable(getResources().getDrawable(R.drawable.gwanakgu));
+                            break;
+                        case "Gwangjin-gu":
+                            mSelectedDistrictImage.setImageDrawable(getResources().getDrawable(R.drawable.gwangjingu));
+                            break;
+                        case "Guro-gu":
+                            mSelectedDistrictImage.setImageDrawable(getResources().getDrawable(R.drawable.gurogu));
+                            break;
+                        case "Geumcheon-gu":
+                            mSelectedDistrictImage.setImageDrawable(getResources().getDrawable(R.drawable.geumcheongu));
+                            break;
+                        case "Nowon-gu":
+                            mSelectedDistrictImage.setImageDrawable(getResources().getDrawable(R.drawable.nowongu));
+                            break;
+                        case "Dobong-gu":
+                            mSelectedDistrictImage.setImageDrawable(getResources().getDrawable(R.drawable.dobonggu));
+                            break;
+                        case "Dongdaemun-gu":
+                            mSelectedDistrictImage.setImageDrawable(getResources().getDrawable(R.drawable.dongdaemungu));
+                            break;
+                        case "Dongjak-gu":
+                            mSelectedDistrictImage.setImageDrawable(getResources().getDrawable(R.drawable.dongjakgu));
+                            break;
+                        case "Mapo-gu":
+                            mSelectedDistrictImage.setImageDrawable(getResources().getDrawable(R.drawable.mapogu));
+                            break;
+                        case "Seodaemun-gu":
+                            mSelectedDistrictImage.setImageDrawable(getResources().getDrawable(R.drawable.seodaemungu));
+                            break;
+                        case "Seocho-gu":
+                            mSelectedDistrictImage.setImageDrawable(getResources().getDrawable(R.drawable.seochogu));
+                            break;
+                        case "Seongdong-gu":
+                            mSelectedDistrictImage.setImageDrawable(getResources().getDrawable(R.drawable.seongdonggu));
+                            break;
+                        case "Seongbuk-gu":
+                            mSelectedDistrictImage.setImageDrawable(getResources().getDrawable(R.drawable.seongbukgu));
+                            break;
+                        case "Songpa-gu":
+                            mSelectedDistrictImage.setImageDrawable(getResources().getDrawable(R.drawable.songpagu));
+                            break;
+                        case "Yangcheon-gu":
+                            mSelectedDistrictImage.setImageDrawable(getResources().getDrawable(R.drawable.yangcheongu));
+                            break;
+                        case "Yeongdeungpo-gu":
+                            mSelectedDistrictImage.setImageDrawable(getResources().getDrawable(R.drawable.yeongdeungpogu));
+                            break;
+                        case "Yongsan-gu":
+                            mSelectedDistrictImage.setImageDrawable(getResources().getDrawable(R.drawable.yongsangu));
+                            break;
+                        case "Eunpyeong-gu":
+                            mSelectedDistrictImage.setImageDrawable(getResources().getDrawable(R.drawable.eunpyeonggu));
+                            break;
+                        case "Jongno-gu":
+                            mSelectedDistrictImage.setImageDrawable(getResources().getDrawable(R.drawable.jongnogu));
+                            break;
+                        case "Jung-gu":
+                            mSelectedDistrictImage.setImageDrawable(getResources().getDrawable(R.drawable.junggu));
+                            break;
+                        case "Jungnang-gu":
+                            mSelectedDistrictImage.setImageDrawable(getResources().getDrawable(R.drawable.jungnanggu));
+                            break;
+                    }
                 }
             });
 

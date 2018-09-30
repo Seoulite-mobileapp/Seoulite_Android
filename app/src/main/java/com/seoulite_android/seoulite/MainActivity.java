@@ -171,31 +171,37 @@ public class MainActivity extends AppCompatActivity implements NavigationHost,
         mSearchView.setOnQueryTextListener(new MaterialSearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                if (query.charAt(0) >= 'a' && query.charAt(0) <= 'z') {
-                    query = Character.toUpperCase(query.charAt(0)) + query.substring(1);
-                }
-                if (query.length() < 4) {
-                    Toast.makeText(MainActivity.this, "Result not found. Please Try Again.", Toast.LENGTH_SHORT).show();
-                    return false;
-                }
-                if (query.substring(query.length() - 2, query.length()).equals("gu")
-                        && (query.charAt(query.length()-3) != '-')) {
-                    query = query.substring(0, query.length() - 2) + "-gu";
-                }
-                if (!query.substring(query.length() - 3, query.length()).equals("-gu")) {
-                    query += "-gu";
-                }
+//                if (query.charAt(0) >= 'a' && query.charAt(0) <= 'z') {
+//                    query = Character.toUpperCase(query.charAt(0)) + query.substring(1);
+//                }
+//                if (query.length() < 4) {
+//                    Toast.makeText(MainActivity.this, "Result not found. Please Try Again.", Toast.LENGTH_SHORT).show();
+//                    return false;
+//                }
+//                if (query.substring(query.length() - 2, query.length()).equals("gu")
+//                        && (query.charAt(query.length()-3) != '-')) {
+//                    query = query.substring(0, query.length() - 2) + "-gu";
+//                }
+//                if (!query.substring(query.length() - 3, query.length()).equals("-gu")) {
+//                    query += "-gu";
+//                }
                 for (String district : mDistrictList) {
                     if (district.equals(query)) {
                         Bundle bundle = new Bundle();
-                        bundle.putString("distName", query);
-                        LivingInfoFragment f = new LivingInfoFragment();
+                        bundle.putString("districtName", query);
+                        AgencyByDistrictFragment f = new AgencyByDistrictFragment();
                         f.setArguments(bundle);
                         replaceFragment(f, true);
                         return false;
                     }
                 }
-                Toast.makeText(MainActivity.this, "Result not found. Please Try Again.", Toast.LENGTH_SHORT).show();
+                Bundle bundle = new Bundle();
+                bundle.putString("searching", query);
+                Log.d("검색어:", query);
+                SearchResultFragment resultFragment = new SearchResultFragment();
+                resultFragment.setArguments(bundle);
+                replaceFragment(resultFragment, true);
+                //Toast.makeText(MainActivity.this, "Result not found. Please Try Again.", Toast.LENGTH_SHORT).show();
                 return false;
             }
 
@@ -233,9 +239,9 @@ public class MainActivity extends AppCompatActivity implements NavigationHost,
             case R.id.nav_favorites:
                 replaceFragment(new FavoritesFragment(), true);
                 break;
-            case R.id.nav_languages:
-                replaceFragment(new LanguageSettingFragment(), true);
-                break;
+//            case R.id.nav_languages:
+//                replaceFragment(new LanguageSettingFragment(), true);
+//                break;
         }
 
         mDrawer.closeDrawer(GravityCompat.START);
