@@ -58,10 +58,6 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
     ViewGroup rootView;
     MainActivity activity;
 
-    //Declaration for getLanguage
-    private Locale systemLocale;
-    private String currentLangauge;
-
     private Geocoder geocoder;
     private GoogleMap mMap;
     private Marker mAgency;
@@ -73,7 +69,6 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
 
     private boolean favorite_check = true;
 
-    private String stragcId;
     private int agencyId;
 
     //db test
@@ -116,8 +111,8 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         rootView = (ViewGroup) inflater.inflate(R.layout.fragment_agency_info, container, false);
         //getLanguage
-        systemLocale = activity.getResources().getConfiguration().locale;
-        currentLangauge = systemLocale.getLanguage();
+        Locale systemLocale = activity.getResources().getConfiguration().locale;
+        String currentLangauge = systemLocale.getLanguage();
 
         ButterKnife.bind(this, rootView);
 
@@ -163,7 +158,7 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
     private void gettingAgencyId(){
         Bundle bundle = getArguments();
         if(bundle != null){
-            stragcId = bundle.getString("agcId");
+            String stragcId = bundle.getString("agcId");
             agencyId = Integer.parseInt(stragcId);
         }else{
             Toast.makeText(activity, "Can't get data. Try again.", Toast.LENGTH_LONG).show();
@@ -383,7 +378,6 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
         mMap = googleMap;
 
         addMarkerToMap();
-//todo: 구글맵 마커가 정중앙에 오게 하기. 300dp 이상일 때에만 구글 마커가 중앙에 온다. 왜?? ㅠㅠ
         mMap.moveCamera(CameraUpdateFactory.newLatLng(AGENCYLatLng));
         mMap.animateCamera(CameraUpdateFactory.zoomTo(16));
         mMap.setOnMarkerClickListener(this);
@@ -396,11 +390,12 @@ public class AgencyInfoFragment extends Fragment implements OnMarkerClickListene
                 .snippet("to open Google Maps"));
     }
 
+
     @Override
     public boolean onMarkerClick(final Marker marker) {
         if(marker.equals(mAgency)){
-            Uri agencyAddr = Uri.parse("geo:0,0?q="+ agencyAddress);
-            Intent intent = new Intent(Intent.ACTION_VIEW, agencyAddr);
+            Uri naviToAgency = Uri.parse("google.navigation:q="+lat+","+lon);
+            Intent intent = new Intent(Intent.ACTION_VIEW, naviToAgency);
       //      intent.setClassName("com.google.android.apps.maps",
         //            "com.google.android.maps.MapsActivity");
             startActivity(intent);
