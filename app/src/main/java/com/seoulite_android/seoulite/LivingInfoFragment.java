@@ -82,7 +82,7 @@ public class LivingInfoFragment extends Fragment {
             public void onClick(View view) {
                 AgencyByDistrictFragment fragment = new AgencyByDistrictFragment();
                 Bundle bundle = new Bundle();
-                bundle.putString("disName", distName);
+                bundle.putString("districtName", distName);
                 fragment.setArguments(bundle);
 
                 getFragmentManager().beginTransaction().replace(R.id.main_container, fragment)
